@@ -69,7 +69,7 @@ function render(){
             if (user) {
                 console.log("logged")
             }
-    }
+    })
 }
 
 function phoneAuth(){
