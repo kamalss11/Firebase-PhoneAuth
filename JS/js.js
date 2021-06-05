@@ -63,15 +63,13 @@ window.onload = function(){
     loader()
 }
 
-var myvar 
-
 function loader(){
-   myvar = setTimeout(showPage, 3000);
+    setTimeout(showPage, 3000);
 }
 
 function showPage(){
     document.getElementById("loader").style.display = "none"
-    document.getElementsById("bl").style.display = "block"
+    document.getElementById("bl").style.display = "block"
 }
 
 function render(){
