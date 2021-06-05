@@ -34,6 +34,17 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+
+        window.load = () =>{
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (!user) {
+                    location.replace("https://phoneauth-dojo.netlify.app/")
+                } 
+                else {
+                    location.replace("https://phoneauth-dojo.netlify.app/logged.html")
+                }
+            });
+        }
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
 </body>
