@@ -20,7 +20,7 @@ body{
     background-color: #e8f0fa;
 }
 
-.loads{
+#loads{
     position: fixed;
     top: 0;
     left: 0;
