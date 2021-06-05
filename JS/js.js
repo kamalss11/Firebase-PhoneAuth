@@ -74,10 +74,12 @@ function phoneAuth(){
         login.style.display = "block"
         ph.style.display = "none"
         otp.style.display = "none"
+        recaptcha.style.display = "none"
     }).catch(function (error){
         alert(error.message)
         code.style.display = "none"
         login.style.display = "none"
+        recaptcha.style.display = "block"
     })
 }
 
