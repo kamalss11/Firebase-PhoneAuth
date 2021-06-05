@@ -68,7 +68,7 @@ function loader(){
 }
 
 function showPage(){
-    document.getElementById("loads").style.display = "none"
+    document.getElementById("loads").style.opacity = "0"
     document.getElementById("bl").style.display = "block"
 }
 
