@@ -21,7 +21,7 @@ ph.addEventListener("blur",function(){
         otp.style.pointerEvents = "none"
     }
 
-    else if(ph.value.length < 10){
+    else if(ph.value.length < 13){
         error("Please enter valid number",0)
         otp.style.pointerEvents = "none"
     }
