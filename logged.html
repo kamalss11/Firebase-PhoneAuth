@@ -37,12 +37,11 @@
 
         window.onload = () =>{
             firebase.auth().onAuthStateChanged(function(user) {
-                alert("hi")
                 if (!user) {
-                    console.log("hi")
                     location.replace("https://phoneauth-dojo.netlify.app/")
                 } 
                 else {
+                    console.log(user)
                     location.replace("https://phoneauth-dojo.netlify.app/logged.html")
                 }
             });
