@@ -67,7 +67,7 @@ function render(){
     recaptchaVerifier.render()
     firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
-            console.log(user+user.phoneNumber)
+            console.log(user,user.phoneNumber)
           } else {
             // No user is signed in.
           }
