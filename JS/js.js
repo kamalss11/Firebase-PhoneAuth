@@ -98,3 +98,9 @@ function verification(){
         alert(error.message)
     })
 }
+
+var user = firebase.auth().currentUser;
+if (user) 
+console.log("logged")
+
+
