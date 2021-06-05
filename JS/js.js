@@ -69,7 +69,7 @@ function render(){
             if (user) {
                 console.log("Already logged",user)
             let usr = firebase.auth().currentUser
-            console.log(usr.displayName)
+            console.log(usr.phoneNumber)
             }
     })
 }
