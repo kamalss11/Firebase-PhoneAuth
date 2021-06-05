@@ -60,6 +60,16 @@ const recaptcha = document.querySelector("#recaptcha-container")
 
 window.onload = function(){
     render()
+    loader()
+}
+
+function loader(){
+    setTimeout(showPage, 3000);
+}
+
+function showPage(){
+    document.getElementById("loader").style.display = "none"
+    document.getElementsByClassName("forms").style.display = "block"
 }
 
 function render(){
@@ -67,11 +77,11 @@ function render(){
     recaptchaVerifier.render()
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          console.log(user,user.phoneNumber)
-          location.replace("https://phoneauth-dojo.netlify.app/logged.html")
+            console.log(user,user.phoneNumber)
+            location.replace("https://phoneauth-dojo.netlify.app/logged.html")
         } 
         else {
-          console.log("No user is logged in")
+            console.log("No user is logged in.")
         }
     });
 }
@@ -108,3 +118,11 @@ function verification(){
     })
 }
 
+// Signout
+
+function logout(){
+    firebase.auth().signOut()
+    let u = firebase.auth().currentUser
+    console.log(u,"logged out")
+    location.replace("https://phoneauth-dojo.netlify.app/")
+}
