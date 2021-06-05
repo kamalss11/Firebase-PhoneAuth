@@ -81,6 +81,10 @@ body{
     text-align: left;
 }
 
+.forms #recaptcha-container div{
+    width: 50% !important;
+}
+
 @media(max-width: 900px){
     .forms{
         width: 80%;

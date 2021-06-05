@@ -38,3 +38,38 @@ function error(err,n){
 }
 
 // Phone Auth
+   
+const recaptcha = document.querySelector("#recaptcha-container")
+
+window.onload = function(){
+    render()
+}
+
+function render(){
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(recaptcha)
+    recaptchaVerifier.render()
+}
+
+function phoneAuth(){
+    var number = document.getElementById("ph").value
+    // phone number authentication
+
+    firebase.auth().SignInWithPhoneNumber(number,window.recaptchaVerifier).then(function(confirmationResult){
+        window.confirmationResult = confirmationResult
+        coderesult = confirmationResult
+        console.log(coderesult)
+        alert("Message Sent")
+    }).catch(function (error){
+        console.log(error.message)
+    })
+}
+
+function verification(){
+    coderesult.confirm(code.value).then(function (result){
+        alert("Successfully Verified")
+        var user = result.user
+        console.log(user)
+    }).catch(function (error){
+        console.log(error.message)
+    })
+}
