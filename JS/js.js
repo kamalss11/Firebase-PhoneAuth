@@ -63,8 +63,10 @@ window.onload = function(){
     loader()
 }
 
+var myvar 
+
 function loader(){
-    setTimeout(showPage, 3000);
+   myvar = setTimeout(showPage, 3000);
 }
 
 function showPage(){
