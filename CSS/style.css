@@ -58,16 +58,17 @@ body{
 .forms .btns{
     display: flex;
     justify-content: space-around;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .forms .btns button{
-    padding: 9px 13px;
+    padding: 13px 15px;
     cursor: pointer;
     border: none;
     color: white;
     background: dodgerblue;
     border-radius: 5px;
+    font-size: 15px;
 }
 
 .er{

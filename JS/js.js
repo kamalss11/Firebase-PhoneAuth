@@ -2,7 +2,12 @@ const ph = document.getElementById("ph")
 const code = document.getElementById("code")
 const errors = document.querySelectorAll(".er")
 const form = document.querySelector("#form")
-                                    
+const otp = document.querySelector(".otp")
+const login = document.querySelector(".login")
+
+code.style.display = "none"
+login.style.display = "none"
+
 form.addEventListener("submit",function(e){
         e.preventDefault()
     }
@@ -65,8 +70,14 @@ function phoneAuth(){
         coderesult = confirmationResult
         console.log(coderesult)
         alert("Message Sent")
+        code.style.display = "block"
+        login.style.display = "block"
+        ph.style.display = "none"
+        otp.style.display = "none"
     }).catch(function (error){
-        console.log(error.message)
+        alert(error.message)
+        code.style.display = "none"
+        login.style.display = "none"
     })
 }
 
@@ -76,6 +87,6 @@ function verification(){
         var user = result.user
         console.log(user)
     }).catch(function (error){
-        console.log(error.message)
+        alert(error.message)
     })
 }
