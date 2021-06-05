@@ -83,8 +83,7 @@ body{
 }
 
 .forms #recaptcha-container div div{
-    width: 50% !important;
-    margin: 0 auto !important;
+    margin: 15px auto !important;
 }
 
 @media(max-width: 900px){
