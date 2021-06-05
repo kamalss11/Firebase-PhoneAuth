@@ -41,7 +41,6 @@ body{
     border: 16px solid #e7e6e6;
     border-radius: 50%;
     border-top: 16px solid #3498db;
-    -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }
   

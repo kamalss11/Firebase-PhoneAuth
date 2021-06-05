@@ -9,6 +9,10 @@
     <title>Phone Authentication</title>
 </head>
 <body>
+    <div id="loads">
+        <div id="loader"></div>
+    </div>
+
     <div class="logout">
         <button onclick="logout()">Logout</button>
     </div>
@@ -45,6 +49,16 @@
                     location.replace("https://phoneauth-dojo.netlify.app/logged.html")
                 }
             });
+            loader()
+        }
+
+        function loader(){
+            setTimeout(showPage, 3000);
+        }
+
+        function showPage(){
+            document.getElementById("loads").style.display = "none"
+            document.getElementById("bl").style.display = "block"
         }
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
