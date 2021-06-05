@@ -1,16 +1,3 @@
-// Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyDVdGF7waQdY_SiZSI7OcAyXNDYrB9tIuE",
-    authDomain: "dojo-c2657.firebaseapp.com",
-    databaseURL: "https://dojo-c2657.firebaseio.com",
-    projectId: "dojo-c2657",
-    storageBucket: "dojo-c2657.appspot.com",
-    messagingSenderId: "789766035590",
-    appId: "1:789766035590:web:9b0bbf87ea30b2a5971907"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
 const ph = document.getElementById("ph")
 const code = document.getElementById("code")
 const errors = document.querySelectorAll(".er")
