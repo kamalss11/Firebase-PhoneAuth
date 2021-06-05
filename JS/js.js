@@ -69,6 +69,7 @@ function loader(){
 
 function showPage(){
     document.getElementById("loads").style.opacity = "0"
+    document.getElementById("loads").style.zIndex = "-1"
     document.getElementById("bl").style.display = "block"
 }
 
