@@ -65,13 +65,12 @@ window.onload = function(){
 function render(){
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(recaptcha)
     recaptchaVerifier.render()
-    firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                console.log("Already logged",user)
-           // let usr = firebase.auth().currentUser
-            console.log(user.phoneNumber)
-            }
-    })
+    var usr = firebase.auth().currentUser()
+     if (usr!=null) {
+        console.log("Already logged",usr)
+        // let usr = firebase.auth().currentUser
+        console.log(usr.phoneNumber)
+     }
 }
 
 function phoneAuth(){
