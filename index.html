@@ -44,6 +44,19 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+
+        
+        const recaptcha = document.querySelector("#recaptcha-container")
+
+        window.onload = function(){
+            render()
+        }
+
+        function render(){
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(recaptcha)
+            recaptchaVerifier.render()
+        }
     </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
 </body>
 </html>

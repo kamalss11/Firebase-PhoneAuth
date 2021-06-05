@@ -38,8 +38,3 @@ function error(err,n){
 }
 
 // Phone Auth
-
-window.onload = function(){
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
-    recaptchaVerifier.render()
-}
