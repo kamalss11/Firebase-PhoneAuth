@@ -66,7 +66,7 @@ function render(){
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(recaptcha)
     recaptchaVerifier.render()
     var usr = firebase.auth().currentUser
-     if (usr!=null) {
+     if (usr) {
         console.log("Already logged",usr)
         // let usr = firebase.auth().currentUser
         console.log(usr.phoneNumber)
