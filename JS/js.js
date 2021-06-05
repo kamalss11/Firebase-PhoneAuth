@@ -65,6 +65,10 @@ window.onload = function(){
 function render(){
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(recaptcha)
     recaptchaVerifier.render()
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        console.log("logged")
+    }
 }
 
 function phoneAuth(){
@@ -81,10 +85,6 @@ function phoneAuth(){
         ph.style.display = "none"
         otp.style.display = "none"
         recaptcha.style.display = "none"
-
-        var user = firebase.auth().currentUser;
-        if (user) 
-        console.log("logged")
     }).catch(function (error){
         alert(error.message)
         code.style.display = "none"
