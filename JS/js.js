@@ -81,6 +81,10 @@ function phoneAuth(){
         ph.style.display = "none"
         otp.style.display = "none"
         recaptcha.style.display = "none"
+
+        var user = firebase.auth().currentUser;
+        if (user) 
+        console.log("logged")
     }).catch(function (error){
         alert(error.message)
         code.style.display = "none"
@@ -98,9 +102,5 @@ function verification(){
         alert(error.message)
     })
 }
-
-var user = firebase.auth().currentUser;
-if (user) 
-console.log("logged")
 
 
