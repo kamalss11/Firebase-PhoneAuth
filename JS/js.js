@@ -4,7 +4,7 @@ const errors = document.querySelectorAll(".er")
 const form = document.querySelector("#form")
                                     
 form.addEventListener("submit",function(e){
-        e.preventDefault
+        e.preventDefault()
     }
 )
 
