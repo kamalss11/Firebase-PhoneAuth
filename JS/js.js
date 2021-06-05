@@ -68,6 +68,7 @@ function render(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           console.log(user,user.phoneNumber)
+          location.replace("https://phoneauth-dojo.netlify.app/logged.html")
         } 
         else {
           // No user is signed in.
