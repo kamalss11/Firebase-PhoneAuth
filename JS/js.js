@@ -109,7 +109,7 @@ function verification(){
 
 // Signout
 
-function signout(){
+function logout(){
     firebase.auth().signOut()
     let u = firebase.auth().currentUser
     console.log(u,"logged out")
