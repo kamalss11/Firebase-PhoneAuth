@@ -45,6 +45,15 @@
                 }
             });
         }
+        
+        // Signout
+
+        function logout(){
+            firebase.auth().signOut()
+            let u = firebase.auth().currentUser
+            console.log(u,"logged out")
+            location.replace("https://phoneauth-dojo.netlify.app/")
+        }
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
 </body>
