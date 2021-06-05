@@ -66,12 +66,12 @@ function render(){
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(recaptcha)
     recaptchaVerifier.render()
     firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            console.log(user,user.phoneNumber)
-            location.replace("https://phoneauth-dojo.netlify.app/logged.html")
-          } else {
-            // No user is signed in.
-          }
+        if (user) {
+          console.log(user,user.phoneNumber)
+        } 
+        else {
+          // No user is signed in.
+        }
     });
 }
 
@@ -107,4 +107,10 @@ function verification(){
     })
 }
 
+// Signout
 
+function signout(){
+    firebase.auth().signOut()
+    let u = firebase.auth().currentUser
+    console.log(u,"logged out")
+}
