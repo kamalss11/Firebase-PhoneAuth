@@ -71,7 +71,7 @@ function render(){
           location.replace("https://phoneauth-dojo.netlify.app/logged.html")
         } 
         else {
-          // No user is signed in.
+          console.log("No user is logged in")
         }
     });
 }
