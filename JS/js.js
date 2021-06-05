@@ -68,7 +68,7 @@ function loader(){
 }
 
 function showPage(){
-    document.getElementById("loader").style.display = "none"
+    document.getElementsByClassName("loads").style.display = "none"
     document.getElementById("bl").style.display = "block"
 }
 
