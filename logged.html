@@ -38,6 +38,7 @@
         window.load = () =>{
             firebase.auth().onAuthStateChanged(function(user) {
                 if (!user) {
+                    console.log("hi")
                     location.replace("https://phoneauth-dojo.netlify.app/")
                 } 
                 else {
