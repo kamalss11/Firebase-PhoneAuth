@@ -69,7 +69,8 @@ function loader(){
 
 function showPage(){
     document.getElementById("loader").style.display = "none"
-    document.getElementsById("forms").style.display = "block"
+    var bl = document.getElementsByClassName("forms")
+    bl.style.display = "block"
 }
 
 function render(){
