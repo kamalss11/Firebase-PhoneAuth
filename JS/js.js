@@ -1,7 +1,7 @@
 const ph = document.getElementById("ph")
 const code = document.getElementById("code")
 const errors = document.querySelectorAll(".er")
-const form = document.querySelector("#form)
+const form = document.querySelector("#form")
                                     
 form.addEventListener("submit",function(e){
         e.preventDefault
