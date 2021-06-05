@@ -70,6 +70,7 @@ function loader(){
 function showPage(){
     document.getElementById("loads").style.opacity = "0"
     document.getElementById("loads").style.zIndex = "-1"
+    document.getElementById("loads").style.transition = ".9s"
     document.getElementById("bl").style.display = "block"
 }
 
