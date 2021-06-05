@@ -68,6 +68,8 @@ function render(){
     firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log("Already logged",user)
+            let usr = firebase.auth().currentUser
+            console.log(usr.displayName)
             }
     })
 }
