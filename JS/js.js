@@ -66,8 +66,9 @@ function render(){
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(recaptcha)
     recaptchaVerifier.render()
     firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        console.log("logged")
+            if (user) {
+                console.log("logged")
+            }
     }
 }
 
