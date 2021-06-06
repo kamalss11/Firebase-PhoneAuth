@@ -36,7 +36,7 @@ function logout(){
     location.replace("https://phoneauth-dojo.netlify.app/")
 }
 
-// form tabs
+// Form tabs
 
 const forms = document.querySelectorAll(".forms")
 const tabs = document.querySelector(".tabs").children
@@ -51,3 +51,41 @@ for(let i=0;i<tabs.length;i++){
         tabs[i].classList.add("active")
     })
 }
+
+// Forms
+
+const sbtn = document.querySelector(".submit")
+
+var nam = document.querySelector("#name")
+var phone = document.querySelector("#phone")
+var price = document.querySelector("#price")
+var rate = document.querySelector("#rate")
+var service = document.querySelector("#service")
+var staus = document.querySelector("#staus")
+var add = document.querySelector("#add")
+
+const db = firestore.collection("Studios")
+
+sbtn.addEventListener("click",function(){
+    let nameInput = nam.value
+    let phoneInput = phone.value
+    let priceInput = price.value
+    let rateInput = rate.value
+    let serviceInput = service.value
+    let statusInput = staus.value
+    let addInput = add.value
+    db.doc().set({
+        Name: nameInput,
+        Phone: phoneInput,
+        Price = priceInput,
+        Rate = rateInput,
+        Service = serviceInput,
+        Status = statusInput,
+        Address = addInput
+    }).then(function(){
+        console.log("Data Saved")
+    })
+    .catch(function(error){
+        console.log(error)
+    })
+})
