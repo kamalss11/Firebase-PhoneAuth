@@ -100,6 +100,11 @@ body{
     font-size: 15px;
 }
 
+.forms .btns button.otp.active,.forms .btns button.login.active{
+    background-color: rgb(204, 202, 202);
+    pointer-events: none;
+}
+
 .er{
     display: none;
 }

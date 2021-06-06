@@ -18,34 +18,34 @@ ph.addEventListener("blur",function(){
     let val = /\d[0-9]{9,}$/
     if(ph.value === ''){
         error("This field is required",0)
-        otp.style.pointerEvents = "none"
+        otp.classList.add("active")
     }
 
     else if(ph.value.length < 13){
         error("Please enter valid number",0)
-        otp.style.pointerEvents = "none"
+        otp.classList.add("active")
     }
 
     else if(!ph.value.match(val)){
         error("Enter only numbers",0)
-        otp.style.pointerEvents = "none"
+        otp.classList.add("active")
     }
 
     else{
         errors[0].classList.remove("active")
-        otp.style.pointerEvents = "auto"
+        otp.classList.remove("active")
     }
 })
 
 code.addEventListener("blur",function(){
     if(code.value === ''){
         error("Enter your OTP",1)
-        login.style.pointerEvents = "none"
+        login.classList.add("active")
     }
 
     else{
         errors[1].classList.remove("active")
-        login.style.pointerEvents = "auto"
+        login.classList.remove("active")
     }
 })
 
