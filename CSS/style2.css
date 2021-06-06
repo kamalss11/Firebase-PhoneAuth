@@ -40,9 +40,11 @@
     100% { transform: rotate(360deg); }
 }
 
+.wl{
+    text-align: right;
+}
+
 .logout{
-    display: flex;
-    justify-content: flex-end;
     position: relative;
 }
 
