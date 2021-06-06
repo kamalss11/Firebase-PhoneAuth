@@ -1,4 +1,5 @@
-var wel = document.querySelector("#usr")
+var wel = document.querySelector(".wel")
+var usr = document.querySelector("#usr")
 var lo = document.querySelector(".outbtn")
 
 window.onload = () =>{
@@ -8,7 +9,7 @@ window.onload = () =>{
         } 
         else{
             console.log(user.phoneNumber)
-            wel.innerHTML = user.phoneNumber
+            usr.innerHTML = user.phoneNumber
         }
     });
     loader()
@@ -25,6 +26,7 @@ function showPage(){
 wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
+
 // Signout
 
 function logout(){
