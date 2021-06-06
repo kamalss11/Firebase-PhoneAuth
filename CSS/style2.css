@@ -122,7 +122,7 @@
 }
 
 .tabs button.active{
-    border-bottom: 1px solid dodgerblue;
+    border-bottom: 2px solid dodgerblue;
 }
 
 .forms{

@@ -43,6 +43,10 @@ const tabs = document.querySelector(".tabs").children
 
 for(let i=0;i<tabs.length;i++){
     tabs[i].addEventListener("click",function(){
+        for(let j=0;j<tabs.length;j++){
+            tabs[j].classList.remove("active")
+            forms[j].classList.remove("active")
+        }
         forms[i].classList.add("active")
         tabs[i].classList.add("active")
     })
