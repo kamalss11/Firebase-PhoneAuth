@@ -64,7 +64,7 @@ var service = document.querySelector("#service")
 var staus = document.querySelector("#staus")
 var add = document.querySelector("#add")
 
-var firebase = firebase()
+var firebase = firebase
 var firestore  = firebase.firestore()
 const db = firestore.collection("Studios")
 
