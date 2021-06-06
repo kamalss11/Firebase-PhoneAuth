@@ -40,3 +40,10 @@ function logout(){
 
 const forms = document.querySelectorAll(".forms")
 const tabs = document.querySelector(".tabs").children
+
+for(let i=0;i<tabs.length;i++){
+    tabs[i].addEventListener("click",function(){
+        forms[i].classList.add("active")
+        tabs[i].classList.add("active")
+    })
+}

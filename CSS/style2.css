@@ -117,6 +117,12 @@
     border: none;
     margin: 0 9px;
     padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tabs button.active{
+    border-bottom: 1px solid dodgerblue;
 }
 
 .forms{
@@ -129,6 +135,11 @@
     box-shadow: 0 0 15px rgba(0,0,0,.2);
     border-radius: 5px;
     padding: 10px 15px;
+    display: none;
+}
+
+.forms.active{
+    display: block;
 }
 
 .forms h2{
