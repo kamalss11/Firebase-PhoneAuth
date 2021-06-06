@@ -168,6 +168,9 @@
     background: dodgerblue;
     color: white;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
 }
 
 @media(max-width: 950px){
