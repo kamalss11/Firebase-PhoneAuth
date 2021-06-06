@@ -158,3 +158,9 @@
     resize: none;
     font-size: 15px;
 }
+
+@media(max-width: 950px){
+    .forms{
+        width: 80%;
+    }
+}
