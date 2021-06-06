@@ -130,7 +130,7 @@
     width: 100%;
 }
 
-.forms .field input{
+.forms .field input,.forms .field textarea{
     width: 100%;
     padding: 8px 10px;
     border: none;
