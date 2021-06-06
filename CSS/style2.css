@@ -67,7 +67,7 @@
 .logout .outbtn{
     position: absolute;
     bottom: -100px;
-    left: 50%;
+    right: 0;
     width: 180px;
     transform: translateX(-50%);
     background: white;
