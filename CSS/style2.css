@@ -109,7 +109,7 @@
 }
 
 .tabs{
-    margin: 25px 0;
+    margin: 25px;
 }
 
 .tabs button{
@@ -128,9 +128,6 @@
 
 .forms{
     margin: 25px auto;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     width: 40%;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,.2);
