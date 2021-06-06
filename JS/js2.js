@@ -1,5 +1,5 @@
-var wel = document.querySelector("#usr"),
-logout = document.querySelector(".outbtn")
+var wel = document.querySelector("#usr")
+var logout = document.querySelector(".outbtn")
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
