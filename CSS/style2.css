@@ -70,7 +70,8 @@
     position: absolute;
     content: '';
     top: -20px;
-    right: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     border: solid 10px;
     border-color: transparent transparent gray;
 }
