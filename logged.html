@@ -48,7 +48,8 @@
                 else{
                     console.log(user.phoneNumber)
                     var wel = document.querySelector(".wel")
-                    wel.appendChild('user.phoneNumber')
+                    var usr = document.createTextNode(user.phoneNumber)
+                    wel.appendChild(usr)
                 }
             });
             loader()
