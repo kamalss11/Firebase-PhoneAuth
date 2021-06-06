@@ -44,6 +44,9 @@
                 if (!user) {
                     location.replace("https://phoneauth-dojo.netlify.app/")
                 } 
+                else{
+                    console.log(user.phoneNumber)
+                }
             });
             loader()
         }
