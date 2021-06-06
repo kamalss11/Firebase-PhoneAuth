@@ -46,6 +46,7 @@
 
 .logout{
     position: relative;
+    display: inline-block;
 }
 
 .logout .wel{
