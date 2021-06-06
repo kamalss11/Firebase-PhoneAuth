@@ -15,10 +15,11 @@
 
     <div class="logout">
         <p class="wel">Welcome <span id="usr"></span></p>
-        <button onclick="logout()">Logout</button>
+        <div class="outbtn">
+            <button onclick="logout()">Logout</button>
+        </div>
     </div>
 
-    <script src="JS/js.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
 
@@ -40,13 +41,15 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
+        var wel = document.querySelector("#usr"),
+        logout = document.querySelector(".outbtn")
+
         window.onload = () =>{
             firebase.auth().onAuthStateChanged(function(user) {
                 if (!user) {
                     location.replace("https://phoneauth-dojo.netlify.app/")
                 } 
                 else{
-                    var wel = document.querySelector("#usr")
                     console.log(user.phoneNumber)
                     wel.innerHTML = user.phoneNumber
                 }
@@ -61,6 +64,10 @@
         function showPage(){
             document.getElementById("loads").style.display = "none"
         }
+
+        wel.addEventListener("click",function(){
+            logout.classList.toggle("active")
+        })
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
 </body>

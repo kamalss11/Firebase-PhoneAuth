@@ -39,3 +39,27 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.logout{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.logout .wel{
+    cursor: pointer;
+}
+
+.logout .outbtn{
+    position: absolute;
+    bottom: -15px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+    display: none;
+}
+
+.logout .outbtn.active{
+    display: block;
+}
