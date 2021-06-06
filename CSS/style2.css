@@ -72,7 +72,7 @@
     top: -20px;
     right: 15px;
     border: solid 10px;
-    border-color: gray;
+    border-color: transparent transparent gray;
 }
 
 .logout .outbtn button{
