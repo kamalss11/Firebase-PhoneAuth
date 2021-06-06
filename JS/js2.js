@@ -35,3 +35,8 @@ function logout(){
     console.log(u,"logged out")
     location.replace("https://phoneauth-dojo.netlify.app/")
 }
+
+// form tabs
+
+const forms = document.querySelectorAll(".forms")
+const tabs = document.querySelector(".tabs").children
