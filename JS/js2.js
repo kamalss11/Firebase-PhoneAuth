@@ -65,7 +65,9 @@ var staus = document.querySelector("#staus")
 var add = document.querySelector("#add")
 
 var firebase = firebase
-var firestore  = firebase.firestore()
+console.log(firebase)
+var firestore  = firebase.firestore
+console.log(firestore)
 const db = firestore.collection("Studios")
 
 sbtn.addEventListener("click",function(){
