@@ -57,6 +57,7 @@
     position: absolute;
     bottom: -50px;
     left: 50%;
+    width: 250px;
     transform: translateX(-50%);
     background: white;
     padding: 8px 12px;
@@ -67,6 +68,13 @@
 
 .logout .outbtn button{
     width: 95%;
+    background: none;
+    transition: .4s;
+}
+
+.logout .outbtn button:hover{
+    background-color: dodgerblue;
+    color: white;
 }
 
 .logout .outbtn.active{
