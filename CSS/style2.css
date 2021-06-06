@@ -61,8 +61,12 @@
     background: white;
     padding: 8px 12px;
     border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,.1);
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
     display: none;
+}
+
+.logout .outbtn button{
+    width: 95%;
 }
 
 .logout .outbtn.active{
