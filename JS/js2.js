@@ -1,5 +1,5 @@
 var wel = document.querySelector("#usr")
-var logout = document.querySelector(".outbtn")
+var lo = document.querySelector(".outbtn")
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -23,7 +23,7 @@ function showPage(){
 }
 
 wel.addEventListener("click",function(){
-    logout.classList.toggle("active")
+    lo.classList.toggle("active")
 })
 // Signout
 
