@@ -14,6 +14,7 @@
     </div>
 
     <div class="logout">
+        <p class="wel">Welcome</p>
         <button onclick="logout()">Logout</button>
     </div>
 
@@ -46,6 +47,8 @@
                 } 
                 else{
                     console.log(user.phoneNumber)
+                    var wel = document.querySelector(".wel")
+                    wel.appendChild(user.phoneNumber)
                 }
             });
             loader()
