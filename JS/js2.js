@@ -64,8 +64,7 @@ var service = document.querySelector("#service")
 var staus = document.querySelector("#staus")
 var add = document.querySelector("#add")
 
-var firestore = firebase.firestore()
-const db = firestore.collection("Studios")
+const db = firebase.firestore()
 
 sbtn.addEventListener("click",function(){
     let nameInput = nam.value
@@ -75,7 +74,7 @@ sbtn.addEventListener("click",function(){
     let serviceInput = service.value
     let statusInput = staus.value
     let addInput = add.value
-    db.doc().set({
+    db.collection("Studios").add({
         Name: nameInput,
         Phone: phoneInput,
         Price: priceInput,
