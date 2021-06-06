@@ -120,6 +120,11 @@
     padding: 10px 15px;
 }
 
+.forms h3{
+    margin: 15px 0;
+    text-align: center;
+}
+
 .forms .field{
     margin: 10px 0;
     width: 100%;
