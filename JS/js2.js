@@ -77,11 +77,11 @@ sbtn.addEventListener("click",function(){
     db.doc().set({
         Name: nameInput,
         Phone: phoneInput,
-        Price = priceInput,
-        Rate = rateInput,
-        Service = serviceInput,
-        Status = statusInput,
-        Address = addInput
+        Price: priceInput,
+        Rate: rateInput,
+        Service: serviceInput,
+        Status: statusInput,
+        Address: addInput
     }).then(function(){
         console.log("Data Saved")
     })
