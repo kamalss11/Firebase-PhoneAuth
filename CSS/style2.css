@@ -122,6 +122,7 @@
 
 .tabs button.active{
     color: dodgerblue;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
 }
 
 .forms{
