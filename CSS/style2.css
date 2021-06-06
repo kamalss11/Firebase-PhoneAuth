@@ -53,6 +53,14 @@
     cursor: pointer;
 }
 
+.logout .wel{
+    font-size: 15px;
+}
+
+.logout .wel span{
+    font-size: 18px;
+}
+
 .logout .outbtn{
     position: absolute;
     bottom: -80px;
