@@ -81,6 +81,9 @@
     padding: 8px;
     background: none;
     border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
     transition: .4s;
 }
 
