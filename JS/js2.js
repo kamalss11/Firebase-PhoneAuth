@@ -63,7 +63,7 @@ var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
 var staus = document.querySelector("#staus")
 var add = document.querySelector("#add")
-
+console.log(db)
 sbtn.addEventListener("click",function(){
     let nameInput = nam.value
     let phoneInput = phone.value
