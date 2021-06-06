@@ -124,3 +124,10 @@
     margin: 10px 0;
     width: 100%;
 }
+
+.forms .field input{
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
