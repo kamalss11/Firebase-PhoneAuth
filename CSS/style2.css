@@ -118,11 +118,10 @@
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
-    border: transparent;
 }
 
 .tabs button.active{
-    border-bottom: 2px solid dodgerblue;
+    color: dodgerblue;
 }
 
 .forms{
@@ -142,7 +141,6 @@
 .forms h2{
     margin: 15px 0;
     text-align: center;
-    color: dodgerblue;
 }
 
 .forms .field{
