@@ -158,6 +158,18 @@
     font-size: 15px;
 }
 
+.forms .btn{
+    margin: 15px 0;
+    text-align: center;
+}
+
+.forms .btn button{
+    padding: 8px 15px;
+    background: dodgerblue;
+    color: white;
+    cursor: pointer;
+}
+
 @media(max-width: 950px){
     .forms{
         width: 80%;
