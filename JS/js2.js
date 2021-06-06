@@ -61,7 +61,7 @@ var phone = document.querySelector("#phone")
 var price = document.querySelector("#price")
 var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
-var staus = document.querySelector("#staus")
+var status = document.querySelector("#status")
 var add = document.querySelector("#add")
 
 var firestore  = firebase.firestore()
@@ -73,7 +73,7 @@ sbtn.addEventListener("click",function(){
     let priceInput = price.value
     let rateInput = rate.value
     let serviceInput = service.value
-    let statusInput = staus.value
+    let statusInput = status.value
     let addInput = add.value
     db.doc().set({
         Name: nameInput,
