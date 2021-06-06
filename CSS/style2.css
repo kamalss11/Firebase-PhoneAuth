@@ -107,3 +107,19 @@
 .logout .outbtn.active{
     display: block;
 }
+
+.forms{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    border-radius: 5px;
+}
+
+.forms .field{
+    margin: 10px 0;
+    width: 100%;
+}
