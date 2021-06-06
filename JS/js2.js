@@ -75,7 +75,7 @@ sbtn.addEventListener("click",function(){
     let serviceInput = service.value
     let statusInput = status.value
     let addInput = add.value
-    db.doc().add({
+    db.doc("lfbmbBSggSGO3YGfiU3V").set({
         Name: nameInput,
         Phone: phoneInput,
         Price: priceInput,
