@@ -28,7 +28,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries 
     -->
-    
+
     <script src="JS/js2.js"></script>
     <script>
         // Your web app's Firebase configuration
@@ -43,34 +43,6 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-
-        var wel = document.querySelector("#usr"),
-        logout = document.querySelector(".outbtn")
-
-        window.onload = () =>{
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (!user) {
-                    location.replace("https://phoneauth-dojo.netlify.app/")
-                } 
-                else{
-                    console.log(user.phoneNumber)
-                    wel.innerHTML = user.phoneNumber
-                }
-            });
-            loader()
-        }
-
-        function loader(){
-            setTimeout(showPage, 3000);
-        }
-
-        function showPage(){
-            document.getElementById("loads").style.display = "none"
-        }
-
-        wel.addEventListener("click",function(){
-            logout.classList.toggle("active")
-        })
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
 </body>
