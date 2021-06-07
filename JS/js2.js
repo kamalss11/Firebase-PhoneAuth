@@ -76,7 +76,7 @@ sbtn.addEventListener("click",function(e){
     let priceInput = price.value
     let rateInput = rate.value
     let serviceInput = service.value
-    let statusInput = status.value
+    let statusInput = sts.value
     let addInput = add.value
     console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput)
     db.doc().set({
