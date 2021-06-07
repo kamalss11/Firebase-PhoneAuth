@@ -73,11 +73,11 @@ var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 
 for(let i=0;i<fields1.length;i++){   
-    inputs[i].addEventListener("blur",blur(e,i))
+    inputs[i].addEventListener("blur",blur(i))
 }
 
-function blur(e,n){
-    if(e.target.value == ''){
+function blur(n){
+    if(this.target.value == ''){
         error("This field is required",i)
         errors[n].classList.add("active")
     }
