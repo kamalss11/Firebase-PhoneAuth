@@ -70,7 +70,7 @@ var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
 var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
-const errors = document.querySelectorAll(".error")
+var errors = document.querySelectorAll(".error")
 
 for(let i=0;i<fields1.length;i++){   
     inputs[i].addEventListener("blur",function(e,i){
@@ -80,7 +80,7 @@ for(let i=0;i<fields1.length;i++){
 
 function blur(e,n){
     if(e.target.value == ''){
-        error("This field is required",n)
+        ers("This field is required",n)
         errors[n].classList.add("active")
     }
 
@@ -89,7 +89,7 @@ function blur(e,n){
     }
 }
 
-function error(err,n){
+function ers(err,n){
     errors[n].innerHTML = err
 }
 
