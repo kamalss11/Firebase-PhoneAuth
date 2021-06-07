@@ -90,6 +90,7 @@ function blur(e,n){
 }
 
 function ers(err,n){
+    console.log(err)
     errors[n].innerHTML = err
 }
 
