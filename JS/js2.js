@@ -88,7 +88,7 @@ sbtn.addEventListener("click",function(e){
         Status: statusInput,
         Address: addInput
     }).then((docRef)=>{
-        console.log("Data Saved",docRef)
+        console.log("Data Saved.This is you id = > ",docRef.id)
     })
     .catch(function(error){
         alert(error)
