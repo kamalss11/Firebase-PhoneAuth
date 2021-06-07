@@ -38,16 +38,16 @@ function logout(){
 
 // Form tabs
 
-const forms = document.querySelectorAll(".forms")
+const formdiv = document.querySelectorAll(".forms")
 const tabs = document.querySelector(".tabs").children
 
 for(let i=0;i<tabs.length;i++){
     tabs[i].addEventListener("click",function(){
         for(let j=0;j<tabs.length;j++){
             tabs[j].classList.remove("active")
-            forms[j].classList.remove("active")
+            formdiv[j].classList.remove("active")
         }
-        forms[i].classList.add("active")
+        formdiv[i].classList.add("active")
         tabs[i].classList.add("active")
     })
 }
@@ -68,6 +68,7 @@ console.log(sts)
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("Studios")
+const form = document.querySelector("#form")
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
@@ -89,7 +90,7 @@ sbtn.addEventListener("click",function(e){
         Address: addInput
     }).then((docRef)=>{
         console.log("Data Saved.This is you id = > ",docRef.id)
-        forms[0].reset()
+        form.reset()
     })
     .catch(function(error){
         alert(error)
