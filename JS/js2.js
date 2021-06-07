@@ -229,10 +229,10 @@ function blur2(e,num){
         ers2("This field is required",num)
     }
 
-    else if(num == 3){
-        if(!inputs2[num].value.match(ph)){
+    else if(num == 2){
+        if(!inputs2[num].value.match(email)){
             errors2[num].classList.add("active")
-            ers2("Enter valid number",num)
+            ers2("Enter valid Email",num)
         }
 
         else{
@@ -240,10 +240,10 @@ function blur2(e,num){
         }
     }
 
-    else if(num == 4){
-        if(!inputs2[num].value.match(email)){
+    else if(num == 3){
+        if(!inputs2[num].value.match(ph)){
             errors2[num].classList.add("active")
-            ers2("Enter valid Email",num)
+            ers2("Enter valid number",num)
         }
 
         else{
