@@ -73,12 +73,12 @@ var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
     
 for(let i=0;i<fields1.length;i++){   
-    inputs[i].addEventListener("blur",function(n=i){
-        blur(n)
+    inputs[i].addEventListener("blur",function(e,n=i){
+        blur(e,n)
     })
 }
 
-function blur(num){
+function blur(e,num){
     console.log(num)
     if(inputs[num].value == ''){
         errors[num].classList.add("active")
@@ -117,7 +117,7 @@ sbtn.addEventListener("click",function(e){
     console.log(e)
     e.preventDefault()
     for(let i=0;i<fields1.length;i++){   
-        blur(n=i)
+        blur(0,n=i)
     }
     
     let nameInput = nam.value
