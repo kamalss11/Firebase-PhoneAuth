@@ -210,7 +210,7 @@ var tag = document.querySelector("#tag")
 var cat = document.querySelector("#cat")
 var pic = document.querySelector("#pic")
 var inputs2 = document.querySelectorAll(".inp")
-var fields2 = document.querySelectorAll(".fields")
+var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 var form2 = document.querySelector("#form2")
 
