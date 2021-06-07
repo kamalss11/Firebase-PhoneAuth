@@ -2,6 +2,7 @@ var wel = document.querySelector(".wel")
 var usr = document.querySelector("#usr")
 var lo = document.querySelector(".outbtn")
 
+// While browser loads
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
@@ -22,6 +23,8 @@ function loader(){
 function showPage(){
     document.getElementById("loads").style.display = "none"
 }
+
+// Welcome user 
 
 wel.addEventListener("click",function(){
     lo.classList.toggle("active")
@@ -63,8 +66,26 @@ var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
 var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
+var fields = document.querySelectorAll(".fields")
+var inputs = document.querySelectorAll(".inputs")
+const errors = document.querySelectorAll(".errors")
 
-console.log(sts)
+for(let i=0;i<fields.length;i++){   
+    inputs[i].addEventListener("blur",function(e){
+        if(e.target.value == ''){
+            error("This field is required",i)
+            errors[i].classList.add("active")
+        }
+
+        else{
+            errors[i].classList.remove("active")
+        }
+    })
+}
+
+function error(err,n){
+    errors[n].innerHTML = err
+}
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
@@ -109,7 +130,7 @@ sbtn.addEventListener("click",function(e){
                 form.reset()
             })
             .catch(function(error){
-                alert(error)
+                console.log(error)
             })
         })
     }).catch(function(error){

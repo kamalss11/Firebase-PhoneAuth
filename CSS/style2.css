@@ -158,6 +158,16 @@
     font-size: 15px;
 }
 
+.forms .field .error{
+    font-size: 14px;
+    color: red;
+    display: none;
+}
+
+.forms .field .error.active{
+    display: block;
+}
+
 .forms .btn{
     margin: 15px 0;
     text-align: center;
