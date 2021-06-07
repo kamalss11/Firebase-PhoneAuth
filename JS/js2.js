@@ -67,7 +67,7 @@ var add = document.querySelector("#add")
 console.log(sts)
 
 var firestore  = firebase.firestore()
-const db = firestore.collection("Studios")
+const db = firestore.collection("STUDIOS")
 const form = document.getElementById("form")
 
 sbtn.addEventListener("click",function(e){
@@ -87,61 +87,32 @@ sbtn.addEventListener("click",function(e){
     const metadata = {
         contentType:image.type
     }
-    var uploadImg = storageref.child(imgname)
+    var uploadImg = storageref.child("images").child(imgname)
     uploadImg.put(image,metadata)
     .then(snapshot =>{
         return uploadImg.getDownloadURL()
         .then(url => {
             urls = url
             console.log(urls)
-            // db.add({
-            //     Name: nameInput,
-            //     Phone: phoneInput,
-            //     Price: priceInput,
-            //     Rate: rateInput,
-            //     Service: serviceInput,
-            //     Status: statusInput,
-            //     Address: addInput,
-            //     DisplayPicture: JSON.stringify(urls)
-            // }).then((docRef)=>{
-            //     console.log("Data Saved.This is you id = > ",docRef.id)
-            //     form.reset()
-            // })
-            // .catch(function(error){
-            //     alert(error)
-            // })
+            db.add({
+                Name: nameInput,
+                Phone: phoneInput,
+                Price: priceInput,
+                Rate: rateInput,
+                Service: serviceInput,
+                Status: statusInput,
+                Address: addInput,
+                DisplayPicture: urls
+            }).then((docRef)=>{
+                console.log("Data Saved.This is you id = > ",docRef.id)
+                console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
+                form.reset()
+            })
+            .catch(function(error){
+                alert(error)
+            })
         })
     }).catch(function(error){
         console.log(error)
-    })
-
-
-    // uploadImg.on('state_changed',function(snapshot){
-    //     var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100
-    //     console.log("Uploaded file is "+progress+" done")
-    // }),function(error){
-    //     console.log(error)
-    // },function(){
-    //     uploadImg.snapshot.ref.getDownloadURL().then(function(downloadURL){
-    //         console.log(downloadURL)
-    //     })
-    // }
-
-    console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
-    db.add({
-        Name: nameInput,
-        Phone: phoneInput,
-        Price: priceInput,
-        Rate: rateInput,
-        Service: serviceInput,
-        Status: statusInput,
-        Address: addInput,
-        DisplayPicture: JSON.stringify(urls)
-    }).then((docRef)=>{
-        console.log("Data Saved.This is you id = > ",docRef.id)
-        form.reset()
-    })
-    .catch(function(error){
-        alert(error)
     })
 })
