@@ -80,6 +80,7 @@ for(let i=0;i<fields1.length;i++){
 
 function blur(e,num){
     let ph = /\d[0-9]{9,}$/
+    let rt = /\d[0-9]$/
 
     if(inputs[num].value == ''){
         errors[num].classList.add("active")
@@ -98,7 +99,7 @@ function blur(e,num){
     }
 
     else if(num == 3){
-        if(inputs[num].value > 5){
+        if(inputs[num].value > 5 && inputs[num].value.match(rt)){
             errors[num].classList.add("active")
             ers("Rate out of 5",num)
         }
