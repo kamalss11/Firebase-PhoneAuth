@@ -94,6 +94,22 @@ sbtn.addEventListener("click",function(e){
         .then(url => {
             urls = url
             console.log(urls)
+            db.add({
+                Name: nameInput,
+                Phone: phoneInput,
+                Price: priceInput,
+                Rate: rateInput,
+                Service: serviceInput,
+                Status: statusInput,
+                Address: addInput,
+                DisplayPicture: JSON.stringify(urls)
+            }).then((docRef)=>{
+                console.log("Data Saved.This is you id = > ",docRef.id)
+                form.reset()
+            })
+            .catch(function(error){
+                alert(error)
+            })
         })
     }).catch(function(error){
         console.log(error)
@@ -113,20 +129,20 @@ sbtn.addEventListener("click",function(e){
 
     console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
     console.log(urls)
-    db.add({
-        Name: nameInput,
-        Phone: phoneInput,
-        Price: priceInput,
-        Rate: rateInput,
-        Service: serviceInput,
-        Status: statusInput,
-        Address: addInput,
-        DisplayPicture: JSON.stringify(urls)
-    }).then((docRef)=>{
-        console.log("Data Saved.This is you id = > ",docRef.id)
-        form.reset()
-    })
-    .catch(function(error){
-        alert(error)
-    })
+    // db.add({
+    //     Name: nameInput,
+    //     Phone: phoneInput,
+    //     Price: priceInput,
+    //     Rate: rateInput,
+    //     Service: serviceInput,
+    //     Status: statusInput,
+    //     Address: addInput,
+    //     DisplayPicture: JSON.stringify(urls)
+    // }).then((docRef)=>{
+    //     console.log("Data Saved.This is you id = > ",docRef.id)
+    //     form.reset()
+    // })
+    // .catch(function(error){
+    //     alert(error)
+    // })
 })
