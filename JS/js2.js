@@ -74,6 +74,7 @@ const errors = document.querySelectorAll(".error")
 
 for(let i=0;i<fields1.length;i++){   
     inputs[i].addEventListener("blur",function(e,i){
+        console.log(i)
         blur(e,i)
     })
 }
