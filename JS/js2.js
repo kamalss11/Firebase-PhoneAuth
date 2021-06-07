@@ -64,6 +64,7 @@ var service = document.querySelector("#service")
 var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
 var image = document.getElementById("image").files[0]
+var imgname = image.name
 
 console.log(sts)
 
@@ -80,7 +81,6 @@ sbtn.addEventListener("click",function(e){
     let serviceInput = service.value
     let statusInput = sts.value
     let addInput = add.value
-    let imgname = image.name
     var storageref =  firebase.storage().ref('images/'+imgname)
     var uploadImg = storageref.put(img)
     uploadImg.on('state_changed',function(snapshot){
