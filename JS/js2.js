@@ -140,6 +140,7 @@ function ers(err,nu){
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
+const db2 = firestore.collection("Trainers")
 const form = document.getElementById("form")
 var storageref
 
@@ -333,7 +334,7 @@ sbtn2.addEventListener("click",function(e){
         .then(url => {
             urls2 = url
             console.log(urls)
-            db.add({
+            db2.add({
                 Name: namIn,
                 Gender: genIn,
                 Email: emIn,
