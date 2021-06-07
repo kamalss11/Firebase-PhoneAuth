@@ -70,7 +70,7 @@ var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
 var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
-var errors = document.querySelectorAll(".error")
+const errors = document.querySelectorAll(".error")
 
 for(let i=0;i<fields1.length;i++){   
     inputs[i].addEventListener("blur",function(e,i){
