@@ -79,10 +79,33 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(e,num){
-    console.log(num)
+    let ph = /\d[0-9]{9,}$/
+
     if(inputs[num].value == ''){
         errors[num].classList.add("active")
         ers("This field is required",num)
+    }
+
+    else if(num == 1){
+        if(!inputs[num].value.match(ph)){
+            errors[num].classList.add("active")
+            ers("Enter valid number",num)
+        }
+
+        else{
+            errors[num].classList.remove("active")
+        }
+    }
+
+    else if(num == 3){
+        if(inputs[num] > 5){
+            errors[num].classList.add("active")
+            ers("Rate out of 5",num)
+        }
+
+        else{
+            errors[num].classList.remove("active")
+        }
     }
 
     else{
