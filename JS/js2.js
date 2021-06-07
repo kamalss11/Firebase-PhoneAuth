@@ -63,6 +63,7 @@ var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
 var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
+var img = document.querySelector("#image").files[0]
 
 console.log(sts)
 
@@ -79,7 +80,20 @@ sbtn.addEventListener("click",function(e){
     let serviceInput = service.value
     let statusInput = sts.value
     let addInput = add.value
-    console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput)
+    let imgname = img.name
+    var storageref =  firebase.storage().ref('images/'+imgname)
+    var uploadImg = storageref.put(img)
+    uploadImg.on('state_changed',function(snapshot){
+        var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100
+        console.log("Uploaded file is "+progress+" done")
+    }),function(error){
+        console.log(error)
+    },function(){
+        uploadImg.snapshot.ref.getDownloadURL().then(function(downloadURL){
+            console.log(downloadURL)
+        })
+    }
+    console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
     db.add({
         Name: nameInput,
         Phone: phoneInput,
