@@ -72,10 +72,14 @@ var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 
-for(let i=0;i<fields1.length;i++){   
-    inputs[i].addEventListener("blur",function(e,n=i){
-        blur(e,n)
-    })
+check()
+
+function check(){
+    for(let i=0;i<fields1.length;i++){   
+        inputs[i].addEventListener("blur",function(e,n=i){
+            blur(e,n)
+        })
+    }
 }
 
 function blur(e,num){
@@ -114,13 +118,14 @@ const form = document.getElementById("form")
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
-    for(let i=0;i<fields1.length;i++){
-        if(inputs[i].value == ''){
-            ers("This field is required",i)
-        }
+    // for(let i=0;i<fields1.length;i++){
+    //     if(inputs[i].value == ''){
+    //         ers("This field is required",i)
+    //     }
 
-        submitbtn()
-    }
+    //     submitbtn()
+    // }
+    check()
     
     let nameInput = nam.value
     let phoneInput = phone.value
@@ -130,7 +135,10 @@ sbtn.addEventListener("click",function(e){
     let statusInput = sts.value
     let addInput = add.value
     var image = document.getElementById("img").files[0]
-    var imgname = image.name
+    var imgname
+    if(image){
+        imgname = image.name
+    }
     var urls 
 
     var storageref =  firebase.storage().ref()
