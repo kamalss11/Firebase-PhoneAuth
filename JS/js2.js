@@ -1,8 +1,7 @@
-var wel = document.querySelector(".wel")
-var usr = document.querySelector("#usr")
-var lo = document.querySelector(".outbtn")
-
 // While browser loads
+
+var usr = document.querySelector("#usr")
+
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
@@ -25,6 +24,9 @@ function showPage(){
 }
 
 // Welcome user 
+
+var wel = document.querySelector(".wel")
+var lo = document.querySelector(".outbtn")
 
 wel.addEventListener("click",function(){
     lo.classList.toggle("active")
@@ -71,16 +73,18 @@ var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 
 for(let i=0;i<fields1.length;i++){   
-    inputs[i].addEventListener("blur",function(e){
-        if(e.target.value == ''){
-            error("This field is required",i)
-            errors[i].classList.add("active")
-        }
+    inputs[i].addEventListener("blur",blur(e,i))
+}
 
-        else{
-            errors[i].classList.remove("active")
-        }
-    })
+function blur(e,n){
+    if(e.target.value == ''){
+        error("This field is required",i)
+        errors[n].classList.add("active")
+    }
+
+    else{
+        errors[n].classList.remove("active")
+    }
 }
 
 function error(err,n){
