@@ -74,7 +74,6 @@ const errors = document.querySelectorAll(".error")
 
 for(let i=0;i<fields1.length;i++){   
     inputs[i].addEventListener("blur",function(e,n=i){
-        console.log(n)
         blur(e,n)
     })
 }
@@ -91,18 +90,17 @@ function blur(e,num){
 
     for(let i=0;i<fields1.length;i++){
         if(errors[i].classList.contains("active")){
-            sbtn.style.pointerEvents = "none"
+            sbtn.classList.add("hide")
             break
         }
 
         else{
-            sbtn.style.pointerEvents = "auto"
+            sbtn.classList.remove("hide")
         }
     }
 }
 
 function ers(err,nu){
-    console.log(err)
     errors[nu].innerHTML = err
 }
 

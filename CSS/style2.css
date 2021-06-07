@@ -180,12 +180,18 @@
 
 .forms .btn button{
     padding: 8px 15px;
-    background: dodgerblue;
+    background-color: dodgerblue;
     color: white;
     cursor: pointer;
     border: none;
     border-radius: 5px;
     font-size: 15px;
+    pointer-events: auto;
+}
+
+.forms .btn button.hide{
+    pointer-events: none;
+    background-color: rgb(204, 202, 202);
 }
 
 @media(max-width: 950px){
