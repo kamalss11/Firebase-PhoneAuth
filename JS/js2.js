@@ -79,7 +79,7 @@ sbtn.addEventListener("click",function(e){
     let statusInput = sts.value
     let addInput = add.value
     console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput)
-    db.doc().add({
+    db.add({
         Name: nameInput,
         Phone: phoneInput,
         Price: priceInput,
