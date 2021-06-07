@@ -81,6 +81,7 @@ sbtn.addEventListener("click",function(e){
     let addInput = add.value
     var image = document.getElementById("img").files[0]
     var imgname = image.name
+    var urls 
 
     var storageref =  firebase.storage().ref()
     const metadata = {
@@ -91,7 +92,8 @@ sbtn.addEventListener("click",function(e){
     .then(snapshot =>{
         uploadImg.getDownloadURL()
         .then(url => {
-            console.log(url)
+            urls = url
+            console.log(urls)
         })
     }).catch(function(error){
         console.log(error)
@@ -117,7 +119,8 @@ sbtn.addEventListener("click",function(e){
         Rate: rateInput,
         Service: serviceInput,
         Status: statusInput,
-        Address: addInput
+        Address: addInput,
+        DisplayImage: urls,
     }).then((docRef)=>{
         console.log("Data Saved.This is you id = > ",docRef.id)
         form.reset()
