@@ -71,15 +71,11 @@ var add = document.querySelector("#add")
 var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
-
-check()
-
-function check(){
-    for(let i=0;i<fields1.length;i++){   
-        inputs[i].addEventListener("blur",function(e,n=i){
-            blur(e,n)
-        })
-    }
+    
+for(let i=0;i<fields1.length;i++){   
+    inputs[i].addEventListener("blur",function(e,n=i){
+        blur(e,n)
+    })
 }
 
 function blur(e,num){
@@ -118,14 +114,11 @@ const form = document.getElementById("form")
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
-    // for(let i=0;i<fields1.length;i++){
-    //     if(inputs[i].value == ''){
-    //         ers("This field is required",i)
-    //     }
-
-    //     submitbtn()
-    // }
-    check()
+    for(let i=0;i<fields1.length;i++){   
+        inputs[i].addEventListener("blur",function(e,n=i){
+            blur(e,n)
+        })
+    }
     
     let nameInput = nam.value
     let phoneInput = phone.value
