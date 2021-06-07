@@ -73,19 +73,20 @@ var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 
 for(let i=0;i<fields1.length;i++){   
-    inputs[i].addEventListener("blur",br(i))
+    inputs[i].addEventListener("blur",function(e){
+        blur(e,i)
+    })
 }
 
-function br(n){
-    console.log(this)
-    // if(this.target.value == ''){
-    //     error("This field is required",i)
-    //     errors[n].classList.add("active")
-    // }
+function blur(e,n){
+    if(e.target.value == ''){
+        error("This field is required",i)
+        errors[n].classList.add("active")
+    }
 
-    // else{
-    //     errors[n].classList.remove("active")
-    // }
+    else{
+        errors[n].classList.remove("active")
+    }
 }
 
 function error(err,n){
