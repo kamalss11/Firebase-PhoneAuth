@@ -158,6 +158,10 @@
     font-size: 15px;
 }
 
+.forms .field .inputs:nth-last-child(1){
+    border: none;
+}
+
 .forms .field .error{
     font-size: 12px;
     padding: 5px;
