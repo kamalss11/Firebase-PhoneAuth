@@ -115,9 +115,9 @@ const form = document.getElementById("form")
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
     for(let i=0;i<fields1.length;i++){   
-        inputs[i].addEventListener("blur",function(e,n=i){
-            blur(e,n)
-        })
+        if(inputs[i].value == ''){
+            blur(e,n=i)
+        }
     }
     
     let nameInput = nam.value
