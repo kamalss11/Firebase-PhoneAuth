@@ -69,6 +69,7 @@ console.log(sts)
 var firestore  = firebase.firestore()
 const db = firestore.collection("Studios")
 const form = document.getElementById("form")
+console.log(form)
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
@@ -90,8 +91,8 @@ sbtn.addEventListener("click",function(e){
         Address: addInput
     }).then((docRef)=>{
         console.log("Data Saved.This is you id = > ",docRef.id)
-        form.reset()
     })
+    form.reset()
     .catch(function(error){
         alert(error)
     })
