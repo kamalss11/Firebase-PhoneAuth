@@ -89,10 +89,12 @@ sbtn.addEventListener("click",function(e){
     var uploadImg = storageref.child(imgname).put(image,metadata)
     uploadImg
     .then(snapshot =>{
-        return uploadImg.getDownloadURL().toPromise()
+        return uploadImg.getDownloadURL()
         .then(url => {
             console.log(url)
         })
+    }).catch(function(error){
+        console.log(error)
     })
 
 
