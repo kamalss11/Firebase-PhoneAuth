@@ -79,18 +79,18 @@ sbtn.addEventListener("click",function(e){
     let statusInput = status.value
     let addInput = add.value
     console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput)
-    // db.doc().set({
-    //     Name: nameInput,
-    //     Phone: phoneInput,
-    //     Price: priceInput,
-    //     Rate: rateInput,
-    //     Service: serviceInput,
-    //     Status: statusInput,
-    //     Address: addInput
-    // }).then(function(){
-    //     console.log("Data Saved")
-    // })
-    // .catch(function(error){
-    //     alert(error)
-    // })
+    db.doc().set({
+        Name: nameInput,
+        Phone: phoneInput,
+        Price: priceInput,
+        Rate: rateInput,
+        Service: serviceInput,
+        Status: statusInput,
+        Address: addInput
+    }).then(function(){
+        console.log("Data Saved")
+    })
+    .catch(function(error){
+        alert(error)
+    })
 })
