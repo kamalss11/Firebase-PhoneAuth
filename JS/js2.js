@@ -79,14 +79,15 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(e,num){
-    if(e.target.value === ''){
-        errors[num].classList.add("active")
-        ers("This field is required",n)
-    }
+    console.log(e,num)
+    // if(e.target.value === ''){
+    //     errors[num].classList.add("active")
+    //     ers("This field is required",n)
+    // }
 
-    else{
-        errors[n].classList.remove("active")
-    }
+    // else{
+    //     errors[n].classList.remove("active")
+    // }
 }
 
 function ers(err,nu){
