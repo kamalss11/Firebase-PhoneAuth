@@ -79,9 +79,9 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(e,n){
-    if(e.target.value == ''){
-        ers("This field is required",n)
+    if(e.target.value === ''){
         errors[n].classList.add("active")
+        ers("This field is required",n)
     }
 
     else{
