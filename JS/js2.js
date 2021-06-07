@@ -86,7 +86,8 @@ sbtn.addEventListener("click",function(e){
     const metadata = {
         contentType:image.type
     }
-    var uploadImg = storageref.child(imgname).put(image,metadata)
+    var uploadImg = storageref.child(imgname)
+    uploadImg.put(image,metadata)
     uploadImg
     .then(snapshot =>{
         uploadImg.getDownloadURL()
