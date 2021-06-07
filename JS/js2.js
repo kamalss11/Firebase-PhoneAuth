@@ -80,7 +80,7 @@ for(let i=0;i<fields1.length;i++){
 
 function blur(e,n){
     if(e.target.value == ''){
-        ers("This field is required",n)
+        ers("This field is required",nu)
         errors[n].classList.add("active")
     }
 
@@ -89,9 +89,9 @@ function blur(e,n){
     }
 }
 
-function ers(err,n){
+function ers(err,nu){
     console.log(err)
-    errors[n].innerHTML = err
+    errors[nu].innerHTML = err
 }
 
 var firestore  = firebase.firestore()
