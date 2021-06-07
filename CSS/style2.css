@@ -159,7 +159,8 @@
 }
 
 .forms .field .error{
-    font-size: 14px;
+    font-size: 12px;
+    padding: 5px;
     color: red;
     display: none;
 }
