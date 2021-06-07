@@ -82,18 +82,28 @@ sbtn.addEventListener("click",function(e){
     var image = document.getElementById("img").files[0]
     var imgname = image.name
 
-    var storageref =  firebase.storage.ref('images/'+imgname)
-    var uploadImg = storageref.put(img)
-    uploadImg.on('state_changed',function(snapshot){
-        var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100
-        console.log("Uploaded file is "+progress+" done")
-    }),function(error){
-        console.log(error)
-    },function(){
-        uploadImg.snapshot.ref.getDownloadURL().then(function(downloadURL){
-            console.log(downloadURL)
-        })
+    var storageref =  firebase.storage().ref()
+    const metadata = {
+        contentType:image.type
     }
+    var uploadImg = storageref.child(imgname).put(image,metadata)
+    uploadImg.then(snapshot => snapshot.storageref.getDownloadURL())
+    .then(url => {
+        console.log(url)
+    })
+
+
+    // uploadImg.on('state_changed',function(snapshot){
+    //     var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100
+    //     console.log("Uploaded file is "+progress+" done")
+    // }),function(error){
+    //     console.log(error)
+    // },function(){
+    //     uploadImg.snapshot.ref.getDownloadURL().then(function(downloadURL){
+    //         console.log(downloadURL)
+    //     })
+    // }
+
     console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
     db.add({
         Name: nameInput,
