@@ -135,7 +135,6 @@ function ers(err,nu){
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
 const form = document.getElementById("form")
-var storageref =  firebase.storage().ref()
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
@@ -152,6 +151,7 @@ sbtn.addEventListener("click",function(e){
     let addInput = add.value
     var image = document.getElementById("img").files[0]
     var imgname = image.name
+    var storageref =  firebase.storage().ref()
         
     const metadata = {
         contentType:image.type
