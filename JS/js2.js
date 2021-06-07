@@ -66,11 +66,11 @@ var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
 var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
-var fields = document.querySelectorAll(".field")
+var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".errors")
 
-for(let i=0;i<fields.length;i++){   
+for(let i=0;i<fields1.length;i++){   
     inputs[i].addEventListener("blur",function(e){
         if(e.target.value == ''){
             error("This field is required",i)
