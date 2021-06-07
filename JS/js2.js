@@ -135,16 +135,16 @@ sbtn.addEventListener("click",function(e){
     let statusInput = sts.value
     let addInput = add.value
     var image = document.getElementById("img").files[0]
-    var imgname
+    var imgname,storageref
+    const metadata
     if(image){
         imgname = image.name
+        storageref =  firebase.storage().ref()
+        metadata = {
+            contentType:image.type
+        }
     }
     var urls 
-
-    var storageref =  firebase.storage().ref()
-    const metadata = {
-        contentType:image.type
-    }
 
     var uploadImg = storageref.child("images").child(imgname)
     uploadImg.put(image,metadata)
