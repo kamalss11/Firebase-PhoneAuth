@@ -80,6 +80,15 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(e,num){
+    if(e.target.value === ''){
+        errors[num].classList.add("active")
+        ers("This field is required",num)
+    }
+
+    else{
+        errors[num].classList.remove("active")
+    }
+    
     for(let i=0;i<fields1.length;i++){
         if(errors[i].classList.contains("active")){
             sbtn.style.pointerEvents = "none"
@@ -88,15 +97,6 @@ function blur(e,num){
         else{
             sbtn.style.pointerEvents = "auto"
         }
-    }
-
-    if(e.target.value === ''){
-        errors[num].classList.add("active")
-        ers("This field is required",num)
-    }
-
-    else{
-        errors[num].classList.remove("active")
     }
 }
 
