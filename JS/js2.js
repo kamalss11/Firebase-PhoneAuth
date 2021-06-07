@@ -63,7 +63,7 @@ var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
 var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
-var image = document.querySelector("#image").files[0]
+var image = document.getElementById("image").files[0]
 
 console.log(sts)
 
