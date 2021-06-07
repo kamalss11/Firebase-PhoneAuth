@@ -113,6 +113,7 @@ const db = firestore.collection("STUDIOS")
 const form = document.getElementById("form")
 
 sbtn.addEventListener("click",function(e){
+    console.log(e)
     e.preventDefault()
     for(let i=0;i<fields1.length;i++){   
         if(inputs[i].value == ''){
@@ -133,7 +134,7 @@ sbtn.addEventListener("click",function(e){
     const metadata = {
         contentType:image.type
     }
-    
+
     var urls 
     var storageref =  firebase.storage().ref()
     
