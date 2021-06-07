@@ -82,7 +82,7 @@ sbtn.addEventListener("click",function(e){
     var image = document.getElementById("img").files[0]
     var imgname = image.name
 
-    var storageref =  firebase.storage().ref('images/'+imgname)
+    var storageref =  firebase.storage.ref('images/'+imgname)
     var uploadImg = storageref.put(img)
     uploadImg.on('state_changed',function(snapshot){
         var progress = (snapshot.bytesTransferred/snapshot.totalBytes)*100
