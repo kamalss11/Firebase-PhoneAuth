@@ -162,14 +162,14 @@
     border: none;
 }
 
-.forms .field .error{
+.forms .field .error,.forms .field .er{
     font-size: 12px;
     padding: 5px 5px 0;
     color: red;
     display: none;
 }
 
-.forms .field .error.active{
+.forms .field .error.active,.forms .field .er.active{
     display: block;
 }
 

@@ -212,6 +212,7 @@ var pic = document.querySelector("#pic")
 var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".fields")
 var errors2 = document.querySelectorAll(".er")
+var form2 = document.querySelector("#form2")
 
 for(let i=0;i<fields2.length;i++){   
     inputs2[i].addEventListener("blur",function(e,n=i){
@@ -221,6 +222,7 @@ for(let i=0;i<fields2.length;i++){
 
 function blur2(e,num){
     let ph = /\d[0-9]{9,}$/
+    let email = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
     if(inputs2[num].value == ''){
         errors2[num].classList.add("active")
@@ -238,7 +240,18 @@ function blur2(e,num){
         }
     }
 
-    else if(num == 3){
+    else if(num == 4){
+        if(!inputs2[num].value.match(email)){
+            errors2[num].classList.add("active")
+            ers2("Enter valid Email",num)
+        }
+
+        else{
+            errors2[num].classList.remove("active")
+        }
+    }
+
+    else if(num == 5){
         if(inputs2[num].value > 5){
             errors2[num].classList.add("active")
             ers2("Rate out of 5",num)
@@ -275,7 +288,7 @@ function ers2(err,nu){
 
 sbtn2.addEventListener("click",function(e){
     e.preventDefault()
-    for(let i=0;i<fields1.length;i++){   
+    for(let i=0;i<fields2.length;i++){   
         blur2(0,n=i)
     }
 
@@ -286,5 +299,54 @@ sbtn2.addEventListener("click",function(e){
     let prIn = pr.value
     let ratIn = rat.value
     let serIn = ser.value
-    let 
+    let staIn = sta.value
+    let speIn = spe.value
+    let citIn = cit.value
+    let steIn = ste.value
+    let expIn = exp.value
+    let tagIn = tag.value
+    let catIn = cat.value
+    let picName = pic.name
+
+    const metadata2 = {
+        contentType:image.type
+    }
+
+    var urls2
+
+    var uploadPic = storageref.child("images").child(picName)
+    uploadPic.put(pic,metadata2)
+    .then(snapshot =>{
+        return uploadPic.getDownloadURL()
+        .then(url => {
+            urls2 = url
+            console.log(urls)
+            db.add({
+                Name: namIn,
+                Gender: genIn,
+                Email: emIn,
+                Phone: phIn,
+                Price: prIn,
+                Rate: ratIn,
+                Service: serIn,
+                Status: staIn,
+                Speaciality: speIn,
+                City: citIn,
+                State: steIn,
+                Experience: expIn,
+                Tags: tagIn,
+                Category: catIn,
+                DisplayPicture: urls2
+            }).then((docRef)=>{
+                console.log("Data Saved.This is you id = > ",docRef.id)
+                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,serIn,staIn,staIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
+                form2.reset()
+            })
+            .catch(function(error){
+                console.log(error)
+            })
+        })
+    }).catch(function(error){
+        console.log(error)
+    })
 })
