@@ -64,7 +64,7 @@ var service = document.querySelector("#service")
 var sts = document.querySelector("#status")
 var add = document.querySelector("#add")
 
-console.log(status)
+console.log(status,rate)
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("Studios")
