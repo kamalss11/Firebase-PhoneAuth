@@ -80,6 +80,16 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(e,num){
+    for(let i=0;i<fields1.length;i++){
+        if(errors[i].contains("active")){
+            sbtn.style.pointerEvents = "none"
+        }
+
+        else{
+            sbtn.style.pointerEvents = "auto"
+        }
+    }
+    
     if(e.target.value === ''){
         errors[num].classList.add("active")
         ers("This field is required",num)
