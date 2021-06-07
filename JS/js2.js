@@ -114,7 +114,6 @@ const db = firestore.collection("STUDIOS")
 const form = document.getElementById("form")
 
 sbtn.addEventListener("click",function(e){
-    console.log(e)
     e.preventDefault()
     for(let i=0;i<fields1.length;i++){   
         blur(0,n=i)
