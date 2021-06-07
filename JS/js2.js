@@ -98,7 +98,7 @@ function blur(e,num){
     }
 
     else if(num == 3){
-        if(inputs[num] > 5){
+        if(inputs[num].value > 5){
             errors[num].classList.add("active")
             ers("Rate out of 5",num)
         }
