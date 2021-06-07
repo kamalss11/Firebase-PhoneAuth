@@ -106,7 +106,7 @@ function blur(e,num){
 
         else if(!inputs[num].value.match(rt)){
             errors[num].classList.add("active")
-            ers("Not match",num)
+            ers("Ratings not match",num)
         }
 
         else{
@@ -228,6 +228,7 @@ for(let i=0;i<fields2.length;i++){
 
 function blur2(e,num){
     let ph = /\d[0-9]{9,}$/
+    let rt = /\d[0-9]{0,}$/
     let email = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
     if(inputs2[num].value == ''){
@@ -261,6 +262,11 @@ function blur2(e,num){
         if(inputs2[num].value > 5){
             errors2[num].classList.add("active")
             ers2("Rate out of 5",num)
+        }
+
+        else if(!inputs[num].value.match(rt)){
+            errors2[num].classList.add("active")
+            ers2("Ratings not match",num)
         }
 
         else{
