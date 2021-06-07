@@ -88,7 +88,6 @@ sbtn.addEventListener("click",function(e){
     }
     var uploadImg = storageref.child(imgname)
     uploadImg.put(image,metadata)
-    uploadImg
     .then(snapshot =>{
         uploadImg.getDownloadURL()
         .then(url => {
