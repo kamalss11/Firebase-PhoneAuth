@@ -120,7 +120,7 @@ sbtn.addEventListener("click",function(e){
         Service: serviceInput,
         Status: statusInput,
         Address: addInput,
-        DisplayImage: urls,
+        DisplayImage: urls
     }).then((docRef)=>{
         console.log("Data Saved.This is you id = > ",docRef.id)
         form.reset()
