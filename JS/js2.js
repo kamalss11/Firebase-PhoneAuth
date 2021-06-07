@@ -91,7 +91,7 @@ function blur(e,n){
 
 function ers(err,n){
     console.log(err)
-    errors[n].innerHTML = err
+    errors[i].innerHTML = err
 }
 
 var firestore  = firebase.firestore()
