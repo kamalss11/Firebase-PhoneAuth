@@ -88,10 +88,11 @@ function blur(e,num){
     else{
         errors[num].classList.remove("active")
     }
-    
+
     for(let i=0;i<fields1.length;i++){
         if(errors[i].classList.contains("active")){
             sbtn.style.pointerEvents = "none"
+            break
         }
 
         else{
