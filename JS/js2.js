@@ -80,7 +80,7 @@ for(let i=0;i<fields1.length;i++){
 
 function blur(e,n){
     if(e.target.value == ''){
-        ers("This field is required",nu)
+        ers("This field is required",u)
         errors[n].classList.add("active")
     }
 
