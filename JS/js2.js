@@ -73,13 +73,13 @@ var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
     
 for(let i=0;i<fields1.length;i++){   
-    inputs[i].addEventListener("blur",function(e,n=i){
-        blur(e,n)
+    inputs[i].addEventListener("blur",function(n=i){
+        blur(n)
     })
 }
 
-function blur(e,num){
-    if(e.target.value === ''){
+function blur(num){
+    if(inputs[num].value == ''){
         errors[num].classList.add("active")
         ers("This field is required",num)
     }
@@ -116,9 +116,7 @@ sbtn.addEventListener("click",function(e){
     console.log(e)
     e.preventDefault()
     for(let i=0;i<fields1.length;i++){   
-        if(inputs[i].value == ''){
-            blur(e,n=i)
-        }
+        blur(n=i)
     }
     
     let nameInput = nam.value
