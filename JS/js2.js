@@ -68,7 +68,6 @@ console.log(sts)
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("Studios")
-console.log(db.doc())
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
@@ -88,8 +87,8 @@ sbtn.addEventListener("click",function(e){
         Service: serviceInput,
         Status: statusInput,
         Address: addInput
-    }).then(function(){
-        console.log("Data Saved",data)
+    }).then(function(docRef){
+        console.log("Data Saved",docRef)
     })
     .catch(function(error){
         alert(error)
