@@ -79,6 +79,7 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(num){
+    console.log(num)
     if(inputs[num].value == ''){
         errors[num].classList.add("active")
         ers("This field is required",num)
