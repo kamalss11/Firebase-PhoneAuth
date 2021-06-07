@@ -67,7 +67,8 @@ var add = document.querySelector("#add")
 var firestore  = firebase.firestore()
 const db = firestore.collection("Studios")
 
-sbtn.addEventListener("click",function(){
+sbtn.addEventListener("click",function(e){
+    e.preventDefault()
     let nameInput = nam.value
     let phoneInput = phone.value
     let priceInput = price.value
