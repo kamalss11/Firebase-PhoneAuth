@@ -57,7 +57,7 @@ for(let i=0;i<tabs.length;i++){
     })
 }
 
-// Forms
+// Forms - form(studios)
 
 const sbtn = document.querySelector(".submit")
 
@@ -188,3 +188,7 @@ sbtn.addEventListener("click",function(e){
         console.log(error)
     })
 })
+
+//Forms - form(trainer)
+
+const submit = document.querySelector(".sub")
