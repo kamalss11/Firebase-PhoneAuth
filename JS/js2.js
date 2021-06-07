@@ -77,14 +77,15 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(n){
-    if(this.target.value == ''){
-        error("This field is required",i)
-        errors[n].classList.add("active")
-    }
+    console.log(this)
+    // if(this.target.value == ''){
+    //     error("This field is required",i)
+    //     errors[n].classList.add("active")
+    // }
 
-    else{
-        errors[n].classList.remove("active")
-    }
+    // else{
+    //     errors[n].classList.remove("active")
+    // }
 }
 
 function error(err,n){
