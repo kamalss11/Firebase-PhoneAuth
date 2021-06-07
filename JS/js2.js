@@ -135,6 +135,7 @@ function ers(err,nu){
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
 const form = document.getElementById("form")
+var storageref =  firebase.storage().ref()
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
@@ -157,7 +158,6 @@ sbtn.addEventListener("click",function(e){
     }
 
     var urls 
-    var storageref =  firebase.storage().ref()
     
     var uploadImg = storageref.child("images").child(imgname)
     uploadImg.put(image,metadata)
@@ -191,4 +191,99 @@ sbtn.addEventListener("click",function(e){
 
 //Forms - form(trainer)
 
-const submit = document.querySelector(".sub")
+const sbtn2 = document.querySelector(".sub")
+
+var name = document.querySelector("#nam")
+var gender = document.querySelector("#gender")
+var email = document.querySelector("email")
+var ph = document.querySelector("#ph")
+var pr = document.querySelector("#pr")
+var rat = document.querySelector("#rat")
+var ser = document.querySelector("#ser")
+var sta = document.querySelector("#sat")
+var spe = document.querySelector("#spe")
+var cit = document.querySelector("#cit")
+var ste = document.querySelector("#ste")
+var exp = document.querySelector("#exp")
+var tag = document.querySelector("#tag")
+var cat = document.querySelector("#cat")
+var pic = document.querySelector("#pic")
+var inputs2 = document.querySelectorAll(".inp")
+var fields2 = document.querySelectorAll(".fields")
+var errors2 = document.querySelectorAll(".er")
+
+for(let i=0;i<fields2.length;i++){   
+    inputs2[i].addEventListener("blur",function(e,n=i){
+        blur2(e,n)
+    })
+}
+
+function blur2(e,num){
+    let ph = /\d[0-9]{9,}$/
+
+    if(inputs2[num].value == ''){
+        errors2[num].classList.add("active")
+        ers2("This field is required",num)
+    }
+
+    else if(num == 3){
+        if(!inputs2[num].value.match(ph)){
+            errors2[num].classList.add("active")
+            ers2("Enter valid number",num)
+        }
+
+        else{
+            errors2[num].classList.remove("active")
+        }
+    }
+
+    else if(num == 3){
+        if(inputs2[num].value > 5){
+            errors2[num].classList.add("active")
+            ers2("Rate out of 5",num)
+        }
+
+        else{
+            errors2[num].classList.remove("active")
+        }
+    }
+
+    else{
+        errors2[num].classList.remove("active")
+    }
+
+    submitbtn2()
+}
+
+function submitbtn2(){
+    for(let i=0;i<fields2.length;i++){
+        if(errors2[i].classList.contains("active")){
+            sbtn2.classList.add("hide")
+            break
+        }
+
+        else{
+            sbtn2.classList.remove("hide")
+        }
+    }
+}
+
+function ers2(err,nu){
+    errors2[nu].innerHTML = err
+}
+
+sbtn2.addEventListener("click",function(e){
+    e.preventDefault()
+    for(let i=0;i<fields1.length;i++){   
+        blur2(0,n=i)
+    }
+
+    let namIn = nam.value
+    let genIn = gender.value
+    let emIn = email.value
+    let phIn = ph.value
+    let prIn = pr.value
+    let ratIn = rat.value
+    let serIn = ser.value
+    let 
+})
