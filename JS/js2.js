@@ -114,6 +114,14 @@ const form = document.getElementById("form")
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
+    for(let i=0;i<fields1.length;i++){
+        if(inputs[i].value == ''){
+            ers("This field is required",i)
+        }
+
+        submitbtn()
+    }
+    
     let nameInput = nam.value
     let phoneInput = phone.value
     let priceInput = price.value
@@ -125,19 +133,11 @@ sbtn.addEventListener("click",function(e){
     var imgname = image.name
     var urls 
 
-    for(let i=0;i<fields1.length;i++){
-        if(inputs[i].value == ''){
-            ers("This field is required",i)
-        }
-
-        submitbtn()
-    }
-
     var storageref =  firebase.storage().ref()
     const metadata = {
         contentType:image.type
     }
-    
+
     var uploadImg = storageref.child("images").child(imgname)
     uploadImg.put(image,metadata)
     .then(snapshot =>{
