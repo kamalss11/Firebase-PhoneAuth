@@ -92,7 +92,7 @@ sbtn.addEventListener("click",function(e){
     .then(snapshot =>{
         uploadImg.getDownloadURL()
         .then(url => {
-            urls = url
+            urls = String(url)
             console.log(urls)
         })
     }).catch(function(error){
