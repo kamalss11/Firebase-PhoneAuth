@@ -158,7 +158,7 @@
     font-size: 15px;
 }
 
-.forms .field .inputs:nth-last-child(1){
+.forms .field #img{
     border: none;
 }
 
