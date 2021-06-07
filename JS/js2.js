@@ -68,7 +68,7 @@ console.log(sts)
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("Studios")
-console.log(db)
+console.log(db.doc())
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
