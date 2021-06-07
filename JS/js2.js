@@ -128,42 +128,41 @@ sbtn.addEventListener("click",function(e){
     let statusInput = sts.value
     let addInput = add.value
     var image = document.getElementById("img").files[0]
-    var imgname,storageref,metadata
-    if(image){
-        imgname = image.name
-        storageref =  firebase.storage().ref()
-        metadata = {
-            contentType:image.type
-        }
-        var urls 
-    
-        var uploadImg = storageref.child("images").child(imgname)
-        uploadImg.put(image,metadata)
-        .then(snapshot =>{
-            return uploadImg.getDownloadURL()
-            .then(url => {
-                urls = url
-                console.log(urls)
-                db.add({
-                    Name: nameInput,
-                    Phone: phoneInput,
-                    Price: priceInput,
-                    Rate: rateInput,
-                    Service: serviceInput,
-                    Status: statusInput,
-                    Address: addInput,
-                    DisplayPicture: urls
-                }).then((docRef)=>{
-                    console.log("Data Saved.This is you id = > ",docRef.id)
-                    console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
-                    form.reset()
-                })
-                .catch(function(error){
-                    console.log(error)
-                })
-            })
-        }).catch(function(error){
-            console.log(error)
-        })
+    var imgname = image.name
+        
+    const metadata = {
+        contentType:image.type
     }
+    
+    var urls 
+    var storageref =  firebase.storage().ref()
+    
+    var uploadImg = storageref.child("images").child(imgname)
+    uploadImg.put(image,metadata)
+    .then(snapshot =>{
+        return uploadImg.getDownloadURL()
+        .then(url => {
+            urls = url
+            console.log(urls)
+            db.add({
+                Name: nameInput,
+                Phone: phoneInput,
+                Price: priceInput,
+                Rate: rateInput,
+                Service: serviceInput,
+                Status: statusInput,
+                Address: addInput,
+                DisplayPicture: urls
+            }).then((docRef)=>{
+                console.log("Data Saved.This is you id = > ",docRef.id)
+                console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
+                form.reset()
+            })
+            .catch(function(error){
+                console.log(error)
+            })
+        })
+    }).catch(function(error){
+        console.log(error)
+    })
 })
