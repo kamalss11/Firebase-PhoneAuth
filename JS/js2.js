@@ -93,7 +93,7 @@ sbtn.addEventListener("click",function(e){
         uploadImg.getDownloadURL()
         .then(url => {
             urls = String(url)
-            console.log(typeof(urls))
+            console.log((urls))
         })
     }).catch(function(error){
         console.log(error)
@@ -112,6 +112,7 @@ sbtn.addEventListener("click",function(e){
     // }
 
     console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
+    console.log(urls)
     db.add({
         Name: nameInput,
         Phone: phoneInput,
