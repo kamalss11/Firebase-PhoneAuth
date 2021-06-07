@@ -66,7 +66,7 @@ var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
 var sts = document.querySelector("#sts")
 var add = document.querySelector("#add")
-var fields = document.querySelectorAll(".fields")
+var fields = document.querySelectorAll(".field")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".errors")
 
