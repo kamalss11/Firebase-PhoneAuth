@@ -201,7 +201,7 @@ sbtn.addEventListener("click",function(e){
 
 const sbtn2 = document.querySelector(".sub")
 
-var name = document.querySelector("#nam")
+var nm = document.querySelector("#nam")
 var gender = document.querySelector("#gender")
 var email = document.querySelector("#email")
 var ph = document.querySelector("#ph")
@@ -217,7 +217,7 @@ var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 var form2 = document.querySelector("#form2")
-var storageref2
+var storageref2,doclen
 
 for(let i=0;i<fields2.length;i++){   
     inputs2[i].addEventListener("blur",function(e,n=i){
@@ -303,7 +303,7 @@ sbtn2.addEventListener("click",function(e){
         blur2(0,n=i)
     }
 
-    let namIn = nam.value
+    let namIn = nm.value
     let genIn = gender.value
     let emIn = email.value
     let phIn = ph.value
@@ -319,7 +319,7 @@ sbtn2.addEventListener("click",function(e){
     let picName = pic.name
     let date = new Date()
     let year = date.getFullYear()
-    let doclen
+
     db2.get().then((snapshot)=>{
        doclen = snapshot.docs.length
     }).catch(function(error){
@@ -343,7 +343,7 @@ sbtn2.addEventListener("click",function(e){
             urls2 = url
             console.log(urls2)
             db2.add({
-                Name: namIn,
+                Name: nmIn,
                 Gender: genIn,
                 Email: emIn,
                 Phone: phIn,
@@ -361,7 +361,7 @@ sbtn2.addEventListener("click",function(e){
                 
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
-                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
+                console.log(nmIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
             })
             .catch(function(error){
