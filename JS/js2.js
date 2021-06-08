@@ -314,6 +314,7 @@ sbtn2.addEventListener("click",function(e){
     let steIn = ste.value
     let expIn = exp.value
     let tagIn = tag.value
+    let catIn = cat.value
     var pic = document.getElementById("pic").files[0]
     let picName = pic.name
     let date = new Date()
