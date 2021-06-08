@@ -322,10 +322,8 @@ sbtn2.addEventListener("click",function(e){
     var pic = document.getElementById("pic").files[0]
     let picName = pic.name
     let timestamp = new Date()
-    let day = timestamp.getDate()
-    let month = timestamp.getMonth()+1
     let year = timestamp.getFullYear()
-    let data = ("ON"+year+month+day)
+    let id = ("ON"+year)
 
     const metadata2 = {
         contentType:pic.type
@@ -358,7 +356,7 @@ sbtn2.addEventListener("click",function(e){
                 Category: catIn,
                 DisplayPicture: urls2,
                 Timestamp: firebase.firestore.Timestamp.now(),
-                ID: data,
+                ID: id,
                 
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
