@@ -324,8 +324,8 @@ sbtn2.addEventListener("click",function(e){
     let date = new Date()
     let year = date.getFullYear()
     let doclen
-    let documents = db.get().then function((snapshot){
-       doclen = snapshot.docs().length
+    let documents = db.get().then((snapshot){
+       doclen = snapshot.docs.length
     }).catch(error){
        Console.log(error)
     }
