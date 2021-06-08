@@ -321,9 +321,14 @@ sbtn2.addEventListener("click",function(e){
     let catIn = cat.value
     var pic = document.getElementById("pic").files[0]
     let picName = pic.name
-    let timestamp = new Date()
-    let year = timestamp.getFullYear()
-    let id = ("ON"+year)
+    let date = new Date()
+    let year = date.getFullYear()
+    let doclen
+    let documents = db.get().then(snapshot) =>{
+       doclen = snapshot.docs().length
+    }
+    let ndoc = 100 + (doclen + 1)
+    let id = ("ON"+year+ndoc)
 
     const metadata2 = {
         contentType:pic.type
