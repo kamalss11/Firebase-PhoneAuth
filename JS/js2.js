@@ -314,7 +314,6 @@ sbtn2.addEventListener("click",function(e){
     let steIn = ste.value
     let expIn = exp.value
     let tagIn = tag.value
-    let catIn = cat.value
     var pic = document.getElementById("pic").files[0]
     let picName = pic.name
     let date = new Date()
@@ -349,8 +348,6 @@ sbtn2.addEventListener("click",function(e){
                 Phone: phIn,
                 Price: prIn,
                 Rate: ratIn,
-                Service: serIn,
-                Status: staIn,
                 Speaciality: speIn,
                 City: citIn,
                 State: steIn,
@@ -363,7 +360,7 @@ sbtn2.addEventListener("click",function(e){
                 
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
-                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,serIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
+                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
             })
             .catch(function(error){
