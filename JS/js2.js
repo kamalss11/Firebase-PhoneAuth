@@ -264,7 +264,7 @@ function blur2(e,num){
             ers2("Rate out of 5",num)
         }
 
-        else if(!inputs[num].value.match(rt)){
+        else if(!inputs2[num].value.match(rt)){
             errors2[num].classList.add("active")
             ers2("Ratings not match",num)
         }
