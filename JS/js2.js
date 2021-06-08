@@ -326,7 +326,7 @@ sbtn2.addEventListener("click",function(e){
     let doclen
     db2.get().then((snapshot)=>{
        doclen = snapshot.docs.length
-    }).catch function((error){
+    }).catch(function(error){
        console.log(error)
     })
     let ndoc = 100 + (doclen + 1)
