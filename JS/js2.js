@@ -144,58 +144,58 @@ const db2 = firestore.collection("Trainers")
 const form = document.getElementById("form")
 var storageref
 
-sbtn.addEventListener("click",function(e){
-    e.preventDefault()
-    for(let i=0;i<fields1.length;i++){   
-        blur(0,n=i)
-    }
+// sbtn.addEventListener("click",function(e){
+//     e.preventDefault()
+//     for(let i=0;i<fields1.length;i++){   
+//         blur(0,n=i)
+//     }
     
-    let nameInput = nam.value
-    let phoneInput = phone.value
-    let priceInput = price.value
-    let rateInput = rate.value
-    let serviceInput = service.value
-    let statusInput = sts.value
-    let addInput = add.value
-    var image = document.getElementById("img").files[0]
-    var imgname = image.name
-    storageref =  firebase.storage().ref()
+//     let nameInput = nam.value
+//     let phoneInput = phone.value
+//     let priceInput = price.value
+//     let rateInput = rate.value
+//     let serviceInput = service.value
+//     let statusInput = sts.value
+//     let addInput = add.value
+//     var image = document.getElementById("img").files[0]
+//     var imgname = image.name
+//     storageref =  firebase.storage().ref()
         
-    const metadata = {
-        contentType:image.type
-    }
+//     const metadata = {
+//         contentType:image.type
+//     }
 
-    var urls 
+//     var urls 
     
-    var uploadImg = storageref.child("images").child(imgname)
-    uploadImg.put(image,metadata)
-    .then(snapshot =>{
-        return uploadImg.getDownloadURL()
-        .then(url => {
-            urls = url
-            console.log(urls)
-            db.add({
-                Name: nameInput,
-                Phone: phoneInput,
-                Price: priceInput,
-                Rate: rateInput,
-                Service: serviceInput,
-                Status: statusInput,
-                Address: addInput,
-                DisplayPicture: urls
-            }).then((docRef)=>{
-                console.log("Data Saved.This is you id = > ",docRef.id)
-                console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
-                form.reset()
-            })
-            .catch(function(error){
-                console.log(error)
-            })
-        })
-    }).catch(function(error){
-        console.log(error)
-    })
-})
+//     var uploadImg = storageref.child("images").child(imgname)
+//     uploadImg.put(image,metadata)
+//     .then(snapshot =>{
+//         return uploadImg.getDownloadURL()
+//         .then(url => {
+//             urls = url
+//             console.log(urls)
+//             db.add({
+//                 Name: nameInput,
+//                 Phone: phoneInput,
+//                 Price: priceInput,
+//                 Rate: rateInput,
+//                 Service: serviceInput,
+//                 Status: statusInput,
+//                 Address: addInput,
+//                 DisplayPicture: urls
+//             }).then((docRef)=>{
+//                 console.log("Data Saved.This is you id = > ",docRef.id)
+//                 console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
+//                 form.reset()
+//             })
+//             .catch(function(error){
+//                 console.log(error)
+//             })
+//         })
+//     }).catch(function(error){
+//         console.log(error)
+//     })
+// })
 
 //Forms - form(trainer)
 
