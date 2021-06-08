@@ -335,7 +335,7 @@ sbtn2.addEventListener("click",function(e){
         return uploadPic.getDownloadURL()
         .then(url => {
             urls2 = url
-            console.log(urls)
+            console.log(urls2)
             db2.add({
                 Name: namIn,
                 Gender: genIn,
