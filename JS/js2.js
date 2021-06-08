@@ -207,8 +207,6 @@ var email = document.querySelector("#email")
 var ph = document.querySelector("#ph")
 var pr = document.querySelector("#pr")
 var rat = document.querySelector("#rat")
-var ser = document.querySelector("#ser")
-var sta = document.querySelector("#sta")
 var spe = document.querySelector("#spe")
 var cit = document.querySelector("#cit")
 var ste = document.querySelector("#ste")
@@ -311,8 +309,6 @@ sbtn2.addEventListener("click",function(e){
     let phIn = ph.value
     let prIn = pr.value
     let ratIn = rat.value
-    let serIn = ser.value
-    let staIn = sta.value
     let speIn = spe.value
     let citIn = cit.value
     let steIn = ste.value
