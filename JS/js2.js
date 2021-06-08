@@ -325,7 +325,7 @@ sbtn2.addEventListener("click",function(e){
     let day = timestamp.getDate()
     let month = timestamp.getMonth()+1
     let year = timestamp.getFullYear()
-    let data = ("ON"+day+month+year)
+    let data = ("ON"+year+month+day)
 
     const metadata2 = {
         contentType:pic.type
