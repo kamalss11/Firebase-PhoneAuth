@@ -219,7 +219,7 @@ var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 var form2 = document.querySelector("#form2")
-var storageref2,timeStamp
+var storageref2
 
 for(let i=0;i<fields2.length;i++){   
     inputs2[i].addEventListener("blur",function(e,n=i){
@@ -321,6 +321,11 @@ sbtn2.addEventListener("click",function(e){
     let catIn = cat.value
     var pic = document.getElementById("pic").files[0]
     let picName = pic.name
+    let timestamp = new Date()
+    let day = timestamp.getDate()
+    let month = timestamp.getMonth()+1
+    let year = timestamp.getFullYear()
+    let data = ("ON"+day+month+year)
 
     const metadata2 = {
         contentType:pic.type
@@ -352,7 +357,9 @@ sbtn2.addEventListener("click",function(e){
                 Tags: tagIn,
                 Category: catIn,
                 DisplayPicture: urls2,
-                TimeStamp: firebase.firestore.Timestamp.now(),
+                Timestamp: firebase.firestore.Timestamp.now(),
+                ID: data,
+                
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,serIn,staIn,staIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
