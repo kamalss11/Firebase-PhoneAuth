@@ -219,7 +219,7 @@ var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 var form2 = document.querySelector("#form2")
-var storageref2
+var storageref2,timeStamp
 
 for(let i=0;i<fields2.length;i++){   
     inputs2[i].addEventListener("blur",function(e,n=i){
@@ -331,6 +331,7 @@ sbtn2.addEventListener("click",function(e){
 
     var uploadPic = storageref2.child("images").child(picName)
     uploadPic.put(pic,metadata2)
+    timeStamp = firebase.firestore.FieldValue.serverTimeStamp()
     .then(snapshot =>{
         return uploadPic.getDownloadURL()
         .then(url => {
@@ -351,7 +352,8 @@ sbtn2.addEventListener("click",function(e){
                 Experience: expIn,
                 Tags: tagIn,
                 Category: catIn,
-                DisplayPicture: urls2
+                DisplayPicture: urls2,
+                TimeStamp: timeStamp
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,serIn,staIn,staIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
