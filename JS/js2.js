@@ -343,7 +343,7 @@ sbtn2.addEventListener("click",function(e){
             urls2 = url
             console.log(urls2)
             db2.add({
-                Name: nmIn,
+                Name: namIn,
                 Gender: genIn,
                 Email: emIn,
                 Phone: phIn,
@@ -361,7 +361,7 @@ sbtn2.addEventListener("click",function(e){
                 
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
-                console.log(nmIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
+                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
             })
             .catch(function(error){
