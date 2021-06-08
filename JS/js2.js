@@ -215,7 +215,6 @@ var ste = document.querySelector("#ste")
 var exp = document.querySelector("#exp")
 var tag = document.querySelector("#tag")
 var cat = document.querySelector("#cat")
-var pic = document.getElementById("pic").files[0]
 var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
@@ -320,6 +319,7 @@ sbtn2.addEventListener("click",function(e){
     let expIn = exp.value
     let tagIn = tag.value
     let catIn = cat.value
+    var pic = document.getElementById("pic").files[0]
     let picName = pic.name
 
     const metadata2 = {
