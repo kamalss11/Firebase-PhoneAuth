@@ -363,7 +363,7 @@ sbtn2.addEventListener("click",function(e){
                 
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
-                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,serIn,staIn,staIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
+                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,serIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
             })
             .catch(function(error){
