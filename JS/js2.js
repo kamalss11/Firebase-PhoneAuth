@@ -219,6 +219,7 @@ var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 var form2 = document.querySelector("#form2")
+var storageref2
 
 for(let i=0;i<fields2.length;i++){   
     inputs2[i].addEventListener("blur",function(e,n=i){
@@ -325,8 +326,9 @@ sbtn2.addEventListener("click",function(e){
     }
 
     var urls2
+    storageref2 =  firebase.storage().ref()
 
-    var uploadPic = storageref.child("images").child(picName)
+    var uploadPic = storageref2.child("images").child(picName)
     uploadPic.put(pic,metadata2)
     .then(snapshot =>{
         return uploadPic.getDownloadURL()
