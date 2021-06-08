@@ -322,7 +322,8 @@ sbtn2.addEventListener("click",function(e){
     let doclen,ndoc,id
 
     db2.get().then((snapshot)=>{
-       console.log("No of documents " + snapshot.docs.length)
+       doclen = snapshot.docs.length
+       console.log("No of documents " + doclen)
        ndoc = 100 + (doclen + 1)
        console.log(ndoc)
        id = ("ON"+year+ndoc)
