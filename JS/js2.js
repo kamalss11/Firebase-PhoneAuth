@@ -321,7 +321,7 @@ sbtn2.addEventListener("click",function(e){
     let picName = pic.name
 
     const metadata2 = {
-        contentType:image.type
+        contentType:pic.type
     }
 
     var urls2
