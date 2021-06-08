@@ -331,7 +331,6 @@ sbtn2.addEventListener("click",function(e){
 
     var uploadPic = storageref2.child("images").child(picName)
     uploadPic.put(pic,metadata2)
-    timeStamp = firebase.firestore.FieldValue.serverTimeStamp()
     .then(snapshot =>{
         return uploadPic.getDownloadURL()
         .then(url => {
