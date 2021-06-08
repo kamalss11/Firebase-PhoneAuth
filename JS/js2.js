@@ -140,7 +140,6 @@ function ers(err,nu){
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
-const db2 = firestore.collection("Trainers")
 const form = document.getElementById("form")
 var storageref
 
@@ -203,7 +202,7 @@ const sbtn2 = document.querySelector(".sub")
 
 var name = document.querySelector("#nam")
 var gender = document.querySelector("#gender")
-var email = document.querySelector("email")
+var email = document.querySelector("#email")
 var ph = document.querySelector("#ph")
 var pr = document.querySelector("#pr")
 var rat = document.querySelector("#rat")
@@ -265,7 +264,7 @@ function blur2(e,num){
             ers2("Rate out of 5",num)
         }
 
-        else if(!inputs2[num].value.match(rt)){
+        else if(!inputs[num].value.match(rt)){
             errors2[num].classList.add("active")
             ers2("Ratings not match",num)
         }
@@ -334,7 +333,7 @@ sbtn2.addEventListener("click",function(e){
         .then(url => {
             urls2 = url
             console.log(urls)
-            db2.add({
+            db.add({
                 Name: namIn,
                 Gender: genIn,
                 Email: emIn,
