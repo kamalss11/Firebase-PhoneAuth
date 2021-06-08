@@ -217,7 +217,7 @@ var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 var form2 = document.querySelector("#form2")
-var storageref2,doclen
+var storageref2
 
 for(let i=0;i<fields2.length;i++){   
     inputs2[i].addEventListener("blur",function(e,n=i){
@@ -319,15 +319,16 @@ sbtn2.addEventListener("click",function(e){
     let picName = pic.name
     let date = new Date()
     let year = date.getFullYear()
+    let doclen,ndoc,id
 
     db2.get().then((snapshot)=>{
-       console.log(snapshot.docs.length)
+       console.log("No of documents " + snapshot.docs.length)
+       ndoc = 100 + (doclen + 1)
+       console.log(ndoc)
+       id = ("ON"+year+ndoc)
     }).catch(function(error){
        console.log(error)
     })
-    let ndoc = 100 + (doclen + 1)
-    console.log(ndoc)
-    let id = ("ON"+year+ndoc)
 
     const metadata2 = {
         contentType:pic.type
