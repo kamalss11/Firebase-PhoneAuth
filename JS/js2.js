@@ -353,7 +353,7 @@ sbtn2.addEventListener("click",function(e){
                 Tags: tagIn,
                 Category: catIn,
                 DisplayPicture: urls2,
-                TimeStamp: timeStamp
+                TimeStamp: firebase.firestore.Timestamp.now(),
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,serIn,staIn,staIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
