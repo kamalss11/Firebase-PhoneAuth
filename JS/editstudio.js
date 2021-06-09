@@ -65,6 +65,7 @@ db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(docId == doc.id){
             console.log(doc.data())
+            console.log(doc.data().DisplayPicture)
             nam.value = doc.data().Name
             phone.value = doc.data().Phone
             price.value = doc.data().Price
@@ -72,7 +73,7 @@ db.get().then((querySnapShot)=>{
             service.value = doc.data().Service
             sts.value = doc.data().Status
             add.value = doc.data().Address
-            img = doc.data().DisplayPicture            
+            img.value = doc.data().DisplayPicture            
         }
     })
 }).catch(function(error){
