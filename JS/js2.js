@@ -22,7 +22,7 @@ const db = firestore.collection("STUDIOS")
 const db2 = firestore.collection("Trainers")
 const form = document.getElementById("form")
 var form2 = document.querySelector("#form2")
-var storageref = firebase.storage().ref()
+var storageref
 
 // Trainers
 
@@ -146,9 +146,9 @@ window.onload = () =>{
             const metadata = {
                 contentType:image.type
             }
-        
-            var urls 
             
+            storageref = firebase.storage().ref()
+            var urls 
             var uploadImg = storageref.child("images").child(imgname)
             uploadImg.put(image,metadata)
             .then(snapshot =>{
@@ -294,7 +294,8 @@ window.onload = () =>{
             const metadata2 = {
                 contentType:pic.type
             }
-
+            
+            storageref = firebase.storage().ref()
             var urls2
 
             var uploadPic = storageref.child("images").child(picName)
