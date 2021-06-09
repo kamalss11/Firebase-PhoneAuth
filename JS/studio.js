@@ -31,7 +31,7 @@ var phone = document.querySelector("#phone")
 var price = document.querySelector("#price")
 var ratings = document.querySelector("#ratings")
 var service = document.querySelector("#service")
-var status = document.querySelector("#status")
+var stat = document.querySelector("#stat")
 var address = document.querySelector("#address")
 var img = document.querySelector("#img")
 
@@ -44,7 +44,7 @@ db.get().then((querySnapShot)=>{
             price.innerHTML = doc.data().Price
             ratings.innerHTML = doc.data().Ratings
             service.innerHTML = doc.data().Service
-            status.innerHTML = doc.data().Status
+            stat.innerHTML = doc.data().Status
             address.innerHTML = doc.data().Address
             img = document.querySelector("#img").src = doc.data().DisplayPicture
         }
