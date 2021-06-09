@@ -25,6 +25,13 @@ function showPage(){
     document.getElementById("loads").style.display = "none"
 }
 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        docId = user.uid
+        console.log(docId)
+    } 
+});
+
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(docId){
