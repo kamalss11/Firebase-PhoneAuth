@@ -11,6 +11,15 @@ window.onload = () =>{
             usr.innerHTML = user.phoneNumber
         }
     });
+    loader()
+}
+
+function loader(){
+    setTimeout(showPage, 3000);
+}
+
+function showPage(){
+    document.getElementById("loads").style.display = "none"
 }
 
 db.get().then((querySnapShot)=>{
