@@ -5,7 +5,7 @@ const db2 = firestore.collection("Trainers")
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         docId = user.uid
-        console.log(docId1)
+        console.log(docId)
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
         } 
@@ -24,13 +24,6 @@ function loader(){
 function showPage(){
     document.getElementById("loads").style.display = "none"
 }
-
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        docId = user.uid
-        console.log(docId)
-    } 
-});
 
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
