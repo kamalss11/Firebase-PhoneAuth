@@ -45,3 +45,20 @@ db.get().then((querySnapShot)=>{
     console.log(error)
 })
 
+// Welcome user 
+
+var wel = document.querySelector(".wel")
+var lo = document.querySelector(".outbtn")
+
+wel.addEventListener("click",function(){
+    lo.classList.toggle("active")
+})
+
+// Signout
+
+function logout(){
+    firebase.auth().signOut()
+    let u = firebase.auth().currentUser
+    console.log(u,"logged out")
+    location.replace("https://phoneauth-dojo.netlify.app/")
+}
