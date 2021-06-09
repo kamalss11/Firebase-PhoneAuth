@@ -62,3 +62,9 @@ function logout(){
     console.log(u,"logged out")
     location.replace("https://phoneauth-dojo.netlify.app/")
 }
+
+// Edit Profile
+
+function editpro(){
+    location.replace("https://phoneauth-dojo.netlify.app/logged")
+}
