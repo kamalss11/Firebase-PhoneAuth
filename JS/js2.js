@@ -16,6 +16,33 @@ var add = document.querySelector("#add")
 var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
+        
+var firestore  = firebase.firestore()
+const db = firestore.collection("STUDIOS")
+const db2 = firestore.collection("Trainers")
+const form = document.getElementById("form")
+var form2 = document.querySelector("#form2")
+var storageref = firebase.storage().ref()
+
+// Trainers
+
+const sbtn2 = document.querySelector(".sub")
+
+var nm = document.querySelector("#nam")
+var gender = document.querySelector("#gender")
+var email = document.querySelector("#email")
+var ph = document.querySelector("#ph")
+var pr = document.querySelector("#pr")
+var rat = document.querySelector("#rat")
+var spe = document.querySelector("#spe")
+var cit = document.querySelector("#cit")
+var ste = document.querySelector("#ste")
+var exp = document.querySelector("#exp")
+var tag = document.querySelector("#tag")
+var cat = document.querySelector("#cat")
+var inputs2 = document.querySelectorAll(".inp")
+var fields2 = document.querySelectorAll(".field-2")
+var errors2 = document.querySelectorAll(".er")
 
 window.onload = () =>{
     if(window.location.href == "https://phoneauth-dojo.netlify.app/logged"){
@@ -99,12 +126,6 @@ window.onload = () =>{
             errors[nu].innerHTML = err
         }
         
-        var firestore  = firebase.firestore()
-        const db = firestore.collection("STUDIOS")
-        const db2 = firestore.collection("Trainers")
-        const form = document.getElementById("form")
-        var storageref
-        
         sbtn.addEventListener("click",function(e){
             e.preventDefault()
             for(let i=0;i<fields1.length;i++){   
@@ -159,26 +180,6 @@ window.onload = () =>{
         })
 
         //Forms - form(trainer)
-
-        const sbtn2 = document.querySelector(".sub")
-
-        var nm = document.querySelector("#nam")
-        var gender = document.querySelector("#gender")
-        var email = document.querySelector("#email")
-        var ph = document.querySelector("#ph")
-        var pr = document.querySelector("#pr")
-        var rat = document.querySelector("#rat")
-        var spe = document.querySelector("#spe")
-        var cit = document.querySelector("#cit")
-        var ste = document.querySelector("#ste")
-        var exp = document.querySelector("#exp")
-        var tag = document.querySelector("#tag")
-        var cat = document.querySelector("#cat")
-        var inputs2 = document.querySelectorAll(".inp")
-        var fields2 = document.querySelectorAll(".field-2")
-        var errors2 = document.querySelectorAll(".er")
-        var form2 = document.querySelector("#form2")
-        var storageref2
 
         for(let i=0;i<fields2.length;i++){   
             inputs2[i].addEventListener("blur",function(e,n=i){
@@ -295,9 +296,8 @@ window.onload = () =>{
             }
 
             var urls2
-            storageref2 =  firebase.storage().ref()
 
-            var uploadPic = storageref2.child("images").child(picName)
+            var uploadPic = storageref.child("images").child(picName)
             uploadPic.put(pic,metadata2)
             .then(snapshot =>{
                 return uploadPic.getDownloadURL()
@@ -379,5 +379,3 @@ for(let i=0;i<tabs.length;i++){
         tabs[i].classList.add("active")
     })
 }
-
-console.log(nam)
