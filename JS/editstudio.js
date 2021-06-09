@@ -53,6 +53,7 @@ var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
+var img = document.getElementById("img")
         
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
@@ -68,6 +69,10 @@ db.get().then((querySnapShot)=>{
             phone.value = doc.data().Phone
             price.value = doc.data().Price
             rate.value = doc.data().Ratings
+            service.value = doc.data().Service
+            sts.value = doc.data().Status
+            add.value = doc.data().Address
+            img.value = doc.data().DisplayPicture            
         }
     })
 }).catch(function(error){
