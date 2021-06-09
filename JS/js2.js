@@ -53,7 +53,8 @@ var errors2 = document.querySelectorAll(".er")
 window.onload = () =>{
     if(window.location.href == "https://phoneauth-dojo.netlify.app/logged"){
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log(user.uid.length)
+            docId1 = user.uid
+            console.log(docId1)
             if (!user) {
                 location.replace("https://phoneauth-dojo.netlify.app/")
             } 
@@ -209,7 +210,7 @@ sbtn.addEventListener("click",function(e){
         .then(url => {
             urls = url
             console.log(urls)
-            db.add({
+            db.doc(docId1).set({
                 Name: nameInput,
                 Phone: phoneInput,
                 Price: priceInput,
@@ -219,7 +220,6 @@ sbtn.addEventListener("click",function(e){
                 Address: addInput,
                 DisplayPicture: urls
             }).then((docRef)=>{
-                docId1 = docRef.id
                 console.log("Data Saved.This is you id = > ",docId1)
                 console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                 form.reset()
@@ -227,7 +227,7 @@ sbtn.addEventListener("click",function(e){
 
                 db.get().then((querySnapShot)=>{
                     querySnapShot.forEach((doc)=>{
-                        if(doc.id == docId1){
+                        if(docId1){
                             console.log(doc.data() + docId1.length)
                         }
                     })
