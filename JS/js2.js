@@ -53,7 +53,7 @@ var errors2 = document.querySelectorAll(".er")
 window.onload = () =>{
     if(window.location.href == "https://phoneauth-dojo.netlify.app/logged"){
         firebase.auth().onAuthStateChanged(function(user) {
-            console.log(user.doc)
+            console.log(user.docs)
             if (!user) {
                 location.replace("https://phoneauth-dojo.netlify.app/")
             } 
