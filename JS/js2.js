@@ -51,23 +51,19 @@ var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 
 window.onload = () =>{
-    if(window.location.href == "https://phoneauth-dojo.netlify.app/logged"){
-        firebase.auth().onAuthStateChanged(function(user) {
-            docId1 = user.uid
-            console.log(docId1)
-            if (!user) {
-                location.replace("https://phoneauth-dojo.netlify.app/")
-            } 
-            else{
-                console.log(user.phoneNumber)
-                usr.innerHTML = user.phoneNumber
-            }
-        });
-        
-        loader()
-
-        
-    }
+    firebase.auth().onAuthStateChanged(function(user) {
+        docId1 = user.uid
+        console.log(docId1)
+        if (!user) {
+            location.replace("https://phoneauth-dojo.netlify.app/")
+        } 
+        else{
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber
+        }
+    });
+    
+    loader()
 }
 
 function loader(){
@@ -223,17 +219,6 @@ sbtn.addEventListener("click",function(e){
                 console.log("Data Saved.This is you id = > ",docId1)
                 console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                 form.reset()
-
-
-                db.get().then((querySnapShot)=>{
-                    querySnapShot.forEach((doc)=>{
-                        if(docId1){
-                            console.log(doc.data() + docId1.length)
-                        }
-                    })
-                }).catch(function(error){
-                    console.log(error)
-                })
             }).catch(function(error){
                 console.log(error)
             })

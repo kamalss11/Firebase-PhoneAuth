@@ -1,11 +1,24 @@
-// Loader
-
-window.onload = () => {
-    loader()
+var docId
+window.onload = () =>{
+    firebase.auth().onAuthStateChanged(function(user) {
+        docId = user.uid
+        console.log(docId1)
+        if (!user) {
+            location.replace("https://phoneauth-dojo.netlify.app/")
+        } 
+        else{
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber
+        }
+    });
 }
 
-function loader(){
-    setTimeout(function(){
-        document.getElementById("loads").style.display = "none"
-    },3000)
-}
+db.get().then((querySnapShot)=>{
+    querySnapShot.forEach((doc)=>{
+        if(docId){
+            console.log(doc.data())
+        }
+    })
+}).catch(function(error){
+    console.log(error)
+})
