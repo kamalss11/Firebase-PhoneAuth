@@ -2,6 +2,21 @@
 
 var usr = document.querySelector("#usr")
 
+// STUDIOS
+
+const sbtn = document.querySelector(".submit")
+
+var nam = document.querySelector("#name")
+var phone = document.querySelector("#phone")
+var price = document.querySelector("#price")
+var rate = document.querySelector("#rate")
+var service = document.querySelector("#service")
+var sts = document.querySelector("#sts")
+var add = document.querySelector("#add")
+var fields1 = document.querySelectorAll(".field-1")
+var inputs = document.querySelectorAll(".inputs")
+const errors = document.querySelectorAll(".error")
+
 window.onload = () =>{
     if(window.location.href == "https://phoneauth-dojo.netlify.app/logged"){
         firebase.auth().onAuthStateChanged(function(user) {
@@ -17,19 +32,6 @@ window.onload = () =>{
         loader()
 
         // Forms - form(studios)
-
-        const sbtn = document.querySelector(".submit")
-        
-        var nam = document.querySelector("#name")
-        var phone = document.querySelector("#phone")
-        var price = document.querySelector("#price")
-        var rate = document.querySelector("#rate")
-        var service = document.querySelector("#service")
-        var sts = document.querySelector("#sts")
-        var add = document.querySelector("#add")
-        var fields1 = document.querySelectorAll(".field-1")
-        var inputs = document.querySelectorAll(".inputs")
-        const errors = document.querySelectorAll(".error")
             
         for(let i=0;i<fields1.length;i++){   
             inputs[i].addEventListener("blur",function(e,n=i){
@@ -377,3 +379,5 @@ for(let i=0;i<tabs.length;i++){
         tabs[i].classList.add("active")
     })
 }
+
+console.log(nam)
