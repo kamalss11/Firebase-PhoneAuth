@@ -3,7 +3,7 @@
 var usr = document.querySelector("#usr")
 
 window.onload = () =>{
-    if(window.location.href ="https://phoneauth-dojo.netlify.app/logged"){
+    if(window.location.href == "https://phoneauth-dojo.netlify.app/logged"){
         firebase.auth().onAuthStateChanged(function(user) {
             if (!user) {
                 location.replace("https://phoneauth-dojo.netlify.app/")
