@@ -1,4 +1,7 @@
 var docId
+var firestore  = firebase.firestore()
+const db = firestore.collection("STUDIOS")
+const db2 = firestore.collection("Trainers")
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         docId = user.uid
