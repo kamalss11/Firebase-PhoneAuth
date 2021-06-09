@@ -197,6 +197,13 @@ sbtn.addEventListener("click",function(e){
     })
 })
 
+
+db.get().then((querySnapshot)=>{
+    querySnapshot.forEach((doc)=>{
+        console.log(doc.id + " => " + doc.data())
+    })
+})
+
 //Forms - form(trainer)
 
 const sbtn2 = document.querySelector(".sub")
@@ -320,13 +327,11 @@ sbtn2.addEventListener("click",function(e){
     let date = new Date()
     let year = date.getFullYear()
     let doclen,ndoc,id
-
     db2.get().then((snapshot)=>{
-       doclen = snapshot.docs.length
-       console.log("No of documents " + doclen)
-       ndoc = 100 + (doclen + 1)
-       console.log(ndoc)
-       id = ("ON"+year+ndoc)
+        doclen = snapshot.docs.length
+        console.log("No of documents" + doclen)
+        ndoc = 100 + (doclen + 1)
+        id = ("ON"+year+ndoc)
     }).catch(function(error){
        console.log(error)
     })
