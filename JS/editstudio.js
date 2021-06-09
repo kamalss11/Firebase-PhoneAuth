@@ -189,7 +189,7 @@ sbtn.addEventListener("click",function(e){
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
-                form.reset()
+                location.replace("https://phoneauth-dojo.netlify.app/studio_editprofile")
             }).catch(function(error){
                 console.log(error)
             })
