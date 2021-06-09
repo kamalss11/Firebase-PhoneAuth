@@ -59,9 +59,13 @@ window.onload = () =>{
         } 
 
         else if(user){
-            db.doc(docId1).get().then((doc)=> {
+            db.doc(`${docId1}`).get().then((doc)=> {
                 if(doc.exits){
                     location.replace("https://phoneauth-dojo.netlify.app/studio")
+                }
+                
+                else{
+                    console.log()
                 }
             })
         }
