@@ -72,7 +72,7 @@ db.get().then((querySnapShot)=>{
             service.value = doc.data().Service
             sts.value = doc.data().Status
             add.value = doc.data().Address
-            img.value = doc.data().DisplayPicture            
+            img = doc.data().DisplayPicture            
         }
     })
 }).catch(function(error){
