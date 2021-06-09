@@ -27,7 +27,7 @@ function showPage(){
 
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
-        if(docId){
+        if(docId == doc.id){
             console.log(doc.data())
         }
     })
