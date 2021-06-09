@@ -172,8 +172,7 @@ window.onload = () =>{
                         console.log("Data Saved.This is you id = > ",docId1)
                         console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                         form.reset()
-                    })
-                    .catch(function(error){
+                    }).catch(function(error){
                         console.log(error)
                     })
                 })
@@ -181,13 +180,15 @@ window.onload = () =>{
                 console.log(error)
             })
 
-            
+
             db.get().then((querySnapShot)=>{
                 querySnapShot.forEach((doc)=>{
                     if(doc.id == docId1){
                         console.log(doc.data())
                     }
                 })
+            }).catch(function(error){
+                console.log(error)
             })
         })
 
