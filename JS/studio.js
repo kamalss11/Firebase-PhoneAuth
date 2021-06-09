@@ -30,6 +30,10 @@ var nam = document.querySelector("#name")
 var phone = document.querySelector("#phone")
 var price = document.querySelector("#price")
 var ratings = document.querySelector("#ratings")
+var service = document.querySelector("#service")
+var status = document.querySelector("#status")
+var address = document.querySelector("#address")
+var img = document.querySelector("#img")
 
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
@@ -39,6 +43,10 @@ db.get().then((querySnapShot)=>{
             phone.innerHTML = doc.data().Phone
             price.innerHTML = doc.data().Price
             ratings.innerHTML = doc.data().Ratings
+            service.innerHTML = doc.data().Service
+            status.innerHTML = doc.data().status
+            address.innerHTML = doc.data().Address
+            img = document.querySelector("#img").src = doc.data().DisplayPicture
         }
     })
 }).catch(function(error){
