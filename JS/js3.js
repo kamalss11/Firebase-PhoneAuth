@@ -36,7 +36,7 @@ db.get().then((querySnapShot)=>{
         if(docId == doc.id){
             console.log(doc.data())
             nam.innerHTML = doc.data().Name
-            phone.innerHTML = doc.data().PhoneNumber
+            phone.innerHTML = doc.data().Phone
             price.innerHTML = doc.data().Price
             ratings.innerHTML = doc.data().Ratings
         }
