@@ -60,12 +60,12 @@ window.onload = () =>{
 
         else if(user){
             db.doc(`${docId1}`).get().then((doc)=> {
-                if(doc.exits){
+                if(doc.exists){
                     location.replace("https://phoneauth-dojo.netlify.app/studio")
                 }
                 
                 else{
-                    console.log()
+                    console.log("No database found")
                 }
             })
         }
