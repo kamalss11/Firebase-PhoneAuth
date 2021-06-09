@@ -16,6 +16,11 @@ var add = document.querySelector("#add")
 var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
+
+var snam = document.querySelector("#ni")
+var sph = document.querySelector("#ph1")
+var spri = document.querySelector("#pr1")
+var srat = document.querySelector("#r1")
         
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
@@ -162,7 +167,7 @@ window.onload = () =>{
                         Name: nameInput,
                         Phone: phoneInput,
                         Price: priceInput,
-                        Rate: rateInput,
+                        Ratings: rateInput,
                         Service: serviceInput,
                         Status: statusInput,
                         Address: addInput,
@@ -178,11 +183,17 @@ window.onload = () =>{
                             querySnapShot.forEach((doc)=>{
                                 if(doc.id == docId1){
                                     console.log(doc.data())
+                                    snam.innerHTML = doc.data().Name
+                                    sph.innerHTML = doc.data().PhoneNumber
+                                    spri.innerHTML = doc.data().Price
+                                    srat.innerHTML = doc.data().Rate
                                 }
                             })
                         }).catch(function(error){
                             console.log(error)
                         })
+
+                        studio()
                     }).catch(function(error){
                         console.log(error)
                     })
@@ -324,7 +335,7 @@ window.onload = () =>{
                         Email: emIn,
                         Phone: phIn,
                         Price: prIn,
-                        Rate: ratIn,
+                        Ratings: ratIn,
                         Speaciality: speIn,
                         City: citIn,
                         State: steIn,
@@ -393,4 +404,12 @@ for(let i=0;i<tabs.length;i++){
         formdiv[i].classList.add("active")
         tabs[i].classList.add("active")
     })
+}
+
+// studio page
+function studio(){
+    if(docId1){
+        location.replace("https://phoneauth-dojo.netlify.app/studio")
+        loader()
+    }
 }
