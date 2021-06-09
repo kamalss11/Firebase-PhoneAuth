@@ -57,6 +57,15 @@ window.onload = () =>{
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
         } 
+
+        else if(user){
+            db.doc(docId1).get().then((doc)=> {
+                if(doc.exits){
+                    location.replace("https://phoneauth-dojo.netlify.app/studio")
+                }
+            })
+        }
+
         else{
             console.log(user.phoneNumber)
             usr.innerHTML = user.phoneNumber
@@ -65,6 +74,7 @@ window.onload = () =>{
     
     loader()
 }
+
 
 function loader(){
     setTimeout(showPage, 3000);
