@@ -22,6 +22,7 @@ const db = firestore.collection("STUDIOS")
 const db2 = firestore.collection("Trainers")
 const form = document.getElementById("form")
 var form2 = document.querySelector("#form2")
+var docId1,docId2
 var storageref
 
 // Trainers
@@ -47,6 +48,7 @@ var errors2 = document.querySelectorAll(".er")
 window.onload = () =>{
     if(window.location.href == "https://phoneauth-dojo.netlify.app/logged"){
         firebase.auth().onAuthStateChanged(function(user) {
+            console.log(user)
             if (!user) {
                 location.replace("https://phoneauth-dojo.netlify.app/")
             } 
@@ -166,7 +168,8 @@ window.onload = () =>{
                         Address: addInput,
                         DisplayPicture: urls
                     }).then((docRef)=>{
-                        console.log("Data Saved.This is you id = > ",docRef.id)
+                        docId1 = docRef.id
+                        console.log("Data Saved.This is you id = > ",docId1)
                         console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                         form.reset()
                     })
@@ -288,13 +291,13 @@ window.onload = () =>{
                 ndoc = 100 + (doclen + 1)
                 id = ("ON"+year+ndoc)
             }).catch(function(error){
-            console.log(error)
+                console.log(error)
             })
 
             const metadata2 = {
                 contentType:pic.type
             }
-            
+
             storageref = firebase.storage().ref()
             var urls2
 
@@ -323,7 +326,8 @@ window.onload = () =>{
                         ID: id,
                         
                     }).then((docRef)=>{
-                        console.log("Data Saved.This is you id = > ",docRef.id)
+                        docId2 = docRef.id
+                        console.log("Data Saved.This is you id = > ",docId2)
                         console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                         form2.reset()
                     })
