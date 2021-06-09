@@ -16,7 +16,18 @@ window.onload = () =>{
         console.log(user.phoneNumber)
         usr.innerHTML = user.phoneNumber
     })
+
+    loader()    
 }
+
+function loader(){
+    setTimeout(showPage, 3000);
+}
+
+function showPage(){
+    document.getElementById("loads").style.display = "none"
+}
+
 
 // Signout
 

@@ -74,7 +74,6 @@ window.onload = () =>{
     loader()
 }
 
-
 function loader(){
     setTimeout(showPage, 3000);
 }
