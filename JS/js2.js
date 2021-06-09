@@ -180,6 +180,13 @@ window.onload = () =>{
             }).catch(function(error){
                 console.log(error)
             })
+            db.get().then((querySnapShot)=>{
+                querySnapShot.forEach((doc)=>{
+                    if(doc.id == docId1){
+                        console.log(doc.data())
+                    }
+                })
+            })
         })
 
         //Forms - form(trainer)
