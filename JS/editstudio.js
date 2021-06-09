@@ -198,3 +198,9 @@ sbtn.addEventListener("click",function(e){
         console.log(error)
     })
 })
+
+// Profile
+
+function pro(){
+    location.replace("https://phoneauth-dojo.netlify.app/studio")
+}
