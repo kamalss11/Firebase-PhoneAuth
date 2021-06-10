@@ -171,6 +171,10 @@ wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
 
+function mainpage(){
+    location.replace("https://phoneauth-dojo.netlify.app/logged")
+}
+
 // Signout
 
 function logout(){
