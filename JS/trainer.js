@@ -21,6 +21,19 @@ var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 
+// Welcome user 
+
+var wel = document.querySelector(".wel")
+var lo = document.querySelector(".outbtn")
+
+wel.addEventListener("click",function(){
+    lo.classList.toggle("active")
+})
+
+function mainpage(){
+    location.replace("https://phoneauth-dojo.netlify.app/logged")
+}
+
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         docId = user.uid
