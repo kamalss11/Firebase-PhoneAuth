@@ -215,6 +215,7 @@ sbtn2.addEventListener("click",function(e){
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
+                location.replace("")
             })
             .catch(function(error){
                 console.log(error)
@@ -224,3 +225,8 @@ sbtn2.addEventListener("click",function(e){
         console.log(error)
     })
 })
+
+
+function mainpage(){
+    location.replace("https://phoneauth-dojo.netlify.app/trainer_profile") 
+}
