@@ -80,7 +80,7 @@ db.get().then((querySnapShot)=>{
             cat.innerHTML = doc.data().Category
             spe.innerHTML = doc.data().Speciality
             tag.innerHTML = doc.data().Tags
-            stat.innerHTML = doc.data().Status
+            stat.innerHTML = doc.data().State
             cit.innerHTML = doc.data().City
             cre.innerHTML = doc.data().Timestamp.toDate()
             img = document.querySelector("#img").src = doc.data().DisplayPicture
