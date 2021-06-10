@@ -21,7 +21,7 @@ window.onload = () =>{
         }) 
 
         if(user){
-            if(u){
+            if(!u){
                 location.replace("https://phoneauth-dojo.netlify.app/studio")
             }
         }

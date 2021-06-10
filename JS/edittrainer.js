@@ -3,7 +3,7 @@
 var usr = document.querySelector("#usr")
 var wel = document.querySelector(".wel")
 var lo = document.querySelector(".outbtn")
-var docId
+var docId,u
 var firestore  = firebase.firestore()
 const db = firestore.collection("Trainers")
 
@@ -15,16 +15,24 @@ window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         docId = user.uid
         console.log(docId)
+        if(!user){
+            location.replace("https://phoneauth-dojo.netlify.app/")
+        }
+
+        db.get().then((querySnapShot)=>{
+            querySnapShot.forEach((doc)=>{
+                if(docId == doc.id){      
+                    u = docId   
+                }
+            })
+        }).catch(function(error){
+            console.log(error)
+        }) 
+
         if(user){
-            db.get().then((querySnapShot)=>{
-                querySnapShot.forEach((doc)=>{
-                    if(docId != doc.id){         
-                        location.replace("https://phoneauth-dojo.netlify.app/trainer")
-                    }
-                })
-            }).catch(function(error){
-                console.log(error)
-            }) 
+            if(!u){
+                location.replace("https://phoneauth-dojo.netlify.app/trainer")
+            }
         }
         console.log(user.phoneNumber)
         usr.innerHTML = user.phoneNumber
