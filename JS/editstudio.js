@@ -14,26 +14,36 @@ window.onload = () =>{
         docId = user.uid
         console.log(docId)
 
-        db.get().then((querySnapShot)=>{
-            querySnapShot.forEach((doc)=>{
-                if(docId == doc.id){  
-                    u = docId       
-                }
-            })
-        }).catch(function(error){
-            console.log(error)
-        }) 
-
         if(!user){
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
 
-        if(user){
-            if(u){
-            }
-            else{
-                location.replace("https://phoneauth-dojo.netlify.app/studio")
-            }
+        else if(user){
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber
+
+            db.get().then((querySnapShot)=>{
+                querySnapShot.forEach((doc)=>{
+                    if(docId != doc.id){
+                        console.log("No documents")
+                    }
+
+                    else{
+                        u = docId
+                        alert(u)
+                    }
+                })
+
+                if(u == docId){
+                    console.log("Document is there")
+                }
+
+                else{
+                    location.replace("https://phoneauth-dojo.netlify.app/studio")
+                }
+            }).catch(function(error){
+                console.log(error)
+            }) 
         }
 
         console.log(user.phoneNumber)

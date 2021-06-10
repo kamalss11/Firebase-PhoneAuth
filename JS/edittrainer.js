@@ -19,26 +19,33 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
 
-        db.get().then((querySnapShot)=>{
-            querySnapShot.forEach((doc)=>{
-                if(docId == doc.id){      
-                    u = docId   
+        else if(user){
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber
+
+            db.get().then((querySnapShot)=>{
+                querySnapShot.forEach((doc)=>{
+                    if(docId != doc.id){
+                        console.log("No documents")
+                    }
+
+                    else{
+                        u = docId
+                        alert(u)
+                    }
+                })
+
+                if(u == docId){
+                    console.log("Document is there")
                 }
-            })
-        }).catch(function(error){
-            console.log(error)
-        }) 
 
-        if(user){
-            if(u){
-            }
-
-            else{
-                location.replace("https://phoneauth-dojo.netlify.app/trainer")
-            }
+                else{
+                    location.replace("https://phoneauth-dojo.netlify.app/trainer")
+                }
+            }).catch(function(error){
+                console.log(error)
+            }) 
         }
-        console.log(user.phoneNumber)
-        usr.innerHTML = user.phoneNumber
     })
 
     loader()    
