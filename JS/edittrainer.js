@@ -5,7 +5,7 @@ var wel = document.querySelector(".wel")
 var lo = document.querySelector(".outbtn")
 var docId
 var firestore  = firebase.firestore()
-const db = firestore.collection("Trainer")
+const db = firestore.collection("Trainers")
 
 wel.addEventListener("click",function(){
     lo.classList.toggle("active")
@@ -76,10 +76,13 @@ db.get().then((querySnapShot)=>{
             pr.value = doc.data().Price
             price.value = doc.data().Price
             rate.value = doc.data().Ratings
-            service.value = doc.data().Service
-            sts.value = doc.data().Status
-            add.value = doc.data().Address
-            img.value = doc.data().DisplayPicture            
+            spe.value = doc.data().Speciality
+            city.value = doc.data().City
+            state.value = doc.data().State
+            exp.value = doc.data().Experience
+            tag.value = doc.data().Tags
+            cat.value = doc.data().Category
+            img.src = doc.data().DisplayPicture            
         }
         else{
             console.log("NO datas")
