@@ -21,6 +21,40 @@ var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
 var errors2 = document.querySelectorAll(".er")
 
+window.onload = () =>{
+    firebase.auth().onAuthStateChanged(function(user) {
+        docId = user.uid
+        console.log(docId)
+        if (!user) {
+            location.replace("https://phoneauth-dojo.netlify.app/")
+        } 
+
+        else if(user){
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber 
+            db.get().then((querySnapShot)=>{
+                querySnapShot.forEach((doc)=>{
+                    if(docId == doc.id){
+                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")          
+                    }
+                })
+            }).catch(function(error){
+                console.log(error)
+            })
+        }
+    });
+    
+    loader()
+}
+
+function loader(){
+    setTimeout(showPage, 3000);
+}
+
+function showPage(){
+    document.getElementById("loads").style.display = "none"
+}
+
 //Forms - form(trainer)
 
 for(let i=0;i<fields2.length;i++){   
