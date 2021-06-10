@@ -136,7 +136,7 @@ function blur(e,num){
     else if(num == 2){
         if(!inputs[num].value.match(mail)){
             errors[num].classList.add("active")
-            ers("Enter valid number",num)
+            ers("Enter valid mail",num)
         }
 
         else{
