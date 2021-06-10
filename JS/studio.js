@@ -32,7 +32,7 @@ window.onload = () =>{
                 querySnapShot.forEach((doc)=>{
                     if(docId == doc.id){
                         console.log(docId)
-                        // location.replace("https://phoneauth-dojo.netlify.app/studio_profile")
+                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")
                     }
                 })
             }).catch(function(error){
