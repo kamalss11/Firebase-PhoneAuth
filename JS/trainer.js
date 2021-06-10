@@ -211,8 +211,7 @@ sbtn2.addEventListener("click",function(e){
                 Timestamp: firebase.firestore.Timestamp.now(),
                 ID: id,
                 
-            }).then((docRef)=>{
-                docId = docRef.id
+            }).then(()=>{
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()

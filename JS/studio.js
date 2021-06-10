@@ -149,7 +149,7 @@ sbtn.addEventListener("click",function(e){
         .then(url => {
             urls = url
             console.log(urls)
-            db.doc(docId1).set({
+            db.doc(docId).set({
                 Name: nameInput,
                 Phone: phoneInput,
                 Price: priceInput,
