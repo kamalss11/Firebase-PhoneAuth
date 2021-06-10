@@ -109,7 +109,9 @@
 }
 
 .tabs{
-    margin: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 .tabs button{
