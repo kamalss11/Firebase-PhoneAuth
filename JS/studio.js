@@ -40,7 +40,6 @@ window.onload = () =>{
         }
 
         else{
-            usr.innerHTML = user.id
         }
     });
     
