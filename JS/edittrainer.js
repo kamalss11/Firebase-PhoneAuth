@@ -126,7 +126,7 @@ for(let i=0;i<fields.length;i++){
 function blur(e,num){
     let ph = /\d[0-9]{9,}$/
     let rt = /\d[0-9]{0,}$
-    let email = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+    let mail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
     if(inputs[num].value == ''){
         errors[num].classList.add("active")
@@ -134,7 +134,7 @@ function blur(e,num){
     }
 
     else if(num == 2){
-        if(!inputs[num].value.match(email)){
+        if(!inputs[num].value.match(mail)){
             errors[num].classList.add("active")
             ers("Enter valid number",num)
         }
