@@ -38,6 +38,10 @@ window.onload = () =>{
                 console.log(error)
             })
         }
+
+        else{
+            usr.innerHTML = user.id
+        }
     });
     
     loader()
