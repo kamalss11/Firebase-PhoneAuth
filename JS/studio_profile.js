@@ -22,19 +22,12 @@ window.onload = () =>{
 
                     else{
                         u = docId
+                        alert(u)
                     }
                 })
             }).catch(function(error){
                 console.log(error)
             }) 
-
-            if(u == docId){
-                console.log("Document matched")
-            }
-
-            else{
-                location.replace("https://phoneauth-dojo.netlify.app/studio")
-            }
         }
     });
     loader()
