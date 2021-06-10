@@ -14,7 +14,7 @@ window.onload = () =>{
             db.get().then((querySnapShot)=>{
                 querySnapShot.forEach((doc)=>{
                     if(docId != doc.id){         
-                        location.replace("https://phoneauth-dojo.netlify.app/studio")
+                        location.replace("https://phoneauth-dojo.netlify.app/trainer")
                     }
                 })
             }).catch(function(error){
