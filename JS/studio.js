@@ -26,12 +26,12 @@ window.onload = () =>{
         } 
 
         else if(user){
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber 
             db.get().then((querySnapShot)=>{
                 querySnapShot.forEach((doc)=>{
                     if(docId == doc.id){
-                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")  
-                        console.log(user.phoneNumber)
-                        usr.innerHTML = user.phoneNumber         
+                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")          
                     }
                 })
             }).catch(function(error){
