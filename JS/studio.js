@@ -13,7 +13,7 @@ var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
 var docId
-        
+
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
 
@@ -23,27 +23,24 @@ window.onload = () =>{
         console.log(docId)
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
-        } 
+        }
 
         else if(user){
             console.log(user.phoneNumber)
-            usr.innerHTML = user.phoneNumber 
+            usr.innerHTML = user.phoneNumber
             db.get().then((querySnapShot)=>{
                 querySnapShot.forEach((doc)=>{
                     if(docId == doc.id){
-                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")          
+                        console.log(docId)
+                        // location.replace("https://phoneauth-dojo.netlify.app/studio_profile")
                     }
                 })
             }).catch(function(error){
                 console.log(error)
             })
         }
-
-        else{
-            usr.innerHTML = user.id
-        }
     });
-    
+
     loader()
 }
 
@@ -56,8 +53,8 @@ function showPage(){
 }
 
 // Form Submit
-            
-for(let i=0;i<fields1.length;i++){   
+
+for(let i=0;i<fields1.length;i++){
     inputs[i].addEventListener("blur",function(e,n=i){
         blur(e,n)
     })
@@ -125,10 +122,10 @@ function ers(err,nu){
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
-    for(let i=0;i<fields1.length;i++){   
+    for(let i=0;i<fields1.length;i++){
         blur(0,n=i)
     }
-    
+
     let nameInput = nam.value
     let phoneInput = phone.value
     let priceInput = price.value
@@ -139,13 +136,13 @@ sbtn.addEventListener("click",function(e){
     var image = document.getElementById("img").files[0]
     var imgname = image.name
     storageref =  firebase.storage().ref()
-        
+
     const metadata = {
         contentType:image.type
     }
-    
+
     storageref = firebase.storage().ref()
-    var urls 
+    var urls
     var uploadImg = storageref.child("images").child(imgname)
     uploadImg.put(image,metadata)
     .then(snapshot =>{
@@ -176,7 +173,7 @@ sbtn.addEventListener("click",function(e){
     })
 })
 
-// Welcome user 
+// Welcome user
 
 var wel = document.querySelector(".wel")
 var lo = document.querySelector(".outbtn")
