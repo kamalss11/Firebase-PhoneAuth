@@ -60,7 +60,7 @@ var fields = document.querySelectorAll(".field-2")
 var inputs = document.querySelectorAll(".inp")
 const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
-var img = document.getElementById("img")
+var img = document.getElementById("pic")
         
 // From DB
 
@@ -83,9 +83,6 @@ db.get().then((querySnapShot)=>{
             tag.value = doc.data().Tags
             cat.value = doc.data().Category
             img.src = doc.data().DisplayPicture            
-        }
-        else{
-            console.log("NO datas")
         }
     })
 }).catch(function(error){
