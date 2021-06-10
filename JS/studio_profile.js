@@ -25,6 +25,14 @@ window.onload = () =>{
                         alert(u)
                     }
                 })
+
+                if(u == docId){
+                    console.log("Document is there")
+                }
+
+                else{
+                    location.replace("https://phoneauth-dojo.netlify.app/studio")
+                }
             }).catch(function(error){
                 console.log(error)
             }) 
