@@ -4,6 +4,8 @@ var usr = document.querySelector("#usr")
 var wel = document.querySelector(".wel")
 var lo = document.querySelector(".outbtn")
 var docId
+var firestore  = firebase.firestore()
+const db = firestore.collection("Trainer")
 
 wel.addEventListener("click",function(){
     lo.classList.toggle("active")
@@ -28,7 +30,6 @@ function showPage(){
     document.getElementById("loads").style.display = "none"
 }
 
-
 // Signout
 
 function logout(){
@@ -40,24 +41,27 @@ function logout(){
 
 // Forms - form(studios)
 
-const sbtn = document.querySelector(".submit")
+const sbtn = document.querySelector(".sub")
 
 var nam = document.querySelector("#name")
-var phone = document.querySelector("#phone")
-var price = document.querySelector("#price")
-var rate = document.querySelector("#rate")
-var service = document.querySelector("#service")
-var sts = document.querySelector("#sts")
-var add = document.querySelector("#add")
-var fields1 = document.querySelectorAll(".field-1")
-var inputs = document.querySelectorAll(".inputs")
+var g = document.querySelector("#gender")
+var em = document.querySelector("#email")
+var phone = document.querySelector("#ph")
+var price = document.querySelector("#pr")
+var rate = document.querySelector("#rat")
+var spe = document.querySelector("#spe")
+var city = document.querySelector("#cit")
+var state = document.querySelector("#ste")
+var exp = document.querySelector("#exp")
+var tag = document.querySelector("#tag")
+var cat = document.querySelector("#cat")
+var img = document.getElementById("pic")
+var fields = document.querySelectorAll(".field-2")
+var inputs = document.querySelectorAll(".inp")
 const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
 var img = document.getElementById("img")
         
-var firestore  = firebase.firestore()
-const db = firestore.collection("STUDIOS")
-
 // From DB
 
 db.get().then((querySnapShot)=>{
@@ -66,6 +70,7 @@ db.get().then((querySnapShot)=>{
             console.log(doc.data())
             console.log(doc.data().DisplayPicture)
             nam.value = doc.data().Name
+            g.value = doc.data().Gender
             phone.value = doc.data().Phone
             price.value = doc.data().Price
             rate.value = doc.data().Ratings
@@ -80,7 +85,7 @@ db.get().then((querySnapShot)=>{
 })
 
             
-for(let i=0;i<fields1.length;i++){   
+for(let i=0;i<fields.length;i++){   
     inputs[i].addEventListener("blur",function(e,n=i){
         blur(e,n)
     })
