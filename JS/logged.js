@@ -1,27 +1,15 @@
 // While browser loads
 
 var usr = document.querySelector("#usr")
-
+var docId
 // STUDIOS
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
-        docId1 = user.uid
-        console.log(docId1)
+        docId = user.uid
+        console.log(docId)
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
-        } 
-
-        else if(user){
-            db.doc(`${docId1}`).get().then((doc)=> {
-                if(doc.exists){
-                    location.replace("https://phoneauth-dojo.netlify.app/studio")
-                }
-                
-                else{
-                    console.log("No database found")
-                }
-            })
         }
 
         else{
