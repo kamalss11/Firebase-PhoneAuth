@@ -86,7 +86,7 @@ var cat = document.querySelector("#cat")
 var img = document.getElementById("pic")
 var fields = document.querySelectorAll(".field-2")
 var inputs = document.querySelectorAll(".inp")
-const errors = document.querySelectorAll(".error")
+const errors = document.querySelectorAll(".er")
 const form = document.getElementById("form")
 var img = document.getElementById("pic")
         
