@@ -125,7 +125,7 @@ for(let i=0;i<fields.length;i++){
 
 function blur(e,num){
     let ph = /\d[0-9]{9,}$/
-    let rt = /\d[0-9]{0,}$
+    let rt = /\d[0-9]{0,}$/
     let mail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
     if(inputs[num].value == ''){
