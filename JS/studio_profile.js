@@ -22,7 +22,7 @@ window.onload = () =>{
         }) 
 
         if(user){
-            if(u){
+            if(u == docId){
             }
 
             else{
