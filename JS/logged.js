@@ -53,6 +53,7 @@ function logout(){
 function studio(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+            console.log(user)
             db.doc(`${user.uid}`).get().then((doc)=> {
                 if(doc.exists){
                     location.replace("https://phoneauth-dojo.netlify.app/studio")
@@ -69,6 +70,7 @@ function studio(){
 function trainer(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+            console.log(user.uid)
             db.doc(`${user.uid}`).get().then((doc)=> {
                 if(doc.exists){
                     location.replace("https://phoneauth-dojo.netlify.app/trainer")
