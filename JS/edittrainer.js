@@ -201,7 +201,7 @@ sbtn.addEventListener("click",function(e){
     let expInput = ex.value
     let tagInput = tag.value
     let catInput = cat.value
-    var image = document.getElementById("img").files[0]
+    var image = document.getElementById("pic").files[0]
     var imgname = image.name
     storageref =  firebase.storage().ref()
         
