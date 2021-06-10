@@ -228,5 +228,5 @@ sbtn2.addEventListener("click",function(e){
 
 
 function mainpage(){
-    location.replace("https://phoneauth-dojo.netlify.app/trainer_profile") 
+    location.replace("https://phoneauth-dojo.netlify.app/logged") 
 }
