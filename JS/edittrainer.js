@@ -132,7 +132,7 @@ function blur(e,num){
         ers("This field is required",num)
     }
 
-    else if(num == 1){
+    else if(num == 2){
         if(!inputs[num].value.match(ph)){
             errors[num].classList.add("active")
             ers("Enter valid number",num)
@@ -143,7 +143,7 @@ function blur(e,num){
         }
     }
 
-    else if(num == 3){
+    else if(num == 5){
         if(inputs[num].value > 5){
             errors[num].classList.add("active")
             ers("Rate out of 5",num)
