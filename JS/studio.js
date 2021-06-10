@@ -29,17 +29,14 @@ window.onload = () =>{
             db.get().then((querySnapShot)=>{
                 querySnapShot.forEach((doc)=>{
                     if(docId == doc.id){
-                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")           
+                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")  
+                        console.log(user.phoneNumber)
+                        usr.innerHTML = user.phoneNumber         
                     }
                 })
             }).catch(function(error){
                 console.log(error)
             })
-        }
-
-        else{
-            console.log(user.phoneNumber)
-            usr.innerHTML = user.phoneNumber
         }
     });
     
