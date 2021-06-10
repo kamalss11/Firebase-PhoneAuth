@@ -31,7 +31,6 @@ window.onload = () =>{
 
                     else{
                         u = docId
-                        alert(u)
                     }
                 })
 
