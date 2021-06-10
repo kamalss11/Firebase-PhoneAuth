@@ -170,7 +170,7 @@ sbtn2.addEventListener("click",function(e){
     let picName = pic.name
     let date = new Date()
     let year = date.getFullYear()
-    let doclen,ndoc,id
+    var doclen,ndoc,id
     db.get().then((snapshot)=>{
         doclen = snapshot.docs.length
         console.log("No of documents" + doclen)
