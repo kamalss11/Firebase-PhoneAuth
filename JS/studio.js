@@ -25,18 +25,6 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         } 
 
-        else if(user){
-            db.doc(`${docId}`).get().then((doc)=> {
-                if(doc.exists){
-                    location.replace("https://phoneauth-dojo.netlify.app/studio_profile")
-                }
-                
-                else{
-                    console.log("No database found")
-                }
-            })
-        }
-
         else{
             console.log(user.phoneNumber)
             usr.innerHTML = user.phoneNumber
