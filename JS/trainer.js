@@ -171,7 +171,7 @@ sbtn2.addEventListener("click",function(e){
     let date = new Date()
     let year = date.getFullYear()
     let doclen,ndoc,id
-    db2.get().then((snapshot)=>{
+    db.get().then((snapshot)=>{
         doclen = snapshot.docs.length
         console.log("No of documents" + doclen)
         ndoc = 100 + (doclen + 1)
