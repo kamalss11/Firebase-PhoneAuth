@@ -1,5 +1,5 @@
 const firestore = firebase.firestore()
-const db2 = firestore.collection("Trainers")
+const db = firestore.collection("Trainers")
 var form2 = document.querySelector("#form2")
 var storageref,docId
 
