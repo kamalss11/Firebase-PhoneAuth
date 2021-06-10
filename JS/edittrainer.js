@@ -30,7 +30,10 @@ window.onload = () =>{
         }) 
 
         if(user){
-            if(!u){
+            if(u){
+            }
+
+            else{
                 location.replace("https://phoneauth-dojo.netlify.app/trainer")
             }
         }
