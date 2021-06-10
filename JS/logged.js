@@ -1,7 +1,8 @@
 // While browser loads
 
 var usr = document.querySelector("#usr")
-
+var firestore = firebase.firestore()
+var db = firestore.collection("STUDIOS")
 // STUDIOS
 
 window.onload = () =>{
@@ -51,24 +52,32 @@ function logout(){
 
 function studio(){
     firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-            location.replace("https://phoneauth-dojo.netlify.app/studio")
-        }
-
-        else{
-            
+        if (user) {
+            db.doc(`${user.uid}`).get().then((doc)=> {
+                if(doc.exists){
+                    location.replace("https://phoneauth-dojo.netlify.app/studio")
+                }
+                
+                else{
+                    console.log("No database found")
+                }
+            })
         }
     })
 }
 
 function trainer(){
     firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-            location.replace("https://phoneauth-dojo.netlify.app/trainer")
-        }
-
-        else{
-
+        if (user) {
+            db.doc(`${user.uid}`).get().then((doc)=> {
+                if(doc.exists){
+                    location.replace("https://phoneauth-dojo.netlify.app/trainer")
+                }
+                
+                else{
+                    console.log("No database found")
+                }
+            })
         }
     })
 }
