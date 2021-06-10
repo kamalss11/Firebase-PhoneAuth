@@ -10,22 +10,19 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         } 
 
-        db.get().then((querySnapShot)=>{
-            querySnapShot.forEach((doc)=>{
-                if(docId == doc.id){
-                    u = docId
-                    alert(u)
-                }
-            })
-        }).catch(function(error){
+        else if(user){
+            db.get().then((querySnapShot)=>{
+                querySnapShot.forEach((doc)=>{
+                   if(docId == doc.id){
+                        u = docId
+                        alert(u)
+                   }
+                })
+            }).catch(function(error){
             console.log(error)
-        }) 
+            }) 
 
-        if(user){
-            if(u == docId){
-            }
-
-            else{
+            if(u != docId){
                 location.replace("https://phoneauth-dojo.netlify.app/studio")
             }
         }
