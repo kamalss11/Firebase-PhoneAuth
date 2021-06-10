@@ -199,8 +199,8 @@
     background-color: rgb(204, 202, 202);
 }
 
-@media(max-width: 950px){
-    .forms{
-        width: 80%;
+@media(max-width: 450px){
+    .tabs{
+        width: 100%;
     }
 }
