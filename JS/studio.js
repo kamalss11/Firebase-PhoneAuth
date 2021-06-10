@@ -159,7 +159,7 @@ sbtn.addEventListener("click",function(e){
                 Address: addInput,
                 DisplayPicture: urls
             }).then((docRef)=>{
-                console.log("Data Saved.This is you id = > ",docId1)
+                console.log("Data Saved.This is you id = > ",docId)
                 console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                 form.reset()
             }).catch(function(error){
