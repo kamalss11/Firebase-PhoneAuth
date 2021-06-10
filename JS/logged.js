@@ -54,6 +54,10 @@ function studio(){
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/studio")
         }
+
+        else{
+            
+        }
     })
 }
 
@@ -61,6 +65,10 @@ function trainer(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/trainer")
+        }
+
+        else{
+
         }
     })
 }
