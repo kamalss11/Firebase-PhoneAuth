@@ -198,6 +198,10 @@ sbtn.addEventListener("click",function(e){
     })
 })
 
+function mainpage(){
+    location.replace("https://phoneauth-dojo.netlify.app/logged")
+}
+
 // Profile
 
 function pro(){

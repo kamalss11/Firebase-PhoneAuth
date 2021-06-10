@@ -70,6 +70,10 @@ function logout(){
     location.replace("https://phoneauth-dojo.netlify.app/")
 }
 
+function mainpage(){
+    location.replace("https://phoneauth-dojo.netlify.app/logged")
+}
+
 // Edit Profile
 
 function editpro(){
