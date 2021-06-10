@@ -43,7 +43,7 @@ function logout(){
 
 const sbtn = document.querySelector(".sub")
 
-var nam = document.querySelector("#name")
+var nam = document.querySelector("#nam")
 var g = document.querySelector("#gender")
 var em = document.querySelector("#email")
 var phone = document.querySelector("#ph")
@@ -71,13 +71,18 @@ db.get().then((querySnapShot)=>{
             console.log(doc.data().DisplayPicture)
             nam.value = doc.data().Name
             g.value = doc.data().Gender
+            em.value = doc.data().Email
             phone.value = doc.data().Phone
+            pr.value = doc.data().Price
             price.value = doc.data().Price
             rate.value = doc.data().Ratings
             service.value = doc.data().Service
             sts.value = doc.data().Status
             add.value = doc.data().Address
             img.value = doc.data().DisplayPicture            
+        }
+        else{
+            console.log("NO datas")
         }
     })
 }).catch(function(error){
