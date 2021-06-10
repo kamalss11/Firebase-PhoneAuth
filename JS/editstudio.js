@@ -13,6 +13,17 @@ window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         docId = user.uid
         console.log(docId)
+        if(user){
+            db.get().then((querySnapShot)=>{
+                querySnapShot.forEach((doc)=>{
+                    if(docId != doc.id){         
+                        location.replace("https://phoneauth-dojo.netlify.app/studio")
+                    }
+                })
+            }).catch(function(error){
+                console.log(error)
+            }) 
+        }
         console.log(user.phoneNumber)
         usr.innerHTML = user.phoneNumber
     })
