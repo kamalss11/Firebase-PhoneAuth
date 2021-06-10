@@ -194,7 +194,7 @@ sbtn2.addEventListener("click",function(e){
         .then(url => {
             urls2 = url
             console.log(urls2)
-            db2.add({
+            db.add({
                 Name: namIn,
                 Gender: genIn,
                 Email: emIn,
