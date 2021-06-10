@@ -201,7 +201,7 @@ sbtn2.addEventListener("click",function(e){
                 Phone: phIn,
                 Price: prIn,
                 Ratings: ratIn,
-                Speaciality: speIn,
+                Speciality: speIn,
                 City: citIn,
                 State: steIn,
                 Experience: expIn,
