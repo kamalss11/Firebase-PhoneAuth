@@ -167,7 +167,7 @@ function blur(e,num){
 }
 
 function submitbtn(){
-    for(let i=0;i<fields1.length;i++){
+    for(let i=0;i<fields.length;i++){
         if(errors[i].classList.contains("active")){
             sbtn.classList.add("hide")
             break
@@ -185,17 +185,22 @@ function ers(err,nu){
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
-    for(let i=0;i<fields1.length;i++){   
+    for(let i=0;i<fields.length;i++){   
         blur(0,n=i)
     }
     
     let nameInput = nam.value
+    let genderInput = g.value
+    let emailInput = em.value
     let phoneInput = phone.value
     let priceInput = price.value
     let rateInput = rate.value
-    let serviceInput = service.value
-    let statusInput = sts.value
-    let addInput = add.value
+    let speInput = sp.value
+    let cityInput = city.value
+    let sateInput = state.value
+    let expInput = ex.value
+    let tagInput = tag.value
+    let catInput = cat.value
     var image = document.getElementById("img").files[0]
     var imgname = image.name
     storageref =  firebase.storage().ref()
@@ -215,12 +220,17 @@ sbtn.addEventListener("click",function(e){
             console.log(urls)
             db.doc(docId).set({
                 Name: nameInput,
+                Gender: genderInput,
+                Email: emailInput,
                 Phone: phoneInput,
                 Price: priceInput,
                 Ratings: rateInput,
-                Service: serviceInput,
-                Status: statusInput,
-                Address: addInput,
+                Speciality: speInput,
+                City: cityInput,
+                State: stateInput,
+                Experience: expInput,
+                Tags: tagInput,
+                Category: catInput,
                 DisplayPicture: urls
             }).then((docRef)=>{
                 console.log("Data Saved.This is you id = > ",docId)
