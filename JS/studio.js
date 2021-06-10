@@ -25,6 +25,18 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         } 
 
+        else if(user){
+            db.get().then((querySnapShot)=>{
+                querySnapShot.forEach((doc)=>{
+                    if(docId == doc.id){
+                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")           
+                    }
+                })
+            }).catch(function(error){
+                console.log(error)
+            })
+        }
+
         else{
             console.log(user.phoneNumber)
             usr.innerHTML = user.phoneNumber
