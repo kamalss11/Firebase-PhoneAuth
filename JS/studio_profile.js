@@ -14,6 +14,7 @@ window.onload = () =>{
             querySnapShot.forEach((doc)=>{
                 if(docId == doc.id){
                     u = docId
+                    alert(u)
                 }
             })
         }).catch(function(error){
