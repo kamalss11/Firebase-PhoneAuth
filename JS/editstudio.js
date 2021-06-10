@@ -4,6 +4,8 @@ var usr = document.querySelector("#usr")
 var wel = document.querySelector(".wel")
 var lo = document.querySelector(".outbtn")
 var docId,u
+var firestore  = firebase.firestore()
+const db = firestore.collection("STUDIOS")
 
 wel.addEventListener("click",function(){
     lo.classList.toggle("active")
@@ -77,9 +79,6 @@ var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
 var img = document.getElementById("img")
-        
-var firestore  = firebase.firestore()
-const db = firestore.collection("STUDIOS")
 
 // From DB
 
