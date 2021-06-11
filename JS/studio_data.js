@@ -74,6 +74,7 @@ db.get().then((querySnapShot)=>{
     })
     
     data = document.querySelectorAll(".data")
+    console.log(data)
 }).catch(function(error){
     console.log(error)
 })
