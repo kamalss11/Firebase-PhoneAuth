@@ -211,6 +211,7 @@ table tr{
 
 table tr td,table tr th{
     padding: 0 10px;
+    text-align: center;
 }
 
 table tr td{
