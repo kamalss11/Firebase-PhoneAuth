@@ -46,24 +46,24 @@ var datas = document.querySelector(".datas")
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(doc.data().DocumentId){
-            let data = document.createElement("div")
+            let data = document.createElement("tr")
             data.className = "data"
             datas.appendChild(data)
-            let name = document.createElement("p")
+            let name = document.createElement("td")
             name.innerHTML = doc.data().Name
-            let phone = document.createElement("p")
+            let phone = document.createElement("td")
             phone.innerHTML = doc.data().Phone
-            let price = document.createElement("p")
+            let price = document.createElement("td")
             price.innerHTML = doc.data().Price
-            let ratings = document.createElement("p")
+            let ratings = document.createElement("td")
             ratings.innerHTML = doc.data().Ratings
-            let service = document.createElement("p")
+            let service = document.createElement("td")
             service.innerHTML = doc.data().Service
-            let status = document.createElement("p")
+            let status = document.createElement("td")
             status.innerHTML = doc.data().Status
-            let address = document.createElement("p")
+            let address = document.createElement("td")
             address.innerHTML = doc.data().Address
-            let picture = document.createElement("p")
+            let picture = document.createElement("td")
             picture.innerHTML = doc.data().DisplayPicture
             data.append(name,phone,price,ratings,service,status,address)
             console.log(doc.data())
