@@ -226,6 +226,11 @@ table tr th{
     padding: 5px;
 }
 
+.i{
+    text-align: center;
+    margin: 20px 0;
+}
+
 @media(max-width: 950px){
     .forms{
         width: 90%;
