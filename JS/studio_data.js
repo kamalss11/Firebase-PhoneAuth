@@ -53,7 +53,19 @@ db.get().then((querySnapShot)=>{
             name.innerHTML = doc.data().Name
             let phone = document.createElement("p")
             phone.innerHTML = doc.data().Phone
-            data.append(name,phone)
+            let price = document.createElement("p")
+            price.innerHTML = doc.data().Price
+            let ratings = document.createElement("p")
+            ratings.innerHTML = doc.data().Ratings
+            let service = document.createElement("p")
+            service.innerHTML = doc.data().Service
+            let status = document.createElement("p")
+            status.innerHTML = doc.data().Status
+            let address = document.createElement("p")
+            address.innerHTML = doc.data().Address
+            let picture = document.createElement("p")
+            picture.innerHTML = doc.data().DisplayPicture
+            data.append(name,phone,price,ratings,service,status,address)
             console.log(doc.data())
         }
     })
