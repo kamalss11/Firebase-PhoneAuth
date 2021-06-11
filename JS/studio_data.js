@@ -43,13 +43,14 @@ var datas = document.querySelector(".datas")
 
 // Fetching datas
 
-var data,dalen
+var data,dalen,doc = 0
 
 let ids = document.querySelector("#i")
 
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(doc.data().DocumentId){
+            ++doc
             let data = document.createElement("tr")
             data.className = "data"
             data.id = `${doc.data().DocumentId}`
@@ -74,6 +75,10 @@ db.get().then((querySnapShot)=>{
             console.log(doc.data())
         }
     })
+    
+    if(doc == 'null' || doc == 'undefined'){
+          ids.innerHTML = "Documents are not matched with document Id"
+    }
     
     data = document.querySelectorAll(".data")
     dalen = data.length
