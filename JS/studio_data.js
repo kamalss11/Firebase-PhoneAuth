@@ -39,11 +39,16 @@ function mainpage(){
     location.replace("https://phoneauth-dojo.netlify.app/logged")
 }
 
+var datas = document.querySelector(".datas")
+
 // Fetching datas
 
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(doc.data().DocumentId){
+            let name = document.createElement("p")
+            name.innerHTML = doc.data().Name
+            datas.appendChild(name)
             console.log(doc.data())
         }
     })
