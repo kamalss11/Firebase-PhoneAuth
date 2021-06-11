@@ -13,7 +13,6 @@ window.onload = () =>{
             console.log(user.phoneNumber)
             usr.innerHTML = user.phoneNumber
         }
-
     });
 
     loader()
@@ -39,6 +38,16 @@ wel.addEventListener("click",function(){
 function mainpage(){
     location.replace("https://phoneauth-dojo.netlify.app/logged")
 }
+
+// Fetching datas
+
+db.get().then((querySnapShot)=>{
+    querySnapShot.forEach((doc)=>{
+        console.log(doc.data())
+    })
+}).catch(function(error){
+    console.log(error)
+})
 
 // Form Page
  
