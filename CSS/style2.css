@@ -206,7 +206,7 @@ table tr{
     display: flex;
 }
 
-table tr td{
+table tr td,table tr th{
     margin: 0 5px;
     width: 10%;
 }
