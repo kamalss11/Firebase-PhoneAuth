@@ -1,19 +1,3 @@
-const sbtn = document.querySelector(".submit")
-const usr = document.querySelector("#usr")
-
-var nam = document.querySelector("#name")
-var phone = document.querySelector("#phone")
-var price = document.querySelector("#price")
-var rate = document.querySelector("#rate")
-var service = document.querySelector("#service")
-var sts = document.querySelector("#sts")
-var add = document.querySelector("#add")
-var fields1 = document.querySelectorAll(".field-1")
-var inputs = document.querySelectorAll(".inputs")
-const errors = document.querySelectorAll(".error")
-const form = document.getElementById("form")
-var docId
-
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
 
@@ -58,7 +42,7 @@ function mainpage(){
 
 // Form Page
  
-function form(){
+function forms(){
     location.replace("https://phoneauth-dojo.netlify.app/studio")
 }
 
