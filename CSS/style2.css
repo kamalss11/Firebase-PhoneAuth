@@ -210,16 +210,16 @@ table tr{
 }
 
 table tr td,table tr th{
-    padding: 0 10px;
+    padding: 10px;
     text-align: center;
 }
 
 table tr:nth-child(even){
-    background-color: aliceblue;
+    background-color: gainsboro;
 }
 
 table tr th{
-    padding: 30px 10px;
+    background-color: aliceblue;
 }
 
 .datas .data p{
