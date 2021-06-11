@@ -43,6 +43,8 @@ var datas = document.querySelector(".datas")
 
 // Fetching datas
 
+var data
+
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(doc.data().DocumentId){
@@ -70,11 +72,11 @@ db.get().then((querySnapShot)=>{
             console.log(doc.data())
         }
     })
+    
+    data = document.querySelectorAll(".data")
 }).catch(function(error){
     console.log(error)
 })
-
-const data = document.querySelectorAll(".data")
 
 for(let i=0;i<data.length;i++){
     data[i].addEventListener("click",function(){
