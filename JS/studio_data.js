@@ -46,9 +46,13 @@ var datas = document.querySelector(".datas")
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(doc.data().DocumentId){
+            let data = document.createElement("div").className = "data"
+            datas.appendChild(data)
             let name = document.createElement("p")
             name.innerHTML = doc.data().Name
-            datas.appendChild(name)
+            let phone = document.createElement("p")
+            phone.innerHTML = doc.data().Phone
+            datas.appendChild(name,phone)
             console.log(doc.data())
         }
     })
