@@ -12,15 +12,13 @@ var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
-var docId
 
 var firestore  = firebase.firestore()
 const db = firestore.collection("STUDIOS")
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
-        docId = user.uid
-        console.log(docId)
+        console.log(user.uid)
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
@@ -141,7 +139,7 @@ sbtn.addEventListener("click",function(e){
         .then(url => {
             urls = url
             console.log(urls)
-            db.doc(docId).set({
+            db.add({
                 Name: nameInput,
                 Phone: phoneInput,
                 Price: priceInput,
@@ -151,10 +149,13 @@ sbtn.addEventListener("click",function(e){
                 Address: addInput,
                 DisplayPicture: urls
             }).then((docRef)=>{
-                console.log("Data Saved.This is you id = > ",docId)
+                db.doc(`${doc.id}`).set({
+                    DocumentId: docRef.id
+                })
+                console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                 form.reset()
-                location.replace("https://phoneauth-dojo.netlify.app/studio_profile")
+                location.replace("https://phoneauth-dojo.netlify.app/studio_data")
             }).catch(function(error){
                 console.log(error)
             })
