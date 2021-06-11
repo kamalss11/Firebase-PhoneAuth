@@ -74,6 +74,18 @@ db.get().then((querySnapShot)=>{
     console.log(error)
 })
 
+const data = document.querySelectorAll(".data")
+
+for(let i=0;i<data.length;i++){
+    data[i].addEventListener("click",function(){
+        data[i].classList.toggle("active")
+        console.log(data[i].id)
+    })
+}
+
+let i = document.querySelector("#i")
+
+
 // Form Page
  
 function frm(){
