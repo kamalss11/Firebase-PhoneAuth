@@ -196,6 +196,10 @@
     background-color: rgb(204, 202, 202);
 }
 
+.datas .data{
+    display: flex;
+}
+
 @media(max-width: 950px){
     .forms{
         width: 90%;
