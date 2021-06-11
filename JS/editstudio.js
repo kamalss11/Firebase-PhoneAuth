@@ -112,7 +112,7 @@ db.get().then((querySnapShot)=>{
 })
 
             
-for(let i=0;i<fields1.length;i++){   
+for(let i=0;i<fields1.length-1;i++){   
     inputs[i].addEventListener("blur",function(e,n=i){
         blur(e,n)
     })
@@ -180,7 +180,7 @@ function ers(err,nu){
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
-    for(let i=0;i<fields1.length;i++){   
+    for(let i=0;i<fields1.length-1;i++){   
         blur(0,n=i)
     }
     
