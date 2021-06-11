@@ -196,10 +196,6 @@
     background-color: rgb(204, 202, 202);
 }
 
-.datas .data{
-    display: flex;
-}
-
 .datas .data p{
     padding: 5px;
 }
