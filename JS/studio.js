@@ -25,8 +25,11 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
 
-        console.log(user.phoneNumber)
-        usr.innerHTML = user.phoneNumber
+        else{
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber
+        }
+
     });
 
     loader()
