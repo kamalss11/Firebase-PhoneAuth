@@ -45,6 +45,8 @@ var datas = document.querySelector(".datas")
 
 var data,dalen
 
+let ids = document.querySelector("#i")
+
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(doc.data().DocumentId){
@@ -76,18 +78,17 @@ db.get().then((querySnapShot)=>{
     data = document.querySelectorAll(".data")
     dalen = data.length
     console.log(dalen)
+
+    for(let i=0;i<dalen;i++){
+        data[i].addEventListener("click",function(){
+            data[i].classList.toggle("active")
+            ids.innerHTML = data[i].id
+            console.log(data[i].id)
+        })
+    }
 }).catch(function(error){
     console.log(error)
 })
-
-for(let i=0;i<dalen;i++){
-    data[i].addEventListener("click",function(){
-        data[i].classList.toggle("active")
-        console.log(data[i].id)
-    })
-}
-
-let i = document.querySelector("#i")
 
 
 // Form Page
