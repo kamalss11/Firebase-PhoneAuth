@@ -76,7 +76,7 @@ db.get().then((querySnapShot)=>{
         }
     })
     
-    if(docs == 'null' || docs == 'undefined'){
+    if(docs == 'null' || docs == 'undefined' || docs == ''){
           ids.innerHTML = "Documents are not matched with document Id"
     }
     
