@@ -147,7 +147,8 @@ sbtn.addEventListener("click",function(e){
                 Service: serviceInput,
                 Status: statusInput,
                 Address: addInput,
-                DisplayPicture: urls
+                DisplayPicture: urls,
+                Timestamp: firebase.firestore.Timestamp.now()
             }).then((docRef)=>{
                 db.doc(`${docRef.id}`).set({
                     DocumentId: docRef.id
