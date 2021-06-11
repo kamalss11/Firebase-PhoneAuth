@@ -52,7 +52,7 @@ db.get().then((querySnapShot)=>{
             name.innerHTML = doc.data().Name
             let phone = document.createElement("p")
             phone.innerHTML = doc.data().Phone
-            datas.appendChild(name,phone)
+            data.append(name,phone)
             console.log(doc.data())
         }
     })
