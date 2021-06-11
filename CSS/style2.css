@@ -207,14 +207,14 @@ table{
 
 table tr{
     width: 100%;
-    display: flex;
 }
 
 table tr td,table tr th{
-    margin: 0 5px;
-    width: 10%;
-    text-align: center;
-    overflow: auto;
+    padding: 0 10px;
+}
+
+table tr td{
+    padding: 30px 10px;
 }
 
 .datas .data p{
