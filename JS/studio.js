@@ -149,7 +149,7 @@ sbtn.addEventListener("click",function(e){
                 Address: addInput,
                 DisplayPicture: urls
             }).then((docRef)=>{
-                db.doc(`${doc.id}`).set({
+                db.doc(`${docRef.id}`).set({
                     DocumentId: docRef.id
                 })
                 console.log("Data Saved.This is you id = > ",docRef.id)
