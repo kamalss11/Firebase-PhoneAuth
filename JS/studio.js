@@ -150,7 +150,7 @@ sbtn.addEventListener("click",function(e){
                 DisplayPicture: urls,
                 Timestamp: firebase.firestore.Timestamp.now()
             }).then((docRef)=>{
-                db.doc(`${docRef.id}`).set({
+                db.doc(`${docRef.id}`).update({
                     DocumentId: docRef.id
                 })
                 console.log("Data Saved.This is you id = > ",docRef.id)
