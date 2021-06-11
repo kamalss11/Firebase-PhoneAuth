@@ -196,6 +196,14 @@
     background-color: rgb(204, 202, 202);
 }
 
+table{
+    width: 100%;
+}
+
+table tr{
+    width: 100%;
+}
+
 .datas .data p{
     padding: 5px;
 }
