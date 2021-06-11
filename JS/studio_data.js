@@ -42,7 +42,7 @@ function mainpage(){
 
 // Form Page
  
-function forms(){
+function frm(){
     location.replace("https://phoneauth-dojo.netlify.app/studio")
 }
 
