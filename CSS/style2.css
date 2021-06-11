@@ -200,6 +200,10 @@
     display: flex;
 }
 
+.datas .data p{
+    padding: 5px;
+}
+
 @media(max-width: 950px){
     .forms{
         width: 90%;
