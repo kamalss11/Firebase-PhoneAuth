@@ -204,6 +204,10 @@ table tr{
     width: 100%;
 }
 
+table tr td{
+    margin: 0 5px;
+}
+
 .datas .data p{
     padding: 5px;
 }
