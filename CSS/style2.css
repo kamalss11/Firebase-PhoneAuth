@@ -198,15 +198,17 @@
 
 table{
     width: 90%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 table tr{
     width: 100%;
+    display: flex;
 }
 
 table tr td{
     margin: 0 5px;
+    width: 10%;
 }
 
 .datas .data p{
