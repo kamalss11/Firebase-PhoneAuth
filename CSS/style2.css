@@ -214,7 +214,11 @@ table tr td,table tr th{
     text-align: center;
 }
 
-table tr td{
+table tr:nth-child(even){
+    background-color: aliceblue;
+}
+
+table tr th{
     padding: 30px 10px;
 }
 
