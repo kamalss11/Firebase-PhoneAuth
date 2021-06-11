@@ -214,8 +214,8 @@ table tr td,table tr th{
     text-align: center;
 }
 
-table tr:nth-child(even){
-    background-color: gainsboro;
+table tr{
+    background-color: rgb(247, 243, 243);
 }
 
 table tr th{
