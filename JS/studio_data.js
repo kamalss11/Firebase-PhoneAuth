@@ -48,6 +48,7 @@ db.get().then((querySnapShot)=>{
         if(doc.data().DocumentId){
             let data = document.createElement("tr")
             data.className = "data"
+            data.id = `${doc.data().DocumentId}`
             datas.appendChild(data)
             let name = document.createElement("td")
             name.innerHTML = doc.data().Name
