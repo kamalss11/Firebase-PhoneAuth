@@ -196,6 +196,10 @@
     background-color: rgb(204, 202, 202);
 }
 
+.tb{
+    overflow: auto;
+}
+
 table{
     width: 90%;
     margin: 50px auto;
