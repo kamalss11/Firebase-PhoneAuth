@@ -25,20 +25,8 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
 
-        else if(user){
-            console.log(user.phoneNumber)
-            usr.innerHTML = user.phoneNumber
-            db.get().then((querySnapShot)=>{
-                querySnapShot.forEach((doc)=>{
-                    if(docId == doc.id){
-                        console.log(docId)
-                        location.replace("https://phoneauth-dojo.netlify.app/studio_profile")
-                    }
-                })
-            }).catch(function(error){
-                console.log(error)
-            })
-        }
+        console.log(user.phoneNumber)
+        usr.innerHTML = user.phoneNumber
     });
 
     loader()
