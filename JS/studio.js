@@ -173,8 +173,14 @@ wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
 
+// Studio data
+
+function data(){
+    location.replace("https://phoneauth-dojo.netlify.app/studio_data")
+}
+
 function mainpage(){
-    location.replace("https://phoneauth-dojo.netlify.app/logged")
+    
 }
 
 // Signout
