@@ -43,7 +43,10 @@ function mainpage(){
 
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
-        console.log(doc.data())
+        if(doc.data() == "DocumentId"){
+           console.log(doc.data())
+        }
+        
     })
 }).catch(function(error){
     console.log(error)
