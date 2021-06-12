@@ -194,7 +194,7 @@ sbtn2.addEventListener("click",function(e){
     })
     storageref = firebase.storage().ref()
 
-    if(inputs2[11].value == ""){
+    if(inputs2[12].value == ""){
          db.doc(`${docId}`).update({
                 Name: namIn,
                 Gender: genIn,
