@@ -1,7 +1,7 @@
 const firestore = firebase.firestore()
 const db = firestore.collection("Trainers")
 var form2 = document.querySelector("#form2")
-var storageref,docId
+var storageref
 
 const sbtn2 = document.querySelector(".sub")
 
@@ -36,8 +36,7 @@ function mainpage(){
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
-        docId = user.uid
-        console.log(docId)
+        console.log(user.uid)
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
         } 
@@ -194,7 +193,7 @@ sbtn2.addEventListener("click",function(e){
         .then(url => {
             urls2 = url
             console.log(urls2)
-            db.doc(docId).set({
+            db.add({
                 Name: namIn,
                 Gender: genIn,
                 Email: emIn,
@@ -210,8 +209,10 @@ sbtn2.addEventListener("click",function(e){
                 DisplayPicture: urls2,
                 Timestamp: firebase.firestore.Timestamp.now(),
                 ID: id,
-                
-            }).then(()=>{
+            }).then((docRef)=>{
+                db.doc(`${docRef.id}`).update({
+                    DocumentId: docRef.id
+                })
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
