@@ -5,8 +5,7 @@ console.log(docId)
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
-        docId = user.uid
-        console.log(docId)
+        console.log(user.uid)
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
@@ -161,7 +160,7 @@ sbtn.addEventListener("click",function(e){
 
     if(inputs[7].value == ""){
         image = urls
-        return db.doc(`${docId}`).update({
+        db.doc(`${docId}`).update({
             Name: nameInput,
             Phone: phoneInput,
             Price: priceInput,
@@ -194,7 +193,7 @@ sbtn.addEventListener("click",function(e){
             .then(url => {
                 urls = url
                 console.log(urls)
-                return db.doc(`${docId}`).update({
+                db.doc(`${docId}`).update({
                     Name: nameInput,
                     Phone: phoneInput,
                     Price: priceInput,
