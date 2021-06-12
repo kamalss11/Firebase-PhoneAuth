@@ -78,7 +78,7 @@ db.doc(`${docId}`).get().then((doc) => {
     tag.value = doc.data().Tags
     cat.value = doc.data().Category
     urls2 = doc.data().DisplayPicture
-    console.log(urls)
+    console.log(urls2)
 
 }).catch((error) => {
     console.log("Error getting document:", error);
