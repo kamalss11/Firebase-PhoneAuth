@@ -71,6 +71,8 @@ db.get().then((querySnapShot)=>{
             ratings.innerHTML = doc.data().Ratings
             let exp = document.createElement("td")
             exp.innerHTML = doc.data().Experience
+            let cat = document.createElement("td")
+            cat.innerHTML = doc.data().Category
             let spe = document.createElement("td")
             spe.innerHTML = doc.data().Speciality
             let cit = document.createElement("td")
@@ -81,7 +83,7 @@ db.get().then((querySnapShot)=>{
             picture.innerHTML = doc.data().DisplayPicture
             let time = document.createElement("td")
             time.innerHTML = doc.data().Timestamp.toDate()
-            data.append(id,name,gender,email,phone,price,ratings,exp,spe,cit,sta,picture,time)
+            data.append(id,name,gender,email,phone,price,ratings,exp,cat,spe,cit,sta,picture,time)
             console.log(doc.data())
         }
     })
