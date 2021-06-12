@@ -158,8 +158,6 @@ sbtn.addEventListener("click",function(e){
     let serviceInput = service.value
     let statusInput = sts.value
     let addInput = add.value
-    storageref =  firebase.storage().ref()
-
     storageref = firebase.storage().ref()
 
     if(inputs[7].value == ""){
