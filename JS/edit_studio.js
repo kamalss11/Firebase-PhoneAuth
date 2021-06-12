@@ -10,7 +10,7 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
 
-        else if(user && docId == ''){
+        else if(user && docId == 0){
             location.replace("https://phoneauth-dojo.netlify.app/studio_data")
         }
 
