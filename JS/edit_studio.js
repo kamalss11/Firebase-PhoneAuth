@@ -225,7 +225,7 @@ function mainpage(){
 // Form Page
  
 function frm(){
-    location.replace("https://phoneauth-dojo.netlify.app/studio")
+    location.replace("https://phoneauth-dojo.netlify.app/studio_data")
 }
 
 // Signout
