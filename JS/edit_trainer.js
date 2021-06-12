@@ -236,7 +236,7 @@ sbtn2.addEventListener("click",function(e){
             .then(url => {
                  urls2 = url
                  console.log(urls2)
-                 db.doc(`docId`).update({
+                 db.doc(`${docId}`).update({
                      Name: namIn,
                      Gender: genIn,
                      Email: emIn,
