@@ -41,6 +41,7 @@ wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
 
+var sbtn = document.querySelector(".submit")
 var nam = document.querySelector("#name")
 var phone = document.querySelector("#phone")
 var price = document.querySelector("#price")
@@ -55,7 +56,7 @@ const form = document.getElementById("form")
 
 db.doc(`${docId}`).get().then((doc) => {
     console.log(doc.data())
-    
+
 }).catch((error) => {
     console.log("Error getting document:", error);
 });
