@@ -181,8 +181,6 @@ sbtn2.addEventListener("click",function(e){
     let expIn = exp.value
     let tagIn = tag.value
     let catIn = cat.value
-    var pic = document.getElementById("pic").files[0]
-    let picName = pic.name
     let date = new Date()
     let year = date.getFullYear()
     var doclen,ndoc,id
@@ -194,22 +192,10 @@ sbtn2.addEventListener("click",function(e){
     }).catch(function(error){
         console.log(error)
     })
-
-    const metadata2 = {
-        contentType:pic.type
-    }
-
     storageref = firebase.storage().ref()
-    urls2
 
-    var uploadPic = storageref.child("images").child(picName)
-    uploadPic.put(pic,metadata2)
-    .then(snapshot =>{
-        return uploadPic.getDownloadURL()
-        .then(url => {
-            urls2 = url
-            console.log(urls2)
-            db.add({
+    if(inputs2[].value == ""){
+         db.doc(`${docId}`).update({
                 Name: namIn,
                 Gender: genIn,
                 Email: emIn,
@@ -232,6 +218,48 @@ sbtn2.addEventListener("click",function(e){
                 console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
+                localStorage.setItem("TrainerId",0)
+                location.replace("https://phoneauth-dojo.netlify.app/trainer_data")
+            })
+    }
+
+    else{
+        var pic = document.getElementById("pic").files[0]
+        let picName = pic.name
+        const metadata2 = {
+             contentType:pic.type
+        }
+        var uploadPic = storageref.child("images").child(picName)
+        uploadPic.put(pic,metadata2)
+        .then(snapshot =>{
+             return uploadPic.getDownloadURL()
+            .then(url => {
+                 urls2 = url
+                 console.log(urls2)
+                 db.doc(`docId`).update({
+                     Name: namIn,
+                     Gender: genIn,
+                     Email: emIn,
+                     Phone: phIn,
+                     Price: prIn,
+                     Ratings: ratIn,
+                     Speciality: speIn,
+                     City: citIn,
+                     State: steIn,
+                     Experience: expIn,
+                     Tags: tagIn,
+                     Category: catIn,
+                     DisplayPicture: urls2,
+                     Timestamp: firebase.firestore.Timestamp.now(),
+                     ID: id,
+            }).then((docRef)=>{
+                db.doc(`${docRef.id}`).update({
+                    DocumentId: docRef.id
+                })
+                console.log("Data Saved.This is you id = > ",docRef.id)
+                console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
+                form2.reset()
+                localStorage.setItem("TrainerId",0)
                 location.replace("https://phoneauth-dojo.netlify.app/trainer_data")
             })
             .catch(function(error){
@@ -241,6 +269,7 @@ sbtn2.addEventListener("click",function(e){
     }).catch(function(error){
         console.log(error)
     })
+    } 
 })
 
 // Trainer Data
