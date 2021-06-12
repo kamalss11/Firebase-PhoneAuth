@@ -36,7 +36,7 @@ wel.addEventListener("click",function(){
 })
 
 function mainpage(){
-    location.replace("https://phoneauth-dojo.netlify.app/logged")
+    window.location.assign("https://phoneauth-dojo.netlify.app/logged")
 }
 
 var datas = document.querySelector(".datas")
@@ -104,7 +104,7 @@ db.get().then((querySnapShot)=>{
             data[i].classList.toggle("active")
             localStorage.setItem("TrainerId", data[i].id);
             console.log(data[i].id)
-            location.replace("https://phoneauth-dojo.netlify.app/edit_trainer")
+            window.location.assign("https://phoneauth-dojo.netlify.app/edit_trainer")
         })
     }
 }).catch(function(error){
@@ -115,7 +115,7 @@ db.get().then((querySnapShot)=>{
 //  Trainer form
 
 function frm(){
-    location.replace("https://phoneauth-dojo.netlify.app/trainer")
+    window.location.assign("https://phoneauth-dojo.netlify.app/trainer")
 }
 
 function logout(){
@@ -123,6 +123,6 @@ function logout(){
     let u = firebase.auth().currentUser
     console.log(u,"logged out")
     localStorage.setItem("TrainerId",0)
-    location.replace("https://phoneauth-dojo.netlify.app/")
+    window.location.assign("https://phoneauth-dojo.netlify.app/")
 }
 
