@@ -39,23 +39,15 @@ window.onload = () =>{
         console.log(user.uid)
         if (!user) {
             location.replace("https://phoneauth-dojo.netlify.app/")
-        } 
-
-        else if(user){
-            console.log(user.phoneNumber)
-            usr.innerHTML = user.phoneNumber 
-            db.get().then((querySnapShot)=>{
-                querySnapShot.forEach((doc)=>{
-                    if(docId == doc.id){
-                        location.replace("https://phoneauth-dojo.netlify.app/trainer_profile")          
-                    }
-                })
-            }).catch(function(error){
-                console.log(error)
-            })
         }
+
+        else{
+            console.log(user.phoneNumber)
+            usr.innerHTML = user.phoneNumber
+        }
+
     });
-    
+
     loader()
 }
 
