@@ -226,12 +226,14 @@ sbtn.addEventListener("click",function(e){
 
 function mainpage(){
     location.replace("https://phoneauth-dojo.netlify.app/logged")
+    localStorage.setItem("StudioId",0)
 }
 
 // Form Page
  
 function frm(){
     location.replace("https://phoneauth-dojo.netlify.app/studio_data")
+    localStorage.setItem("StudioId",0)
 }
 
 // Signout
@@ -240,5 +242,6 @@ function logout(){
     firebase.auth().signOut()
     let u = firebase.auth().currentUser
     console.log(u,"logged out")
+    localStorage.setItem("StudioId",0)
     location.replace("https://phoneauth-dojo.netlify.app/")
 }
