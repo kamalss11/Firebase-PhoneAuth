@@ -73,7 +73,7 @@ db.doc(`${docId}`).get().then((doc) => {
 
 // Form Submit
 
-for(let i=0;i<fields1.length-1;i++){
+for(let i=0;i<fields1.length;i++){
     inputs[i].addEventListener("blur",function(e,n=i){
         blur(e,n)
     })
@@ -141,9 +141,21 @@ function ers(err,nu){
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
-    for(let i=0;i<fields1.length-1;i++){
+    for(let i=0;i<fields1.length;i++){
         blur(0,n=i)
     }
+
+    var image,imgname
+
+    if(inputs[7].value == ""){
+        image = urls
+    }
+
+    else{
+        image = document.getElementById("img").files[0]
+        imgname = image.name
+    }
+    
 
     let nameInput = na.value
     let phoneInput = phone.value
@@ -152,8 +164,6 @@ sbtn.addEventListener("click",function(e){
     let serviceInput = service.value
     let statusInput = sts.value
     let addInput = add.value
-    var image = document.getElementById("img").files[0]
-    var imgname = image.name
     storageref =  firebase.storage().ref()
 
     const metadata = {
