@@ -216,6 +216,9 @@ table tr td,table tr th{
 
 table tr{
     background-color: rgb(247, 243, 243);
+}
+
+table tr:not(:nth-child(1)){
     cursor: pointer;
 }
 
