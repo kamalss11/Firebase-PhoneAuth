@@ -183,15 +183,8 @@ sbtn2.addEventListener("click",function(e){
     let catIn = cat.value
     let date = new Date()
     let year = date.getFullYear()
-    var doclen,ndoc,id
-    db.get().then((snapshot)=>{
-        doclen = snapshot.docs.length
-        console.log("No of documents" + doclen)
-        ndoc = 100 + (doclen + 1)
-        id = ("ON"+year+ndoc)
-    }).catch(function(error){
-        console.log(error)
-    })
+    var doclen,ndoc
+
     storageref = firebase.storage().ref()
 
     if(inputs2[12].value == ""){
@@ -209,8 +202,7 @@ sbtn2.addEventListener("click",function(e){
                 Tags: tagIn,
                 Category: catIn,
                 DisplayPicture: urls2,
-                Timestamp: firebase.firestore.Timestamp.now(),
-                ID: id,
+                Timestamp: firebase.firestore().Timestamp.now()
             }).then(()=>{
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
@@ -247,8 +239,7 @@ sbtn2.addEventListener("click",function(e){
                      Tags: tagIn,
                      Category: catIn,
                      DisplayPicture: urls2,
-                     Timestamp: firebase.firestore.Timestamp.now(),
-                     ID: id,
+                     Timeestamp: firebase.firstore().Timestamp.now()
             }).then(()=>{
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
