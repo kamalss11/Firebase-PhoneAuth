@@ -53,6 +53,7 @@ var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
 const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
+var urls
 
 db.doc(`${docId}`).get().then((doc) => {
     console.log(doc.data())
@@ -63,6 +64,8 @@ db.doc(`${docId}`).get().then((doc) => {
     service.value = doc.data().Service
     sts.value = doc.data().Status
     add.value = doc.data().Address
+    urls = doc.data().DisplayPicture
+    console.log(urls)
 
 }).catch((error) => {
     console.log("Error getting document:", error);
@@ -70,7 +73,7 @@ db.doc(`${docId}`).get().then((doc) => {
 
 // Form Submit
 
-for(let i=0;i<fields1.length;i++){
+for(let i=0;i<fields1.length-1;i++){
     inputs[i].addEventListener("blur",function(e,n=i){
         blur(e,n)
     })
@@ -138,7 +141,7 @@ function ers(err,nu){
 
 sbtn.addEventListener("click",function(e){
     e.preventDefault()
-    for(let i=0;i<fields1.length;i++){
+    for(let i=0;i<fields1.length-1;i++){
         blur(0,n=i)
     }
 
@@ -158,7 +161,6 @@ sbtn.addEventListener("click",function(e){
     }
 
     storageref = firebase.storage().ref()
-    var urls
     var uploadImg = storageref.child("images").child(imgname)
     uploadImg.put(image,metadata)
     .then(snapshot =>{
@@ -166,7 +168,7 @@ sbtn.addEventListener("click",function(e){
         .then(url => {
             urls = url
             console.log(urls)
-            db.add({
+            db.doc(`${docId}`).update({
                 Name: nameInput,
                 Phone: phoneInput,
                 Price: priceInput,
@@ -177,9 +179,6 @@ sbtn.addEventListener("click",function(e){
                 DisplayPicture: urls,
                 Timestamp: firebase.firestore.Timestamp.now()
             }).then((docRef)=>{
-                db.doc(`${docRef.id}`).update({
-                    DocumentId: docRef.id
-                })
                 console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                 form.reset()
