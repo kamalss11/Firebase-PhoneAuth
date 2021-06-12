@@ -228,3 +228,11 @@ function data(){
 function mainpage(){
     location.replace("https://phoneauth-dojo.netlify.app/logged") 
 }
+
+function logout(){
+    firebase.auth().signOut()
+    let u = firebase.auth().currentUser
+    console.log(u,"logged out")
+    localStorage.setItem("StudioId",0)
+    location.replace("https://phoneauth-dojo.netlify.app/")
+}
