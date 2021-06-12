@@ -216,6 +216,7 @@ table tr td,table tr th{
 
 table tr{
     background-color: rgb(247, 243, 243);
+    cursor: pointer;
 }
 
 table tr th{
