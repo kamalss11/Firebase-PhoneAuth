@@ -91,8 +91,8 @@ db.get().then((querySnapShot)=>{
         data[i].addEventListener("click",function(){
             data[i].classList.toggle("active")
             localStorage.setItem("StudioId", data[i].id);
-            ids.innerHTML = localStorage.getItem("StudioId")
             console.log(data[i].id)
+            location.replace("https://phoneauth-dojo.netlify.app/edit_studio")
         })
     }
 }).catch(function(error){
