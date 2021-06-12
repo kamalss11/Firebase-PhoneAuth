@@ -182,7 +182,8 @@ function data(){
 }
 
 function mainpage(){
-    
+    location.replace("https://phoneauth-dojo.netlify.app/logged") 
+    localStorage.setItem("StudioId",0)
 }
 
 // Signout
