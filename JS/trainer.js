@@ -205,7 +205,7 @@ sbtn2.addEventListener("click",function(e){
                 db.doc(`${docRef.id}`).update({
                     DocumentId: docRef.id
                 })
-                console.log("Data Saved.This is you id = > ",docId)
+                console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
                 location.replace("")
