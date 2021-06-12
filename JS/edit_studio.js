@@ -54,7 +54,8 @@ const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
 
 db.doc(`${docId}`).get().then((doc) => {
-    console.log(doc)
+    console.log(doc.data())
+    
 }).catch((error) => {
     console.log("Error getting document:", error);
 });
