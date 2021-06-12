@@ -76,6 +76,7 @@ db.doc(`${docId}`).get().then((doc) => {
 for(let i=0;i<fields1.length-1;i++){
     inputs[i].addEventListener("blur",function(e,n=i){
         blur(e,n)
+        console.log(e.target.value)
     })
 }
 
