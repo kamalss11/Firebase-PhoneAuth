@@ -145,7 +145,7 @@ sbtn.addEventListener("click",function(e){
         blur(0,n=i)
     }
 
-    let nameInput = nam.value
+    let nameInput = na.value
     let phoneInput = phone.value
     let priceInput = price.value
     let rateInput = rate.value
