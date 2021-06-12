@@ -65,7 +65,7 @@ var storageRef,urls2
 
 db.doc(`${docId}`).get().then((doc) => {
     console.log(doc.data())
-    nm.value = doc.data().name
+    nm.value = doc.data().Name
     gender.value = doc.data().Gender
     email.value = doc.data().Email
     ph.value = doc.data().Phone
