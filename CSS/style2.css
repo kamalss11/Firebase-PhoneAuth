@@ -202,7 +202,7 @@
 
 table{
     width: 90%;
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 table tr{
@@ -236,7 +236,7 @@ table tr th{
 }
 
 .ins{
-    margin: 25px 0;
+    margin: 50px 0;
     text-align: center;
 }
 
