@@ -42,7 +42,7 @@ wel.addEventListener("click",function(){
 })
 
 var sbtn = document.querySelector(".submit")
-var nam = document.querySelector("#name")
+var na = document.querySelector("#name")
 var phone = document.querySelector("#phone")
 var price = document.querySelector("#price")
 var rate = document.querySelector("#rate")
@@ -56,6 +56,13 @@ const form = document.getElementById("form")
 
 db.doc(`${docId}`).get().then((doc) => {
     console.log(doc.data())
+    na.value = doc.data().Name
+    phone.value = doc.data().Phone
+    price.value = doc.data().Price
+    rate.value = doc.data().Ratings
+    service.value = doc.data().Service
+    sts.value = doc.data().Status
+    add.value = doc.data().Address
 
 }).catch((error) => {
     console.log("Error getting document:", error);
