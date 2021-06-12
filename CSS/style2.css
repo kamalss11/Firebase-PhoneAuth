@@ -235,6 +235,11 @@ table tr th{
     font-weight: bolder;
 }
 
+.ins{
+    margin: 25px 0;
+    text-align: center;
+}
+
 @media(max-width: 950px){
     .forms{
         width: 90%;
