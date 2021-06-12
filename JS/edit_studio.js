@@ -10,6 +10,10 @@ window.onload = () =>{
             location.replace("https://phoneauth-dojo.netlify.app/")
         }
 
+        else if(user && docId == ''){
+            location.replace("https://phoneauth-dojo.netlify.app/studio_data")
+        }
+
         else{
             console.log(user.phoneNumber)
             usr.innerHTML = user.phoneNumber
@@ -175,6 +179,7 @@ sbtn.addEventListener("click",function(e){
             console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
             form.reset()
             location.replace("https://phoneauth-dojo.netlify.app/studio_data")
+            localStorage.setItem("StudioId",0)
         }).catch(function(error){
             console.log(error)
         })
@@ -208,6 +213,7 @@ sbtn.addEventListener("click",function(e){
                     console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
                     form.reset()
                     location.replace("https://phoneauth-dojo.netlify.app/studio_data")
+                    localStorage.setItem("StudioId",0)
                 }).catch(function(error){
                     console.log(error)
                 })
