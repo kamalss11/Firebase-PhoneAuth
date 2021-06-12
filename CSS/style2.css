@@ -231,6 +231,10 @@ table tr th{
     margin: 20px 0;
 }
 
+#i span{
+    font-weight: bolder;
+}
+
 @media(max-width: 950px){
     .forms{
         width: 90%;
