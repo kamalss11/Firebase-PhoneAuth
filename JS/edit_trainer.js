@@ -211,11 +211,8 @@ sbtn2.addEventListener("click",function(e){
                 DisplayPicture: urls2,
                 Timestamp: firebase.firestore.Timestamp.now(),
                 ID: id,
-            }).then((docRef)=>{
-                db.doc(`${docRef.id}`).update({
-                    DocumentId: docRef.id
-                })
-                console.log("Data Saved.This is you id = > ",docRef.id)
+            }).then(()=>{
+                console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
                 localStorage.setItem("TrainerId",0)
@@ -252,11 +249,8 @@ sbtn2.addEventListener("click",function(e){
                      DisplayPicture: urls2,
                      Timestamp: firebase.firestore.Timestamp.now(),
                      ID: id,
-            }).then((docRef)=>{
-                db.doc(`${docRef.id}`).update({
-                    DocumentId: docRef.id
-                })
-                console.log("Data Saved.This is you id = > ",docRef.id)
+            }).then(()=>{
+                console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
                 localStorage.setItem("TrainerId",0)
