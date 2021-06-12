@@ -51,7 +51,7 @@ function studio(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             console.log(user.uid)
-            window.location.assign("https://phoneauth-dojo.netlify.app/studio.html")
+            window.location.assign("https://phoneauth-dojo.netlify.app/studio")
         }
     })
 }
@@ -60,7 +60,7 @@ function trainer(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             console.log(user.uid)
-            window.location.assign("https://phoneauth-dojo.netlify.app/trainer.html")
+            window.location.assign("https://phoneauth-dojo.netlify.app/trainer")
         }
     })
 }
