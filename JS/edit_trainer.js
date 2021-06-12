@@ -246,9 +246,11 @@ sbtn2.addEventListener("click",function(e){
 // Trainer Data
 
 function data(){
-    location.replace("https://phoneauth-dojo.netlify.app/trainer_data") 
+    location.replace("https://phoneauth-dojo.netlify.app/trainer_data")
+    localStorage.setItem("TrainerId",0)
 }
 
 function mainpage(){
     location.replace("https://phoneauth-dojo.netlify.app/logged") 
+    localStorage.setItem("TrainerId",0)
 }
