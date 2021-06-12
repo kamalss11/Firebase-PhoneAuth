@@ -147,16 +147,6 @@ sbtn.addEventListener("click",function(e){
 
     var image,imgname
 
-    if(inputs[7].value == ""){
-        image = urls
-    }
-
-    else{
-        image = document.getElementById("img").files[0]
-        imgname = image.name
-    }
-    
-
     let nameInput = na.value
     let phoneInput = phone.value
     let priceInput = price.value
@@ -166,40 +156,66 @@ sbtn.addEventListener("click",function(e){
     let addInput = add.value
     storageref =  firebase.storage().ref()
 
-    const metadata = {
-        contentType:image.type
+    storageref = firebase.storage().ref()
+
+    if(inputs[7].value == ""){
+        image = urls
+        db.doc(`${docId}`).update({
+            Name: nameInput,
+            Phone: phoneInput,
+            Price: priceInput,
+            Ratings: rateInput,
+            Service: serviceInput,
+            Status: statusInput,
+            Address: addInput,
+            DisplayPicture: urls,
+            Timestamp: firebase.firestore.Timestamp.now()
+        }).then((docRef)=>{
+            console.log("Data Saved.This is you id = > ",docRef.id)
+            console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
+            form.reset()
+            location.replace("https://phoneauth-dojo.netlify.app/studio_data")
+        }).catch(function(error){
+            console.log(error)
+        })
     }
 
-    storageref = firebase.storage().ref()
-    var uploadImg = storageref.child("images").child(imgname)
-    uploadImg.put(image,metadata)
-    .then(snapshot =>{
-        return uploadImg.getDownloadURL()
-        .then(url => {
-            urls = url
-            console.log(urls)
-            db.doc(`${docId}`).update({
-                Name: nameInput,
-                Phone: phoneInput,
-                Price: priceInput,
-                Ratings: rateInput,
-                Service: serviceInput,
-                Status: statusInput,
-                Address: addInput,
-                DisplayPicture: urls,
-                Timestamp: firebase.firestore.Timestamp.now()
-            }).then((docRef)=>{
-                console.log("Data Saved.This is you id = > ",docRef.id)
-                console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
-                form.reset()
-                location.replace("https://phoneauth-dojo.netlify.app/studio_data")
-            }).catch(function(error){
-                console.log(error)
+    else{
+        image = document.getElementById("img").files[0]
+        imgname = image.name
+        const metadata = {
+            contentType:image.type
+        }
+        var uploadImg = storageref.child("images").child(imgname)
+        uploadImg.put(image,metadata)
+        .then(snapshot =>{
+            return uploadImg.getDownloadURL()
+            .then(url => {
+                urls = url
+                console.log(urls)
+                db.doc(`${docId}`).update({
+                    Name: nameInput,
+                    Phone: phoneInput,
+                    Price: priceInput,
+                    Ratings: rateInput,
+                    Service: serviceInput,
+                    Status: statusInput,
+                    Address: addInput,
+                    DisplayPicture: urls,
+                    Timestamp: firebase.firestore.Timestamp.now()
+                }).then((docRef)=>{
+                    console.log("Data Saved.This is you id = > ",docRef.id)
+                    console.log(nameInput,phoneInput,priceInput,rateInput,serviceInput,statusInput,addInput,imgname)
+                    form.reset()
+                    location.replace("https://phoneauth-dojo.netlify.app/studio_data")
+                }).catch(function(error){
+                    console.log(error)
+                })
             })
+        }).catch(function(error){
+            console.log(error)
         })
-    }).catch(function(error){
-        console.log(error)
-    })
+    }
 })
 
 function mainpage(){
