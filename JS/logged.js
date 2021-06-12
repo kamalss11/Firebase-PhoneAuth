@@ -64,3 +64,9 @@ function trainer(){
         }
     })
 }
+
+// Trainer data
+
+function trdata(){
+    window.location.assign("https://phoneauth-dojo.netlify.app/trainer_data") 
+}
