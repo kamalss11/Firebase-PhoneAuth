@@ -7,7 +7,7 @@ window.onload = () =>{
         docId1 = user.uid
         console.log(docId1)
         if (!user) {
-            location.replace("https://phoneauth-dojo.netlify.app/")
+            window.location.assign("https://phoneauth-dojo.netlify.app/")
         } 
 
         else{
@@ -42,7 +42,7 @@ function logout(){
     firebase.auth().signOut()
     let u = firebase.auth().currentUser
     console.log(u,"logged out")
-    location.replace("https://phoneauth-dojo.netlify.app/")
+    window.location.assign("https://phoneauth-dojo.netlify.app/")
 }
 
 // Form tabs
