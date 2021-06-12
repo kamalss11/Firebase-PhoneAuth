@@ -90,7 +90,8 @@ db.get().then((querySnapShot)=>{
     for(let i=0;i<dalen;i++){
         data[i].addEventListener("click",function(){
             data[i].classList.toggle("active")
-            ids.innerHTML = data[i].id
+            localStorage.setItem("StudioId", data[i].id);
+            ids.innerHTML = localStorage.getItem("StudioId Wel")
             console.log(data[i].id)
         })
     }
