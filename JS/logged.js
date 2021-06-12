@@ -1,5 +1,5 @@
 // While browser loads
-
+localStorage.setItem("StudioId",0)
 var usr = document.querySelector("#usr")
 
 window.onload = () =>{
