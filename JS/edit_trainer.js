@@ -202,7 +202,7 @@ sbtn2.addEventListener("click",function(e){
                 Tags: tagIn,
                 Category: catIn,
                 DisplayPicture: urls2,
-                Timestamp: firebase.firestore().Timestamp.now()
+                Timestamp: firebase.firestore.Timestamp.now()
             }).then(()=>{
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
@@ -239,7 +239,7 @@ sbtn2.addEventListener("click",function(e){
                      Tags: tagIn,
                      Category: catIn,
                      DisplayPicture: urls2,
-                     Timeestamp: firebase.firstore().Timestamp.now()
+                     Timeestamp: firebase.firstore.Timestamp.now()
             }).then(()=>{
                 console.log("Data Saved.This is you id = > ",docId)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
