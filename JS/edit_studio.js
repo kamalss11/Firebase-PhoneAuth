@@ -160,7 +160,7 @@ sbtn.addEventListener("click",function(e){
 
     if(inputs[7].value == ""){
         image = urls
-        db.doc(`${docId}`).update({
+        return db.doc(`${docId}`).update({
             Name: nameInput,
             Phone: phoneInput,
             Price: priceInput,
@@ -193,7 +193,7 @@ sbtn.addEventListener("click",function(e){
             .then(url => {
                 urls = url
                 console.log(urls)
-                db.doc(`${docId}`).update({
+                return db.doc(`${docId}`).update({
                     Name: nameInput,
                     Phone: phoneInput,
                     Price: priceInput,
