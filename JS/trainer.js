@@ -208,7 +208,7 @@ sbtn2.addEventListener("click",function(e){
                 console.log("Data Saved.This is you id = > ",docRef.id)
                 console.log(namIn,genIn,emIn,phIn,prIn,ratIn,speIn,citIn,steIn,expIn,tagIn,catIn,urls2)
                 form2.reset()
-                location.replace("")
+                location.replace("https://phoneauth-dojo.netlify.app/trainer_data")
             })
             .catch(function(error){
                 console.log(error)
