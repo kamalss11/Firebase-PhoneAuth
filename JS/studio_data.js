@@ -101,6 +101,11 @@ db.get().then((querySnapShot)=>{
     console.log(error)
 })
 
+var tot = document.querySelector(.tt)
+
+db.get().then((snapshot) =>{
+    alert(snapshot.docs.length)
+})
 
 // Form Page
  
