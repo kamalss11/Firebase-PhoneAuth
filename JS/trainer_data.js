@@ -90,6 +90,8 @@ db.get().then((querySnapShot)=>{
             console.log(doc.data())
         }
     })
+
+    tot.textContent += `${docs}`
     
     if(docs == 'null' || docs == 'undefined' || docs == ''){
         let di = document.createElement("span")
