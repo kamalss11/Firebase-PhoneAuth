@@ -4,7 +4,7 @@
 const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
   if (snapshot.exists()) {
-    alert(snapshot.val());
+    alert(snapshot);
   } else {
     alert("No data available");
   }
