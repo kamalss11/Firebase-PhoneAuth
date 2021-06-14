@@ -35,8 +35,8 @@ wel.addEventListener("click",function(){
 })
 
 var data = document.querySelector(".data")
-var fd = db.ref('dojo-c2657');
-data.innerHTML = fd
+// var fd = db.ref('dojo-c2657');
+// data.innerHTML = fd
 
 function mainpage(){
     window.location.assign("https://phoneauth-dojo.netlify.app/logged")
