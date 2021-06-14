@@ -1,6 +1,17 @@
 // var db = firebase.database()
 // alert(db)
 
+const dbRef = firebase.database().ref();
+dbRef.child("Feedbacks").get().then((snapshot) => {
+  if (snapshot.exists()) {
+    alert(snapshot.val());
+  } else {
+    alert("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
         console.log(user.uid)
