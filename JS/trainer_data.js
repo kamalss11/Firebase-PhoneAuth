@@ -80,7 +80,9 @@ db.get().then((querySnapShot)=>{
             let sta = document.createElement("td")
             sta.innerHTML = doc.data().State
             let picture = document.createElement("td")
-            picture.innerHTML = doc.data().DisplayPicture
+            let img = document.createElement("img")
+            img.src = doc.data().DisplayPicture
+            picture.appendChild(img)
             let time = document.createElement("td")
             time.innerHTML = doc.data().Timestamp.toDate()
             data.append(id,name,gender,email,phone,price,ratings,exp,cat,spe,cit,sta,picture,time)
