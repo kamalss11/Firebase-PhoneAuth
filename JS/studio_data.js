@@ -101,7 +101,7 @@ db.get().then((querySnapShot)=>{
     console.log(error)
 })
 
-var tot = document.querySelector(.tt)
+var tot = document.querySelector(".tt")
 
 db.get().then((snapshot) =>{
     alert(snapshot.docs.length)
