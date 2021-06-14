@@ -1,4 +1,5 @@
 var db = firebase.database()
+alert(db)
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -36,11 +37,6 @@ wel.addEventListener("click",function(){
 var data = document.querySelector(".data")
 var fd = db.ref('dojo-c2657');
 data.innerHTML = fd
-/*fd.on('value', function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-      alert(childSnapshot.val())
-    });
-});*/
 
 function mainpage(){
     window.location.assign("https://phoneauth-dojo.netlify.app/logged")
