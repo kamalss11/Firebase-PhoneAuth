@@ -1,10 +1,12 @@
 // var db = firebase.database()
 // alert(db)
 
+var data = document.querySelector(".data")
 const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
   if (snapshot.exists()) {
-    alert(snapshot);
+    alert("Hi")
+    data.innerHTML = snapshot.val()
   } else {
     alert("No data available");
   }
@@ -45,7 +47,6 @@ wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
 
-var data = document.querySelector(".data")
 // var fd = db.ref('dojo-c2657');
 // data.innerHTML = fd
 
