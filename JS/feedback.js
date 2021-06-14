@@ -5,7 +5,7 @@ var data = document.querySelector(".data")
 const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
   snapshot.forEach((doc)=>{
-     alert(doc)
+     alert(doc.data())
   })
   /*if (snapshot.exists()) {
     alert("Hi")
