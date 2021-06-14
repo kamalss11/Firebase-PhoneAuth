@@ -9,7 +9,7 @@ dbRef.get().then((snapshot) => {
           snapshot.forEach((doc)=>{
                console.log(doc.val())
                let tr = document.createElement("tr")
-               datas.appendChild(tr)
+               data.appendChild(tr)
                let id = document.createElement("td")
                id.innerHTML = doc.val().User_ID
                let ud = document.createElement("td")
