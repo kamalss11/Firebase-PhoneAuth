@@ -6,7 +6,7 @@ const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
      console.log(snapshot.val())
   snapshot.forEach((doc)=>{
-      console.log(doc.data())
+      console.log(doc.val())
   })
   /*if (snapshot.exists()) {
     alert("Hi")
