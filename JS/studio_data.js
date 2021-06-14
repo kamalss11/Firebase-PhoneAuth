@@ -79,7 +79,7 @@ db.get().then((querySnapShot)=>{
         }
     })
 
-    tot.textContent += `${tsd}`
+    tot.textContent += `${docs}`
     
     if(docs == 'null' || docs == 'undefined' || docs == ''){
         let di = document.createElement("span")
