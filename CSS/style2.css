@@ -248,6 +248,10 @@ table tr td img{
     text-align: center;
 }
 
+.ins p{
+    line-height: 27px;
+}
+
 .iins{
     font-size: 14px;
     padding: 10px;
