@@ -1,4 +1,5 @@
-var data = document.querySelector(".datas"),docs = 0
+var data = document.querySelector(".datas")
+var docs = 0
 const dbRef = firebase.database().ref("Feedbacks");
 var ins = document.querySelector(".in")
 dbRef.get().then((snapshot) => {
