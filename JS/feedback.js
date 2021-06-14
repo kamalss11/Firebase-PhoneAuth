@@ -4,9 +4,10 @@
 var data = document.querySelector(".data")
 const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
-     alert(snapshot.val())
-     data.innerHTML += snapshot.val()
      console.log(snapshot.val())
+  snapshot.forEach((doc)=>{
+      console.log(doc.data())
+  })
   /*if (snapshot.exists()) {
     alert("Hi")
     data.innerHTML = snapshot.val()
