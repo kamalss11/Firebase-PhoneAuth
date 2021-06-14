@@ -46,6 +46,7 @@ var datas = document.querySelector(".datas")
 var data,dalen,docs = 0
 
 let ids = document.querySelector("#i")
+var tot = document.querySelector(".tt")
 
 db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
@@ -77,6 +78,8 @@ db.get().then((querySnapShot)=>{
             console.log(doc.data())
         }
     })
+
+    tot.textContent += `${tsd}`
     
     if(docs == 'null' || docs == 'undefined' || docs == ''){
         let di = document.createElement("span")
@@ -99,18 +102,6 @@ db.get().then((querySnapShot)=>{
     }
 }).catch(function(error){
     console.log(error)
-})
-
-var tot = document.querySelector(".tt")
-var tsd = 0
-
-db.get().then((querySnapShot)=>{
-    querySnapShot.forEach((doc)=>{
-        if(doc.data().DocumentId){
-            ++tsd
-        }
-    })
-    tot.textContent += `${tsd}`
 })
 
 // Form Page
