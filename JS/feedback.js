@@ -19,7 +19,7 @@ dbRef.get().then((snapshot) => {
                let fd = document.createElement("td")
                fd.innerHTML = doc.val().Feedback
                let tm = document.createElement("td")
-               tm.innerHTML = doc.val().Timestamp
+               tm.innerHTML = doc.val().Timestamp.toData
                tr.append(id,ud,udv,fd,tm)
           })
      } 
