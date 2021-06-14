@@ -7,7 +7,7 @@ dbRef.get().then((snapshot) => {
           console.log(snapshot.val())
           snapshot.forEach((doc)=>{
                console.log(doc.val())
-               // ++docs
+               ++docs
                let tr = document.createElement("tr")
                data.appendChild(tr)
                let id = document.createElement("td")
@@ -22,11 +22,11 @@ dbRef.get().then((snapshot) => {
                tm.innerHTML = doc.val().Timestamp
                tr.append(id,ud,udv,fd,tm)
           })
+          i.textContent += docs
      } 
      else {
           alert("No data available");
      }
-     i.textContent += docs
 }).catch((error) => {
   console.error(error);
 });
