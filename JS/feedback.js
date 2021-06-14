@@ -35,7 +35,9 @@ wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
 
+var data = document.querySelector(".data")
 var fd = database.ref('dojo-c2657');
+data.innerHTML = fd
 fd.on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       alert(childSnapshot.val())
