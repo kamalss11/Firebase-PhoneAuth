@@ -1,6 +1,3 @@
-// var db = firebase.database()
-// alert(db)
-
 var data = document.querySelector(".datas"),docs = 0
 const dbRef = firebase.database().ref("Feedbacks");
 var ins = document.querySelector(".in")
@@ -66,9 +63,13 @@ wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
 
-// var fd = db.ref('dojo-c2657');
-// data.innerHTML = fd
-
 function mainpage(){
     window.location.assign("https://phoneauth-dojo.netlify.app/logged")
+}
+
+function logout(){
+    firebase.auth().signOut()
+    let u = firebase.auth().currentUser
+    console.log(u,"logged out")
+    window.location.assign("https://phoneauth-dojo.netlify.app/")
 }
