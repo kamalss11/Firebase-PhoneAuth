@@ -1,7 +1,7 @@
 var data = document.querySelector(".datas")
 var docs = 0
 const dbRef = firebase.database().ref("Feedbacks");
-var i = document.querySelector(".in")
+// var i = document.querySelector(".in")
 dbRef.get().then((snapshot) => {
      if (snapshot.exists()) {
           console.log(snapshot.val())
@@ -21,12 +21,7 @@ dbRef.get().then((snapshot) => {
                let tm = document.createElement("td")
                tm.innerHTML = doc.val().Timestamp.toDate()
                tr.append(id,ud,udv,fd,tm)
-          }).then(()=>{
-               i.textContent += docs
-          }).catch((error)=>{
-               console.error(error)
           })
-          
      } 
      else {
           alert("No data available");
