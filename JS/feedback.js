@@ -1,5 +1,5 @@
 var data = document.querySelector(".datas")
-var docs = 0
+// var docs = 0
 const dbRef = firebase.database().ref("Feedbacks");
 // var i = document.querySelector(".in")
 dbRef.get().then((snapshot) => {
@@ -7,7 +7,7 @@ dbRef.get().then((snapshot) => {
           console.log(snapshot.val())
           snapshot.forEach((doc)=>{
                console.log(doc.val())
-               ++docs
+               // ++docs
                let tr = document.createElement("tr")
                data.appendChild(tr)
                let id = document.createElement("td")
