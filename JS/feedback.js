@@ -6,7 +6,6 @@ const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
      alert(snapshot.val())
      data.innerHTML += snapshot.val()
-  })
   /*if (snapshot.exists()) {
     alert("Hi")
     data.innerHTML = snapshot.val()
