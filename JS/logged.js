@@ -27,6 +27,10 @@ function showPage(){
     document.getElementById("loads").style.display = "none"
 }
 
+function fb(){
+    window.location.assign("https://phoneauth-dojo.netlify.app/feedback")
+}
+
 // Welcome user 
 
 var wel = document.querySelector(".wel")
