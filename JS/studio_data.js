@@ -104,7 +104,7 @@ db.get().then((querySnapShot)=>{
 var tot = document.querySelector(".tt")
 
 db.get().then((snapshot) =>{
-    alert(snapshot.docs.data().DocumentId)
+    alert(snapshot.docs.data)
 })
 
 // Form Page
