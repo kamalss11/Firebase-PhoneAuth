@@ -256,9 +256,6 @@ table tr td img{
     border-radius: 5px;
 }
 
-.tt{
-    padding: 30px 20px;
-}
 
 @media(max-width: 950px){
     .forms{
