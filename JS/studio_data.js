@@ -70,7 +70,9 @@ db.get().then((querySnapShot)=>{
             let address = document.createElement("td")
             address.innerHTML = doc.data().Address
             let picture = document.createElement("td")
-            picture.innerHTML = doc.data().DisplayPicture
+            let img = document.createElement("img")
+            img.src = "doc.data().DisplayPicture"
+            picture.appendChild(img)
             data.append(name,phone,price,ratings,service,status,address,picture)
             console.log(doc.data())
         }
