@@ -19,7 +19,7 @@ dbRef.get().then((snapshot) => {
                let fd = document.createElement("td")
                fd.innerHTML = doc.val().Feedback
                let tm = document.createElement("td")
-               tm.innerHTML = doc.val().Timestamp.seconds() 
+               tm.innerHTML = doc.val().Timestamp.seconds
                tr.append(id,ud,udv,fd,tm)
           })
           i.textContent += docs
