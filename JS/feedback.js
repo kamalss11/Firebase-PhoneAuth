@@ -21,8 +21,12 @@ dbRef.get().then((snapshot) => {
                let tm = document.createElement("td")
                tm.innerHTML = doc.val().Timestamp.toDate()
                tr.append(id,ud,udv,fd,tm)
+          }).then(()=>{
+               i.textContent += docs
+          }).catch((error)=>{
+               console.error(error)
           })
-          i.textContent += docs
+          
      } 
      else {
           alert("No data available");
