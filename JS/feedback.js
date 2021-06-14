@@ -1,6 +1,4 @@
-
-var firestore  = firebase.firestore()
-const db = firestore.collection("STUDIOS")
+var db = firebase.database()
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -36,7 +34,7 @@ wel.addEventListener("click",function(){
 })
 
 var data = document.querySelector(".data")
-var fd = database.ref('dojo-c2657');
+var fd = db.ref('dojo-c2657');
 data.innerHTML = fd
 fd.on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
