@@ -4,16 +4,15 @@
 var data = document.querySelector(".data")
 const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
-     console.log(snapshot.val())
-  snapshot.forEach((doc)=>{
-      console.log(doc.val())
-  })
-  /*if (snapshot.exists()) {
-    alert("Hi")
-    data.innerHTML = snapshot.val()
-  } else {
-    alert("No data available");
-  }*/
+     if (snapshot.exists()) {
+          console.log(snapshot.val())
+          snapshot.forEach((doc)=>{
+               console.log(doc.val())
+          })
+     } 
+     else {
+          alert("No data available");
+     }
 }).catch((error) => {
   console.error(error);
 });
