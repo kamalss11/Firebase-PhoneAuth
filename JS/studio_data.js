@@ -102,9 +102,15 @@ db.get().then((querySnapShot)=>{
 })
 
 var tot = document.querySelector(".tt")
+var tsd = 0
 
-db.get().then((snapshot) =>{
-    alert(snapshot.docs.data)
+db.get().then((querySnapShot)=>{
+    querySnapShot.forEach((doc)=>{
+        if(doc.data().DocumentId){
+            ++tsd
+        }
+    })
+    tot.textContent += `${tsd}`
 })
 
 // Form Page
