@@ -1,7 +1,7 @@
 // var db = firebase.database()
 // alert(db)
 
-const dbRef = firebase.database.ref("Feedbacks");
+const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
   if (snapshot.exists()) {
     alert(snapshot.val());
