@@ -10,7 +10,17 @@ dbRef.get().then((snapshot) => {
                console.log(doc.val())
                let tr = document.createElement("tr")
                datas.appendChild(tr)
-               
+               let id = document.createElement("td")
+               id.innerHTML = doc.val().User_ID
+               let ud = document.createElement("td")
+               ud.innerHTML = doc.val().User_Device
+               let udv = document.createElement("td")
+               udv.innerHTML = doc.val().User_Device_Version
+               let fd = document.createElement("td")
+               fd.innerHTML = doc.val().Feedback
+               let tm = document.createElement("td")
+               tm.innerHTML = doc.val().Timestamp
+               tr.append(id,ud,udv,fd,tm)
           })
      } 
      else {
