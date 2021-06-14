@@ -1,5 +1,5 @@
-var db = firebase.database()
-alert(db)
+// var db = firebase.database()
+// alert(db)
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
