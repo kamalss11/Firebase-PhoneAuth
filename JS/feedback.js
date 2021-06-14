@@ -22,11 +22,11 @@ dbRef.get().then((snapshot) => {
                tm.innerHTML = doc.val().Timestamp
                tr.append(id,ud,udv,fd,tm)
           })
-          i.textContent += docs
      } 
      else {
           alert("No data available");
      }
+     i.textContent += docs
 }).catch((error) => {
   console.error(error);
 });
