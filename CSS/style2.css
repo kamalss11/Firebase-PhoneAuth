@@ -226,6 +226,10 @@ table tr th{
     background-color: aliceblue;
 }
 
+table tr td img{
+    width: 250px;
+}
+
 .datas .data p{
     padding: 5px;
 }
