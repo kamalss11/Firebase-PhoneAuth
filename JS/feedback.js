@@ -4,8 +4,7 @@ const db = firestore.collection("STUDIOS")
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
-        docId = user.uid
-        console.log(docId)
+        console.log(user.uid)
         if (!user) {
             window.location.assign("https://phoneauth-dojo.netlify.app/")
         }
@@ -35,6 +34,13 @@ var lo = document.querySelector(".outbtn")
 wel.addEventListener("click",function(){
     lo.classList.toggle("active")
 })
+
+var fd = database.ref('dojo-c2657');
+fd.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      alert(childSnapshot.val())
+    });
+});
 
 function mainpage(){
     window.location.assign("https://phoneauth-dojo.netlify.app/logged")
