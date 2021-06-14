@@ -3,7 +3,7 @@
 
 var data = document.querySelector(".data")
 const dbRef = firebase.database().ref("Feedbacks");
-dbRef.child("-M_ZY6yOVfoce9rq46iE").get().then((snapshot) => {
+dbRef.get().then((snapshot) => {
      alert(snapshot.val())
      data.innerHTML += snapshot.val()
   })
