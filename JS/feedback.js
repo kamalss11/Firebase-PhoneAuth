@@ -1,13 +1,16 @@
 // var db = firebase.database()
 // alert(db)
 
-var data = document.querySelector(".data")
+var data = document.querySelector(".datas")
 const dbRef = firebase.database().ref("Feedbacks");
 dbRef.get().then((snapshot) => {
      if (snapshot.exists()) {
           console.log(snapshot.val())
           snapshot.forEach((doc)=>{
                console.log(doc.val())
+               let tr = document.createElement("tr")
+               datas.appendChild(tr)
+               
           })
      } 
      else {
