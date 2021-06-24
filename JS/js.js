@@ -14,7 +14,6 @@ form.addEventListener("submit",function(e){
 )
 
 ph.addEventListener("blur",function(){
-    console.log(ph.value)
     let ph = /\d@[0-9]{9,}$/
     if(ph.value === ''){
         error("This field is required",0)
@@ -35,6 +34,7 @@ ph.addEventListener("blur",function(){
         errors[0].classList.remove("active")
         otp.classList.remove("active")
     }
+    console.log(ph.value)
 })
 
 code.addEventListener("blur",function(){
