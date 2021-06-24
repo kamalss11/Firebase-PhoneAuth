@@ -14,7 +14,7 @@ const errors = document.querySelectorAll(".error")
 const form = document.getElementById("form")
 
 var firestore  = firebase.firestore()
-const db = firestore.collection("STUDIOS")
+const db = firestore.collection("Studios")
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
