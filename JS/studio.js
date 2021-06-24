@@ -116,7 +116,7 @@ sbtn.addEventListener("click",function(e){
     }
 
     let nameInput = nam.value
-    let phoneInput = phone.value
+    let phoneInput = `+91` + phone.value
     let priceInput = price.value
     let rateInput = rate.value
     let serviceInput = service.value
