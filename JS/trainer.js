@@ -148,7 +148,7 @@ sbtn2.addEventListener("click",function(e){
     let namIn = nm.value
     let genIn = gender.value
     let emIn = email.value
-    let phIn = ph.value
+    let phIn = `+91` + ph.value
     let prIn = pr.value
     let ratIn = rat.value
     let speIn = spe.value
