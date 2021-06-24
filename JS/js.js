@@ -20,7 +20,7 @@ ph.addEventListener("blur",function(){
         otp.classList.add("active")
     }
 
-    else if(ph.value.length < 13){
+    else if(ph.value.length < 13 && (ph.value.slice(0,3)!="+91")){
         error("Please enter valid number",0)
         otp.classList.add("active")
     }
@@ -29,10 +29,6 @@ ph.addEventListener("blur",function(){
         error("Enter only numbers",0)
         otp.classList.add("active")
     } 
-
-    else if(ph.value.slice(0,3)!="+91"){
-        alert(ph.value)
-    }
 
     else{
         errors[0].classList.remove("active")
