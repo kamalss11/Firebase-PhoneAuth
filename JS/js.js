@@ -30,7 +30,7 @@ ph.addEventListener("blur",function(){
         otp.classList.add("active")
     } 
 
-    else if(ph.value.slice(0,3) == "+91"){
+    else if(ph.value.slice(0,3)!="+91"){
         alert(ph.value)
     }
 
