@@ -15,7 +15,7 @@ form.addEventListener("submit",function(e){
 
 ph.addEventListener("blur",function(){
     console.log(ph.value)
-    let val = /^+91[0-9]{9,}$/
+    let val = /^\d91+[0-9]{9,}$/
     if(ph.value === ''){
         error("This field is required",0)
         otp.classList.add("active")
