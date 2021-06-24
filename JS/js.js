@@ -20,8 +20,8 @@ ph.addEventListener("blur",function(){
         otp.classList.add("active")
     }
 
-    else if(ph.value.length < 13 && ph.value.slice(0,3)!="+91"){
-        error("Please enter valid number",0)
+    else if(ph.value.length < 10){
+        error("Please enter a valid number",0)
         otp.classList.add("active")
     }
 
@@ -29,6 +29,11 @@ ph.addEventListener("blur",function(){
         error("Enter only numbers",0)
         otp.classList.add("active")
     } 
+
+    else if(ph.value.slice(0,3)!="+91"){
+        error("Please enter number with country code",0)
+        otp.classList.add("active")
+    }
 
     else{
         errors[0].classList.remove("active")
