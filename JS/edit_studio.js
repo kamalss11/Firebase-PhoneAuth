@@ -1,5 +1,5 @@
 var firestore  = firebase.firestore()
-const db = firestore.collection("Studio")
+const db = firestore.collection("Studios")
 var docId = localStorage.getItem("StudioId")
 console.log(docId)
 
