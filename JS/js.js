@@ -14,18 +14,18 @@ form.addEventListener("submit",function(e){
 )
 
 ph.addEventListener("blur",function(){
-    let ph = /\d[0-9]{9,}$/
-    if(ph.value === ''){
+    let pho = /\d[0-9]{9,}$/
+    if(pho.value === ''){
         error("This field is required",0)
         otp.classList.add("active")
     }
 
-    else if(ph.value.length < 13){
+    else if(pho.value.length < 13){
         error("Please enter valid number",0)
         otp.classList.add("active")
     }
 
-    else if(!ph.value.match(val)){
+    else if(!pho.value.match(val)){
         error("Enter only numbers",0)
         otp.classList.add("active")
     }
