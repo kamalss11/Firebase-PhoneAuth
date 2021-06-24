@@ -14,7 +14,7 @@ form.addEventListener("submit",function(e){
 )
 
 ph.addEventListener("blur",function(){
-    let val = /\d[91]{1,}+[0-9]{9,}$/
+    let val = /\d[0-9]{9,}$/
     if(ph.value === ''){
         error("This field is required",0)
         otp.classList.add("active")
@@ -28,6 +28,10 @@ ph.addEventListener("blur",function(){
     else if(!ph.value.match(val)){
         error("Enter only numbers",0)
         otp.classList.add("active")
+    } 
+
+    else if(ph.value.slice(0,3) == "+91"){
+        alert(ph.value)
     }
 
     else{
