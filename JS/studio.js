@@ -50,7 +50,7 @@ for(let i=0;i<fields1.length;i++){
 }
 
 function blur(e,num){
-    let ph = +91[/\d[0-9]{9,}$/]
+    let ph = /\d[0-9]{9,}$/
     let rt = /\d[0-9]{0,}$/
 
     if(inputs[num].value == ''){
