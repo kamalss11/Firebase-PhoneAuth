@@ -1,5 +1,5 @@
 var firestore  = firebase.firestore()
-const db = firestore.collection("Trainers")
+const db = firestore.collection("Online")
 
 window.onload = () =>{
     firebase.auth().onAuthStateChanged(function(user) {
