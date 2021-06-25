@@ -117,6 +117,8 @@ function blur2(e,num){
 
     else if(num == 10){
         console.log(inputs2[num].value.split(','))
+            
+        errors2[num].classList.remove("active")
     }
 
     else{
