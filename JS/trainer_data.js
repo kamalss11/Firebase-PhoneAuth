@@ -52,6 +52,7 @@ db.get().then((querySnapShot)=>{
     querySnapShot.forEach((doc)=>{
         if(doc.data().DocumentId){
             ++docs
+            console.log(doc.data().Tags)
             let data = document.createElement("tr")
             data.className = "data"
             data.id = `${doc.data().DocumentId}`
