@@ -16,6 +16,7 @@ var cit = document.querySelector("#cit")
 var ste = document.querySelector("#ste")
 var exp = document.querySelector("#exp")
 var tag = document.querySelector("#tag")
+var tags
 var cat = document.querySelector("#cat")
 var inputs2 = document.querySelectorAll(".inp")
 var fields2 = document.querySelectorAll(".field-2")
@@ -117,7 +118,7 @@ function blur2(e,num){
 
     else if(num == 10){
         console.log(inputs2[num].value.split(','))
-            
+        tags = inputs2[num].value.split(',')
         errors2[num].classList.remove("active")
     }
 
@@ -161,7 +162,7 @@ sbtn2.addEventListener("click",function(e){
     let citIn = cit.value
     let steIn = ste.value
     let expIn = exp.value
-    let tagIn = tag.value
+    let tagIn = tags
     let catIn = cat.value
     var pic = document.getElementById("pic").files[0]
     let picName = pic.name
