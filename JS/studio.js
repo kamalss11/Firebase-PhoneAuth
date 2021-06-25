@@ -7,6 +7,8 @@ var price = document.querySelector("#price")
 var rate = document.querySelector("#rate")
 var service = document.querySelector("#service")
 var sts = document.querySelector("#sts")
+var tag = document.querySelector("#tag")
+var tags
 var add = document.querySelector("#add")
 var fields1 = document.querySelectorAll(".field-1")
 var inputs = document.querySelectorAll(".inputs")
@@ -85,6 +87,12 @@ function blur(e,num){
         }
     }
 
+    else if(num == 6){
+        tags = inputs[num].value.split(',')
+        console.log(tags)
+        errors[num].classList.remove("active")
+    }
+
     else{
         errors[num].classList.remove("active")
     }
@@ -122,6 +130,7 @@ sbtn.addEventListener("click",function(e){
     let serviceInput = service.value
     let statusInput = sts.value
     let addInput = add.value
+    let tagInput = tags
     var image = document.getElementById("img").files[0]
     var imgname = image.name
     storageref =  firebase.storage().ref()
@@ -146,6 +155,7 @@ sbtn.addEventListener("click",function(e){
                 Rating: rateInput,
                 Services: serviceInput,
                 Status: statusInput,
+                Tags: tagInput,
                 Address: addInput,
                 DisplayPicture: urls,
                 Timestamp: firebase.firestore.Timestamp.now()
